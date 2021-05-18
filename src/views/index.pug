@@ -1,0 +1,37 @@
+extends layouts/layout
+
+block vars
+	-
+		const page = {
+			title: 'index.html'
+		};
+
+
+
+
+block main
+	.wrapper#preloader
+		.main-circle
+			.green-circle
+				.brown-circle
+	//- include components/nav-widget
+	div#pagepiling
+		.section.section__home.pp-scrollable
+			include partials/main/home
+		.section.section__cases.pp-scrollable
+			include partials/main/about
+		.section.section__about.pp-scrollable 
+			include partials/main/experience
+		.section.section__services.pp-scrollable 
+			include partials/main/works
+		.section.section__partners.pp-scrollable 
+			include partials/main/services
+		.section.section__awards.pp-scrollable 
+			include partials/main/recognition
+		.section.section__testimonials.pp-scrollable 
+			include partials/main/testimonials
+		.section.section__blog.pp-scrollable 
+			include partials/main/blog
+		.section.section__contacts.pp-scrollable 
+			include partials/main/contacts
+

@@ -1,0 +1,71 @@
+body {
+    font-family: "SF Pro Display";
+
+    @include tablet-1000 {
+        overflow: auto;
+    }
+}
+
+html {
+    @include tablet-1000 {
+        overflow: auto;
+    }
+}
+
+.section-main {
+    padding-left: 393px;
+    padding-top: toVh(205);
+    padding-right: vwd(100);
+    padding-bottom: toVh(50);
+    height: 100%;
+
+}
+
+.container {
+    &-main {
+        width: 100%;
+        margin: 0 auto;
+        height: 100%;
+    }
+
+    box-sizing: border-box;
+    width: 95%;
+    max-width: 1530px;
+    // max-width: calc(100% - 30px * 2);
+    margin: 0 auto;
+
+    &-fluid {
+        max-width: calc(100% - 200px);
+        margin: auto;
+    }
+
+    @include tablet {
+        width: 95%;
+        max-width: 1530px;
+    }
+
+    @include tablet-1200 {
+        width: 738px;
+        max-width: 100%;
+    }
+
+    @include mobile {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #E9CF49;
+    border-radius: 8px;
+    border: 1px solid #000;
+
+}
