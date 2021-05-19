@@ -8,6 +8,9 @@
 
 /* Partials */
 
+//= partials/pagepiling.js
+//= partials/header.js
+
 
 
 

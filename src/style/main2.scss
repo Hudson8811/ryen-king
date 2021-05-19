@@ -1,11 +1,11 @@
 @import "helpers/_mixins.scss";
 @import "helpers/reset.scss";
 @import "helpers/fonts.scss";
-@import "helpers/layuot.scss";
+@import "helpers/layout.scss";
 
 @import "libs/jquery.fancybox.min.css";
 @import "libs/just-validate.min.css";
-@import "libs/swiper.min.css";
+@import "libs/swiper.min.scss";
 
 @import "partials/footer.scss";
 @import "partials/header.scss";

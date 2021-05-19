@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
     function disabledPreloader() {
-        console.log('work')
         document.getElementById('preloader').style.display = 'none';
     }
 

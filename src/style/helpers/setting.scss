@@ -1,0 +1,33 @@
+.container {
+    max-width: calc(100% - 200px);
+    margin: auto;
+}
+
+.line {
+    height: 2px;
+    background: #787A7C;
+    width: 100%;
+}
+
+#pp-nav {
+    display: none;
+}
+
+body {
+    background: #000;
+    color: #fff;
+}
+
+.section {
+    background-color: #000;
+    opacity: 0;
+
+    @include media('tablet-1000') {
+        opacity: 1;
+    }
+
+    &.active {
+
+        opacity: 1;
+    }
+}
