@@ -3,22 +3,14 @@ mixin heroDescriptionItem(title, listItems, link)
     .hero-description__item.hero-description__item_share
       p.text.manrope.manrope-text2.hero-description__title= title
       .hero-description__list.hero-description__list_share
-        if (link)
-          each listItem in listItems
-            a(href= listItem.link).m2text1.neue.neue-text1.hero-description__li.hero-description__li_share= listItem.name
-        else 
-          each listItem in listItems
-            p.m2text1.neue.neue-text1.hero-description__li= listItem.name
+        each listItem in listItems
+          a(href= listItem.link).m2text1.neue.neue-text1.hero-description__li= listItem.name
   else
     .hero-description__item
       p.text.m2text4.manrope.manrope-text2.hero-description__title= title
       .hero-description__list
-        if (link)
-          each listItem in listItems
-            a(href= listItem.link).m2text1.neue.neue-text1.hero-description__li= listItem.name
-        else 
-          each listItem in listItems
-            p.m2text1.neue.neue-text1.hero-description__li= listItem.name
+        each listItem in listItems
+          p.m2text1.neue.neue-text1.hero-description__li= listItem.name
 
 section.hero 
   .m2container

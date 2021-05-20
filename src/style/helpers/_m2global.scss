@@ -91,6 +91,10 @@
   @include media(992) {
     font-size: 22px;
   }
+
+  @include media(440) {
+    font-size: 16px;
+  }
 }
 
 .m2text3 {
@@ -102,5 +106,9 @@
 .m2text4 {
   @include media(992) {
     font-size: 16px;
+  }
+
+  @include media(440) {
+    font-size: 14px;
   }
 }

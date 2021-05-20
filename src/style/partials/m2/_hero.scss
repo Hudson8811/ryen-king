@@ -26,6 +26,10 @@
     @include media(992) {
       margin-bottom: 60px;
     }
+
+    @include media(440) {
+      margin-bottom: 40px;
+    }
   }
 
   &__headline {
@@ -41,6 +45,10 @@
 
     @include media(600) {
       margin-bottom: 50px;
+    }
+
+    @include media(440) {
+      margin-bottom: 40px;
     }
   }
 
@@ -62,10 +70,15 @@
         }
 
         @include media(992) {
-          margin-right: 40px;
+          margin-right: 22px;
         }
+
         @include media(768) {
           margin-bottom: 50px;
+        }
+
+        @include media(440) {
+          margin-bottom: 25px;
         }
       }
 
@@ -105,10 +118,8 @@
       }
 
       @include media(1600) {
-        &_share {
-          margin-bottom: 0;
-          margin-right: 20px;
-        }
+        margin-bottom: 0;
+        margin-right: 20px;
       }
     }
   }
