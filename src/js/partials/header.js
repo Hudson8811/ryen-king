@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (header.classList.contains("header-js")) {
         window.addEventListener('scroll', () => {
             let y = window.scrollY;
+
             let headerHeight = header.offsetHeight;
 
             if (y > headerHeight) {

@@ -96,20 +96,6 @@
 			}
 		}
 
-		&-social {
-			position: absolute;
-			top: 40px;
-			left: 150px;
-			font-size: 18px;
-			line-height: 140%;
-			color: #F3F3F3;
-			display: flex;
-			z-index: 101;
-			opacity: 0;
-			transition: opacity .6s ease;
-			transition-delay: .3s;
-		}
-
 		&-content {
 			position: relative;
 			padding-top: toVh(150);
@@ -181,26 +167,6 @@
 			}
 
 			&:hover {}
-		}
-
-		&-contacts {
-			font-size: 18px;
-			line-height: 140%;
-			position: absolute;
-			bottom: 60px;
-			right: 90px;
-			display: flex;
-			flex-direction: column;
-			align-items: flex-end;
-			opacity: 0;
-			transition: opacity .6s ease;
-			transition-delay: .55s;
-		}
-
-		&-contact {
-			&:last-child {
-				margin-top: 7px;
-			}
 		}
 	}
 }
