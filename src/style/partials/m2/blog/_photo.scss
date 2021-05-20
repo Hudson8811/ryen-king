@@ -1,0 +1,8 @@
+.photo {
+  padding-bottom: 120px;
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+  }
+}

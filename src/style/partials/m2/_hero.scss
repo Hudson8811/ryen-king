@@ -7,6 +7,10 @@
     padding-bottom: 90px;
   }
 
+  @include media(600) {
+    padding-bottom: 50px;
+  }
+
   &__title {
     margin-bottom: 88px;
 
