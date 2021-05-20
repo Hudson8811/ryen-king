@@ -76,22 +76,14 @@
 
 		&-list {
 			opacity: 0;
-			transition: opacity .6s ease;
-			transition-delay: .45s;
+			transition: opacity .5s ease;
+			transition-delay: .2s;
 		}
 
 		&.active {
 			transform: translateX(0);
 
-			.header__menu-social {
-				opacity: 1;
-			}
-
 			.header__menu-list {
-				opacity: 1;
-			}
-
-			.header__menu-contacts {
 				opacity: 1;
 			}
 		}
@@ -155,18 +147,21 @@
 			transition: .3s ease;
 			position: relative;
 			color: #0D0D0C;
+			transition: transform .3s ease;
 
-			&::after {
-				content: '';
-				position: absolute;
-				transition: .3s ease;
-				bottom: 0;
-				left: 0;
-				height: 1px;
-				background-color: transparent;
+			// &::after {
+			// 	content: '';
+			// 	position: absolute;
+			// 	transition: .3s ease;
+			// 	bottom: 0;
+			// 	left: 0;
+			// 	height: 1px;
+			// 	background-color: transparent;
+			// }
+
+			&:hover {
+				transform: translate(40px, 0);
 			}
-
-			&:hover {}
 		}
 	}
 }

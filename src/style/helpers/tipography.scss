@@ -1,0 +1,54 @@
+.neue {
+    font-family: "NeueMachina", sans-serif;
+    font-style: normal;
+
+    &-headline1 {
+        font-weight: 500;
+        font-size: 140px;
+        line-height: 90%;
+        text-transform: uppercase;
+    }
+
+    &-headline2 {
+        font-weight: 500;
+        font-size: 70px;
+        line-height: 110%;
+        text-transform: uppercase;
+    }
+
+    &-headline3 {
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 120%;
+        text-transform: uppercase;
+    }
+
+    &-text1 {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 120%;
+    }
+
+    &-text2 {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 140%;
+    }
+}
+
+.manrope {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+
+    &-text1 {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 130%;
+    }
+
+    &-text2 {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 140%;
+    }
+}
