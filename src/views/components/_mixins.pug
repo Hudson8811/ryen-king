@@ -16,7 +16,7 @@ mixin breadcrumbs(paddingLeft=false,item1="", item2="", item3="", item4="", item
 						=item2
 			if(item3!="")
 				li.breadcrumbs-item
-					a.breadcrumbs-item-a(href="")
+					.breadcrumbs-item-a(href="")
 						=item3
 			if(item4!="")
 				li.breadcrumbs-item
@@ -26,3 +26,9 @@ mixin breadcrumbs(paddingLeft=false,item1="", item2="", item3="", item4="", item
 				li.breadcrumbs-item
 					a.breadcrumbs-item-a(href="")
 						=item5
+
+mixin neueHeadline3(className, content)
+	p(class="text m2headline3 neue neue-headline3 " + className)= content
+
+mixin mainText(className, content)
+	p(class="text m2text3 manrope manrope-text1 " + className)= content

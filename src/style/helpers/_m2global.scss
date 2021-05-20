@@ -1,3 +1,4 @@
+// main2 only styles
 .m2container {
   margin: 0 auto;
   max-width: 1779px;
@@ -20,14 +21,38 @@
   }
 
   &-body {
+    display: flex;
+    align-items: start;
+    justify-content: flex-end;
+
     &__aside {
+      margin-right: 186px;
+
+      @include media(1900) {
+        margin-right: auto;
+      }
+
+      @include media(1600) {
+        margin-right: 0;
+      }
     }
 
     &__main {
+      width: 1050px;
+      flex-shrink: 0;
+
+      @include media(1600) {
+        width: 100%;
+      }
+    }
+
+    @include media(1600) {
+      flex-direction: column;
     }
   }
 }
 
+// Probably project global styles
 .m2headline1 {
   @include media(1900) {
     font-size: 120px;
@@ -49,5 +74,33 @@
   }
   @include media(440) {
     font-size: 26px;
+  }
+}
+
+.m2headline3 {
+  @include media(992) {
+    font-size: 32px;
+  }
+
+  @include media(600) {
+    font-size: 22px;
+  }
+}
+
+.m2text1 {
+  @include media(992) {
+    font-size: 22px;
+  }
+}
+
+.m2text3 {
+  @include media(992) {
+    font-size: 18px;
+  }
+}
+
+.m2text4 {
+  @include media(992) {
+    font-size: 16px;
   }
 }
