@@ -9,6 +9,54 @@
     }
 }
 
+@mixin container-full {
+    @media (max-width: 1800px) {
+        @content;
+    }
+}
+
+@mixin animation {
+    transition: all ease-out 0.3s;
+}
+
+@mixin neue-text1 {
+    font-family: "NeueMachina", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+}
+
+@mixin neue-text2 {
+    font-family: "NeueMachina", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+@mixin manrope-text1 {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+}
+
+@mixin manrope-text2 {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+@mixin desktop {
+    @media (min-width: 993px) {
+        @content;
+    }
+}
+
 $media-list: ('mobile-350': 350,
     'mobile-450': 450,
     'mobile-620': 620,
