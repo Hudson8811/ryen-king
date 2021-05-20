@@ -19,65 +19,6 @@
   transition: all ease-out 0.3s;
 }
 
-@mixin neue-headline1 {
-  font-family: "NeueMachina", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 140px;
-  line-height: 90%;
-  text-transform: uppercase;
-}
-
-@mixin neue-headline2 {
-  font-family: "NeueMachina", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 70px;
-  line-height: 110%;
-  text-transform: uppercase;
-}
-
-@mixin neue-headline3 {
-  font-family: "NeueMachina", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 120%;
-  text-transform: uppercase;
-}
-
-@mixin neue-text1 {
-  font-family: "NeueMachina", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 120%;
-}
-
-@mixin neue-text2 {
-  font-family: "NeueMachina", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 140%;
-}
-
-@mixin manrope-text1 {
-  font-family: "Manrope", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 130%;
-}
-
-@mixin manrope-text2 {
-  font-family: "Manrope", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 140%;
-}
-
 @mixin desktop {
   @media (min-width: 993px) {
     @content;
