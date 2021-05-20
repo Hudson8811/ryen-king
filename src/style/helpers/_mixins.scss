@@ -1,132 +1,153 @@
 @mixin resize-img-wrapper {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 
-    &::after {
-        content: '';
-        display: block;
-        @content;
-    }
+  &::after {
+    content: "";
+    display: block;
+    @content;
+  }
 }
 
 @mixin container-full {
-    @media (max-width: 1800px) {
-        @content;
-    }
+  @media (max-width: 1800px) {
+    @content;
+  }
 }
 
 @mixin animation {
-    transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+}
+
+@mixin neue-headline1 {
+  font-family: "NeueMachina", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 140px;
+  line-height: 90%;
+  text-transform: uppercase;
+}
+
+@mixin neue-headline2 {
+  font-family: "NeueMachina", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+
+@mixin neue-headline3 {
+  font-family: "NeueMachina", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 120%;
+  text-transform: uppercase;
 }
 
 @mixin neue-text1 {
-    font-family: "NeueMachina", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 120%;
+  font-family: "NeueMachina", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
 }
 
 @mixin neue-text2 {
-    font-family: "NeueMachina", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 140%;
+  font-family: "NeueMachina", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
 }
 
 @mixin manrope-text1 {
-    font-family: "Manrope", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 130%;
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 130%;
 }
 
 @mixin manrope-text2 {
-    font-family: "Manrope", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 140%;
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
 }
 
 @mixin desktop {
-    @media (min-width: 993px) {
-        @content;
-    }
+  @media (min-width: 993px) {
+    @content;
+  }
 }
 
-$media-list: ('mobile-350': 350,
-    'mobile-450': 450,
-    'mobile-620': 620,
-    'mobile': 767,
-    'tablet-1000': 1000,
-    'tablet-1200': 1200,
-    'tablet': 1559);
+$media-list: (
+  "mobile-350": 350,
+  "mobile-450": 450,
+  "mobile-620": 620,
+  "mobile": 767,
+  "tablet-1000": 1000,
+  "tablet-1200": 1200,
+  "tablet": 1559,
+);
 
 @function _get-media-width($width, $maxmin) {
-    @if map-get($media-list, $width) {
-        $width: map-get($media-list, $width);
+  @if map-get($media-list, $width) {
+    $width: map-get($media-list, $width);
 
-        @if $maxmin {
-            @return $width;
-        }
-
-        @else {
-            @return $width+1;
-        }
+    @if $maxmin {
+      @return $width;
+    } @else {
+      @return $width + 1;
     }
-
-    @else {
-        @return $width;
-    }
+  } @else {
+    @return $width;
+  }
 }
 
 @mixin media($width, $maxmin: true) {
-    $width: _get-media-width($width, $maxmin);
+  $width: _get-media-width($width, $maxmin);
 
-    @if ($maxmin) {
-        @media only screen and (max-width: $width + 'px') {
-            @content;
-        }
+  @if ($maxmin) {
+    @media only screen and (max-width: $width + "px") {
+      @content;
     }
-
-    @else {
-        @media only screen and (min-width: $width + 'px') {
-            @content;
-        }
+  } @else {
+    @media only screen and (min-width: $width + "px") {
+      @content;
     }
+  }
 }
 
 @mixin resize-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 $resolutiond: 1920;
 
-
 @function vwd($px) {
-    @return (($px/$resolutiond) * 100)+vw;
+  @return (($px/$resolutiond) * 100) + vw;
 }
 
 @function vwx($px) {
-    @return (($px/$resolutiond) * 80)+vw;
+  @return (($px/$resolutiond) * 80) + vw;
 }
 
 @function novwx($px) {
-    @return ($px)+px;
+  @return ($px) + px;
 }
-
 
 $baseHeight: 1080;
 
 @function toVh($px) {
-    @return (($px/$baseHeight) * 100)+vh;
+  @return (($px/$baseHeight) * 100) + vh;
 }
