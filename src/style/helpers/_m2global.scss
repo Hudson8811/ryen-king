@@ -1,0 +1,53 @@
+.m2container {
+  margin: 0 auto;
+  max-width: 1779px;
+
+  @include media(1900) {
+    max-width: 1400px;
+  }
+  @include media(1600) {
+    max-width: 1140px;
+  }
+  @include media(1200) {
+    max-width: 960px;
+  }
+  @include media(992) {
+    max-width: 700px;
+  }
+  @include media(768) {
+    max-width: 576px;
+    width: 92.5%;
+  }
+
+  &-body {
+    &__aside {
+    }
+
+    &__main {
+    }
+  }
+}
+
+.m2headline1 {
+  @include media(1900) {
+    font-size: 120px;
+  }
+  @include media(1600) {
+    font-size: 100px;
+  }
+  @include media(1200) {
+    font-size: 86px;
+  }
+  @include media(992) {
+    font-size: 60px;
+  }
+  @include media(768) {
+    font-size: 42px;
+  }
+  @include media(600) {
+    font-size: 36px;
+  }
+  @include media(440) {
+    font-size: 26px;
+  }
+}
