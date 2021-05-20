@@ -98,8 +98,8 @@
 }
 
 .m2text3 {
-  @include media(992) {
-    font-size: 18px;
+  @include media(600) {
+    font-size: 16px;
   }
 }
 
