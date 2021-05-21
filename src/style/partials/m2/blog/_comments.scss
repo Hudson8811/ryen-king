@@ -42,7 +42,7 @@
     max-width: 870px;
 
     @include media("tablet") {
-      width: 800px;
+      width: 80%;
       padding-bottom: 120px;
     }
 
@@ -59,7 +59,7 @@
     &_reply {
       margin-left: 180px;
 
-      @include media(992) {
+      @include media("tablet") {
         margin-left: 10%;
       }
     }
@@ -132,7 +132,7 @@
         line-height: 140%;
         color: $light-grey;
 
-        @include media(992) {
+        @include media("tablet") {
           font-size: 16px;
         }
 
@@ -155,7 +155,7 @@
       display: flex;
       justify-content: space-between;
 
-      @include media(992) {
+      @include media("tablet") {
         margin-bottom: 90px;
       }
 
@@ -180,7 +180,7 @@
       cursor: pointer;
       user-select: none;
 
-      @include media(992) {
+      @include media("tablet") {
         margin-bottom: 90px;
       }
 

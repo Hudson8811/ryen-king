@@ -8,14 +8,14 @@ mixin comment(date, name, content, reply, temp)
         | Reply
   else
     if (temp)
-      .comments__item.comments-item.comments-item
+      .comments__item.comments-item
         p.text.manrope.manrope-text2.comments-item__date= date
         p.neue.neue-headline3.m2headline3.comments-item__name= name
         p.sfpro.m2comment.comments-item__content.comments-item__content_temp= content
         a(href="#").neue.neue-link.m2comment.comments-item__reply#reply-button
           | Reply
     else
-      .comments__item.comments-item.comments-item
+      .comments__item.comments-item
         p.text.manrope.manrope-text2.comments-item__date= date
         p.neue.neue-headline3.m2headline3.comments-item__name= name
         p.sfpro.m2comment.comments-item__content= content

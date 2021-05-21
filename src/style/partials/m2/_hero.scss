@@ -39,6 +39,10 @@
   &__headline {
     margin-bottom: 75px;
 
+    @include media("tablet") {
+      margin-bottom: 60px;
+    }
+
     @include media("mobile-620") {
       margin-bottom: 40px;
     }
@@ -96,7 +100,7 @@
     &__title {
       margin-bottom: 20px;
 
-      @include media(992) {
+      @include media("tablet") {
         margin-bottom: 10px;
       }
     }

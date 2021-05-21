@@ -31,6 +31,10 @@
     &_2 {
       margin-bottom: 145px;
 
+      @include media("tablet") {
+        margin-bottom: 90px;
+      }
+
       @include media(992) {
         margin-bottom: 75px;
       }

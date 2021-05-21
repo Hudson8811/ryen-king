@@ -62,9 +62,6 @@
     font-size: 120px;
   }
   @include media("tablet") {
-    font-size: 100px;
-  }
-  @include media("tablet-1200") {
     font-size: 86px;
   }
   @include media(992) {
@@ -83,7 +80,7 @@
 
 .m2headline3 {
   @include media("tablet") {
-    font-size: 32px;
+    font-size: 26px;
   }
 
   @include media("mobile-620") {
@@ -103,7 +100,7 @@
 
 .m2text3 {
   @include media("tablet") {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   @include media("mobile-620") {
@@ -112,7 +109,7 @@
 }
 
 .m2text4 {
-  @include media(992) {
+  @include media("tablet") {
     font-size: 16px;
   }
 
@@ -123,11 +120,11 @@
 
 .m2comment {
   @include media("tablet") {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @include media("mobile-620") {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -160,6 +157,7 @@
   }
 }
 
+// Temporary contains duplicated Neue Headline2 styles
 .m2link {
   display: flex;
   align-items: center;
