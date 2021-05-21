@@ -133,7 +133,7 @@
     &__li {
       @include animation;
 
-      @include media(992, false) {
+      @include media(993, false) {
         &:hover {
           color: $main-green;
           @include animation;
