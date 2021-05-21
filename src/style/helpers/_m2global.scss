@@ -6,7 +6,7 @@
   @include media(1900) {
     max-width: 1400px;
   }
-  @include media(1600) {
+  @include media("tablet") {
     max-width: 1140px;
   }
   @include media("tablet-1200") {
@@ -32,7 +32,7 @@
         margin-right: auto;
       }
 
-      @include media(1600) {
+      @include media("tablet") {
         margin-right: 0;
       }
     }
@@ -41,12 +41,16 @@
       width: 1050px;
       flex-shrink: 0;
 
-      @include media(1600) {
+      @include media("tablet") {
+        width: 75%;
+      }
+
+      @include media(992) {
         width: 100%;
       }
     }
 
-    @include media(1600) {
+    @include media("tablet") {
       flex-direction: column;
     }
   }
@@ -57,7 +61,7 @@
   @include media(1900) {
     font-size: 120px;
   }
-  @include media(1600) {
+  @include media("tablet") {
     font-size: 100px;
   }
   @include media("tablet-1200") {
@@ -78,7 +82,7 @@
 }
 
 .m2headline3 {
-  @include media(992) {
+  @include media("tablet") {
     font-size: 32px;
   }
 
@@ -98,6 +102,10 @@
 }
 
 .m2text3 {
+  @include media("tablet") {
+    font-size: 20px;
+  }
+
   @include media("mobile-620") {
     font-size: 16px;
   }
@@ -110,5 +118,15 @@
 
   @include media("mobile-450") {
     font-size: 14px;
+  }
+}
+
+.m2comment {
+  @include media("tablet") {
+    font-size: 18px;
+  }
+
+  @include media("mobile-620") {
+    font-size: 16px;
   }
 }

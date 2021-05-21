@@ -2,7 +2,7 @@
   padding-top: 152px;
   padding-bottom: 120px;
 
-  @include media(1600) {
+  @include media("tablet") {
     padding-top: 120px;
     padding-bottom: 90px;
   }
@@ -59,7 +59,7 @@
   &-description {
     padding-top: 6px;
 
-    @include media(1600) {
+    @include media("tablet") {
       display: flex;
       flex-wrap: wrap;
     }
@@ -68,7 +68,7 @@
       &:not(:last-child) {
         margin-bottom: 70px;
 
-        @include media(1600) {
+        @include media("tablet") {
           margin-right: 70px;
           margin-bottom: 0;
         }
@@ -86,7 +86,7 @@
         }
       }
 
-      @include media(1600) {
+      @include media("tablet") {
         &_share {
           flex-direction: row;
         }
@@ -105,7 +105,7 @@
       display: flex;
       flex-direction: column;
 
-      @include media(1600) {
+      @include media("tablet") {
         flex-wrap: wrap;
 
         &_share {
@@ -132,7 +132,7 @@
         margin-bottom: 20px;
       }
 
-      @include media(1600) {
+      @include media("tablet") {
         margin-bottom: 0;
         margin-right: 20px;
       }

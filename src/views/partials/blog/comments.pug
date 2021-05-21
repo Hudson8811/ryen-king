@@ -1,17 +1,25 @@
-mixin comment(date, name, content, reply)
+mixin comment(date, name, content, reply, temp)
   if (reply)
-    .comments__item.comments-item.comments-item_reply
-      span.text.manrope.manrope-text2.comments-item__date= date
+    .comments__item.comments__item_reply.comments-item.comments-item_reply
+      p.text.manrope.manrope-text2.comments-item__date= date
       p.neue.neue-headline3.m2headline3.comments-item__name= name
-      p.comments-item__content= content
-      a(href="#").neue.neue-link.comments-item__reply#reply-button
+      p.sfpro.m2comment.comments-item__content= content
+      a(href="#").neue.neue-link.m2comment.comments-item__reply#reply-button
         | Reply
   else
-    .comments__item.comments-item.comments-item
-        span.text.manrope.manrope-text2.comments-item__date= date
+    if (temp)
+      .comments__item.comments-item.comments-item
+        p.text.manrope.manrope-text2.comments-item__date= date
         p.neue.neue-headline3.m2headline3.comments-item__name= name
-        p.comments-item__content= content
-        a(href="#").neue.neue-link.comments-item__reply#reply-button
+        p.sfpro.m2comment.comments-item__content.comments-item__content_temp= content
+        a(href="#").neue.neue-link.m2comment.comments-item__reply#reply-button
+          | Reply
+    else
+      .comments__item.comments-item.comments-item
+        p.text.manrope.manrope-text2.comments-item__date= date
+        p.neue.neue-headline3.m2headline3.comments-item__name= name
+        p.sfpro.m2comment.comments-item__content= content
+        a(href="#").neue.neue-link.m2comment.comments-item__reply#reply-button
           | Reply
 
 section.comments
@@ -22,13 +30,24 @@ section.comments
       .m2container-body__main
         h2.neue.neue-headline3.m2headline3.comments__title.comments-title
           | Comments (
-          span.comment-title__counter#comments-counter
+          span.comments-title__counter#comments-counter
             | 3
           | )
         
         .comments-list
-          +comment('April 20, 2021', 'Julia Duchamps', 'Alpha sales MVP business-to-consumer strategy client influencer pivot founders assets non-disclosure agreement social proof paradigm shift scrum project. Venture learning curve customer. Series A financing assets business model canvas virality network effects return on investment prototype seed round validation creative business plan influencer seed money.')
+          +comment('April 20, 2021', 'Julia Duchamps', 'Alpha sales MVP business-to-consumer strategy client influencer pivot founders assets non-disclosure agreement social proof paradigm shift scrum project. Venture learning curve customer. Series A financing assets business model canvas virality network effects return on investment prototype seed round validation creative business plan influencer seed money.', false, true)
           +comment('April 21, 2021', 'Judit Quinton', 'Learning curve seed money non-disclosure agreement ownership client A/B testing. Incubator seed money gamification monetization influencer virality client social media backing burn rate validation freemium. Niche market business-to-consumer alpha conversion partnership churn rate business-to-business.', true)
           +comment('April 19, 2021', 'Marko Flater', 'Success creative innovator. MVP growth hacking iPad bootstrapping buyer facebook bandwidth marketing validation user experience direct mailing deployment leverage android. Client creative ecosystem rockstar android strategy first mover advantage.')
           
-          
+        .comments-new.comments-item.comments-item_reply
+          h3.neue.neue-headline3.m2headline3.comments-new__title
+            | Leave your comment
+          form(action="#" method="post").comments-new__form.comments-form
+            input(type="text" name="form-name" id="form-name" placeholder="Name").comments-form__input
+            input(type="email" name="email" id="email" placeholder="E-mail").comments-form__input
+            textarea(name="new-comment" id="new-comment" placeholder="Your comment").comments-form__input.comments-form__textarea
+            label(for="save-name")
+              input(type="checkbox" name="save-name" id="save-name") 
+              | Save my name, email, and website in this browser for the next time I comment.
+            button(type='submit' id='new-submit').comments-form__button
+              | send

@@ -1,6 +1,10 @@
 .body {
   padding-bottom: 120px;
 
+  @include media(992) {
+    padding-bottom: 50px;
+  }
+
   &__image {
     margin-bottom: 120px;
     width: 100%;
@@ -91,7 +95,7 @@
       height: 516px;
       object-fit: cover;
 
-      @include media(1600) {
+      @include media("tablet") {
         width: 48%;
       }
       @include media(992) {
