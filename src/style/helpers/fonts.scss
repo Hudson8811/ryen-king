@@ -37,3 +37,23 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'NeueMachina';
+    src: url('../fonts/NeueMachina-Medium.woff2') format('woff2'),
+        url('../fonts/NeueMachina-Medium.woff') format('woff'),
+        url('../fonts/NeueMachina-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NeueMachina';
+    src: url('../fonts/SFProDisplay-Regular.woff2') format('woff2'),
+        url('../fonts/SFProDisplay-Regular.woff') format('woff'),
+        url('../fonts/SFProDisplay-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}

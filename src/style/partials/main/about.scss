@@ -1,0 +1,69 @@
+.about {
+
+    &__container {}
+
+    &__row {
+        display: flex;
+    }
+
+    &__column {
+        &:not(:last-child) {
+            width: 688/1780 * 100%;
+            padding-right: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &:last-child {
+            width: 340/1780 * 100%;
+        }
+    }
+
+    &__title {}
+
+    &__skills {
+        display: flex;
+    }
+
+    &__skill {
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
+    }
+
+    &__skill-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 84px;
+
+        div {
+            margin-right: 10px;
+        }
+    }
+
+    &__skill-desc {}
+
+    &__img-wrapper {
+        position: relative;
+        width: 100%;
+        height: toVh(870);
+        margin-top: -70px;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__work-info {
+        margin-top: 240px;
+        text-transform: none;
+    }
+}

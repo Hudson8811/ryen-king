@@ -1,1 +1,23 @@
-// Typography
+.button-primary {
+  color: $main-black;
+  background: $main-green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 28px;
+  cursor: pointer;
+  transition: bacground .3s linear;
+
+  span {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    background: $main-white;
+  }
+}

@@ -14,6 +14,14 @@
     font-size: 70px;
     line-height: 110%;
     text-transform: uppercase;
+
+    &-green {
+      color: $main-green;
+      font-weight: 500;
+      font-size: 70px;
+      line-height: 110%;
+      text-transform: uppercase;
+    }
   }
 
   &-headline3 {
