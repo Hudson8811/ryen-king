@@ -159,3 +159,32 @@
     }
   }
 }
+
+.m2link {
+  display: flex;
+  align-items: center;
+  font-family: "NeueMachina", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: $main-green;
+
+  &__arrow {
+    width: 64px;
+    height: 32px;
+    margin-left: 40px;
+    fill: $main-green;
+  }
+
+  @include media(993, false) {
+    &:hover {
+      color: $main-white;
+
+      .m2link__arrow {
+        fill: $main-white;
+      }
+    }
+  }
+}
