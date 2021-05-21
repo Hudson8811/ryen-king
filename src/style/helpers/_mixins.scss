@@ -9,20 +9,8 @@
   }
 }
 
-@mixin container-full {
-  @media (max-width: 1800px) {
-    @content;
-  }
-}
-
 @mixin animation {
   transition: all ease-out 0.3s;
-}
-
-@mixin desktop {
-  @media (min-width: 993px) {
-    @content;
-  }
 }
 
 $media-list: (

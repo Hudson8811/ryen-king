@@ -9,13 +9,13 @@
   @include media(1600) {
     max-width: 1140px;
   }
-  @include media(1200) {
+  @include media("tablet-1200") {
     max-width: 960px;
   }
   @include media(992) {
     max-width: 700px;
   }
-  @include media(768) {
+  @include media("mobile") {
     max-width: 576px;
     width: 92.5%;
   }
@@ -60,19 +60,19 @@
   @include media(1600) {
     font-size: 100px;
   }
-  @include media(1200) {
+  @include media("tablet-1200") {
     font-size: 86px;
   }
   @include media(992) {
     font-size: 60px;
   }
-  @include media(768) {
+  @include media("mobile") {
     font-size: 42px;
   }
-  @include media(600) {
+  @include media("mobile-620") {
     font-size: 36px;
   }
-  @include media(440) {
+  @include media("mobile-450") {
     font-size: 26px;
   }
 }
@@ -82,7 +82,7 @@
     font-size: 32px;
   }
 
-  @include media(600) {
+  @include media("mobile-620") {
     font-size: 22px;
   }
 }
@@ -92,13 +92,13 @@
     font-size: 22px;
   }
 
-  @include media(440) {
+  @include media("mobile-450") {
     font-size: 16px;
   }
 }
 
 .m2text3 {
-  @include media(600) {
+  @include media("mobile-620") {
     font-size: 16px;
   }
 }
@@ -108,7 +108,7 @@
     font-size: 16px;
   }
 
-  @include media(440) {
+  @include media("mobile-450") {
     font-size: 14px;
   }
 }

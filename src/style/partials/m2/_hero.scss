@@ -7,17 +7,17 @@
     padding-bottom: 90px;
   }
 
-  @include media(600) {
+  @include media("mobile-620") {
     padding-bottom: 60px;
   }
 
   &__title {
     margin-bottom: 88px;
 
-    @include media(768) {
+    @include media("mobile") {
       margin-bottom: 52px;
     }
-    @include media(440) {
+    @include media("mobile-450") {
       margin-bottom: 32px;
     }
   }
@@ -31,7 +31,7 @@
       margin-bottom: 60px;
     }
 
-    @include media(440) {
+    @include media("mobile-450") {
       margin-bottom: 40px;
     }
   }
@@ -39,7 +39,7 @@
   &__headline {
     margin-bottom: 75px;
 
-    @include media(600) {
+    @include media("mobile-620") {
       margin-bottom: 40px;
     }
   }
@@ -47,11 +47,11 @@
   &__description {
     margin-bottom: 70px;
 
-    @include media(600) {
+    @include media("mobile-620") {
       margin-bottom: 50px;
     }
 
-    @include media(440) {
+    @include media("mobile-450") {
       margin-bottom: 40px;
     }
   }
@@ -77,11 +77,11 @@
           margin-right: 22px;
         }
 
-        @include media(768) {
+        @include media("mobile") {
           margin-bottom: 50px;
         }
 
-        @include media(440) {
+        @include media("mobile-450") {
           margin-bottom: 25px;
         }
       }

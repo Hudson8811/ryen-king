@@ -1,3 +1,17 @@
+mixin listItem(title, listItems, link)
+	if (title === 'Share')
+		.hero-description__item.hero-description__item_share
+			p.text.manrope.manrope-text2.hero-description__title= title
+			.hero-description__list.hero-description__list_share
+				each listItem in listItems
+					a(href= listItem.link).m2text1.neue.neue-text1.hero-description__li= listItem.name
+	else
+		.hero-description__item
+			p.text.m2text4.manrope.manrope-text2.hero-description__title= title
+			.hero-description__list
+				each listItem in listItems
+					p.m2text1.neue.neue-text1.hero-description__li= listItem.name
+
 section.hero 
   .m2container
     h1.hero__title.neue.neue-headline1.m2headline1 Technology direct mailing startup 
