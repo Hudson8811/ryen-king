@@ -100,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // }
 
             const anchors = ['home', 'about', 'experience', 'works', 'services', 'recognition', 'testimonials', 'blog', 'contacts']
-            const labels = ['home', 'Selected works', 'about me', 'services', 'My clients', 'awards', 'testimonials', 'My insights', 'get in touch']
 
             // function setLabel(index) {
             //     const label = labels[index];
@@ -112,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             function setPageNumber(index) {
                 [...document.querySelectorAll('.js-page-number')].forEach(element => {
-                    element.textContent = `${index + 1}/${labels.length}`
+                    element.textContent = `${index + 1}/${anchors.length}`
                 });
             }
 
@@ -145,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 scrollingSpeed: 150,
                 easing: 'swing',
                 menu: '#myMenu',
-                sectionsColor: ['#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000'],
+                // sectionsColor: ['#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000'],
                 onLeave: function (index, nextIndex, direction) {
                     setPageNumber(nextIndex - 1)
                     // setLabel(nextIndex - 1)

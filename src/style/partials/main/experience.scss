@@ -1,0 +1,52 @@
+.experience {
+
+    &__container {}
+
+    &__title {
+        margin-bottom: toVh(50);
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__resume {
+        width: 550/1780 * 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+
+    &__resume-text {
+        margin-bottom: toVh(70);
+    }
+
+    &__resume-button {}
+
+    &__history {
+        width: 1052/1780 * 100%;
+    }
+
+    &__card {
+        &:not(:last-child) {
+            border-bottom: 1px solid $light-grey;
+            margin-bottom: toVh(50);
+        }
+    }
+
+    &__card-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    &__position {}
+
+    &__company {}
+
+    &__date {
+        margin-bottom: toVh(50);
+    }
+}

@@ -1,0 +1,76 @@
+.recognition {
+
+    &__container {}
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {}
+
+    &__contact-me {
+        width: 600/1780 * 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__contact-bottom {
+        max-width: 330px;
+        margin-top: auto;
+    }
+
+    &__contact-text {
+        margin-bottom: toVh(70);
+    }
+
+
+    &__contact-button {
+        max-width: 244px;
+        min-width: 244px;
+    }
+
+    &__inner {
+        width: 1051/1780 * 100%;
+    }
+
+    &__img-wrapper {
+        position: relative;
+        margin-bottom: toVh(70);
+        height: toVh(317);
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1051px;
+        height: 317px;
+        object-position: center;
+        object-fit: cover;
+    }
+
+    &__resource {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__resource-list {
+        &:last-child {
+            margin-right: 100px;
+        }
+    }
+
+    &__resource-list-title {
+        margin-bottom: 40px;
+    }
+
+    &__resource-list-item {
+        &:not(:last-child) {
+            margin-bottom: toVh(30);
+        }
+    }
+}
