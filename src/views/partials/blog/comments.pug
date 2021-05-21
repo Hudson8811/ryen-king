@@ -43,11 +43,13 @@ section.comments
           h3.neue.neue-headline3.m2headline3.comments-new__title
             | Leave your comment
           form(action="#" method="post").comments-new__form.comments-form
-            input(type="text" name="form-name" id="form-name" placeholder="Name").comments-form__input
-            input(type="email" name="email" id="email" placeholder="E-mail").comments-form__input
-            textarea(name="new-comment" id="new-comment" placeholder="Your comment").comments-form__input.comments-form__textarea
-            label(for="save-name")
-              input(type="checkbox" name="save-name" id="save-name") 
+            .comments-form__group
+              input(type="text" name="form-name" id="form-name" placeholder="Name").manrope.manrope-text2.m2text4.comments-form__input
+              input(type="email" name="form-email" id="form-email" placeholder="E-mail").manrope.manrope-text2.m2text4.comments-form__input
+            textarea(name="form-comment" id="form-comment" placeholder="Your comment" rows="1").manrope.manrope-text2.m2text4.comments-form__input.comments-form__textarea
+            label(for="save-name").manrope.manrope-text2.m2text4.comments-form__save
+              input(type="checkbox" name="save-name" id="save-name").comments-form__checkbox
               | Save my name, email, and website in this browser for the next time I comment.
-            button(type='submit' id='new-submit').comments-form__button
+              span.comments-form__checkmark
+            button(type='submit' id='new-submit').m2button.comments-form__button
               | send

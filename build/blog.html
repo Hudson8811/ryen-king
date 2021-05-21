@@ -89,13 +89,15 @@
               <div class="comments-new comments-item comments-item_reply">
                 <h3 class="neue neue-headline3 m2headline3 comments-new__title">Leave your comment</h3>
                 <form class="comments-new__form comments-form" action="#" method="post">
-                  <input class="comments-form__input" type="text" name="form-name" id="form-name" placeholder="Name">
-                  <input class="comments-form__input" type="email" name="email" id="email" placeholder="E-mail">
-                  <textarea class="comments-form__input comments-form__textarea" name="new-comment" id="new-comment" placeholder="Your comment"></textarea>
-                  <label for="save-name">
-                    <input type="checkbox" name="save-name" id="save-name">Save my name, email, and website in this browser for the next time I comment.
+                  <div class="comments-form__group">
+                    <input class="manrope manrope-text2 m2text4 comments-form__input" type="text" name="form-name" id="form-name" placeholder="Name">
+                    <input class="manrope manrope-text2 m2text4 comments-form__input" type="email" name="form-email" id="form-email" placeholder="E-mail">
+                  </div>
+                  <textarea class="manrope manrope-text2 m2text4 comments-form__input comments-form__textarea" name="form-comment" id="form-comment" placeholder="Your comment" rows="1"></textarea>
+                  <label class="manrope manrope-text2 m2text4 comments-form__save" for="save-name">
+                    <input class="comments-form__checkbox" type="checkbox" name="save-name" id="save-name">Save my name, email, and website in this browser for the next time I comment.<span class="comments-form__checkmark"></span>
                   </label>
-                  <button class="comments-form__button" type="submit" id="new-submit">send</button>
+                  <button class="m2button comments-form__button" type="submit" id="new-submit">send</button>
                 </form>
               </div>
             </div>

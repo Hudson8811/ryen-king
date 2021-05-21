@@ -130,3 +130,32 @@
     font-size: 16px;
   }
 }
+
+.m2button {
+  display: flex;
+  align-items: center;
+  width: 158px;
+  height: 60px;
+  padding-left: 27px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: $main-black;
+
+  background: url("../images/arrow-right.svg") no-repeat;
+  background-position: right 28px center;
+  background-color: $main-green;
+
+  cursor: pointer;
+
+  @include animation;
+
+  @include media(993, false) {
+    &:hover {
+      background-color: $main-white;
+
+      @include animation;
+    }
+  }
+}

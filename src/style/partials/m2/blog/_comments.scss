@@ -38,15 +38,20 @@
   }
 
   &-list {
-    padding-bottom: 200px;
+    padding-bottom: 192px;
     max-width: 870px;
 
     @include media("tablet") {
       width: 800px;
+      padding-bottom: 120px;
     }
 
     @include media(992) {
       width: 100%;
+    }
+
+    @include media("mobile-450") {
+      padding-bottom: 90px;
     }
   }
 
@@ -78,6 +83,158 @@
       &_temp {
         max-width: 846px;
       }
+    }
+  }
+
+  &-new {
+    @include media("tablet") {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    &__title {
+      margin-bottom: 130px;
+      color: $light-grey;
+
+      @include media("tablet") {
+        margin-bottom: 90px;
+      }
+      @include media(992) {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+
+    &__input {
+      flex-basis: 46%;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $light-grey;
+      color: $main-white;
+      background-color: transparent;
+
+      @include media("mobile-450") {
+        flex-basis: 100%;
+
+        &:first-child {
+          margin-bottom: 50px;
+        }
+      }
+
+      &::placeholder {
+        font-family: "Manrope", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 140%;
+        color: $light-grey;
+
+        @include media(992) {
+          font-size: 16px;
+        }
+
+        @include media("mobile-450") {
+          font-size: 14px;
+        }
+      }
+
+      @include media(992) {
+        font-size: 16px;
+      }
+
+      @include media("mobile-450") {
+        font-size: 14px;
+      }
+    }
+
+    &__group {
+      margin-bottom: 150px;
+      display: flex;
+      justify-content: space-between;
+
+      @include media(992) {
+        margin-bottom: 90px;
+      }
+
+      @include media("mobile-450") {
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+      }
+    }
+
+    &__textarea {
+      margin-bottom: 44px;
+      flex-basis: 100%;
+    }
+
+    &__save {
+      position: relative;
+      margin-bottom: 120px;
+      display: flex;
+      align-items: center;
+      padding-left: 40px;
+      color: $light-grey;
+      cursor: pointer;
+      user-select: none;
+
+      @include media(992) {
+        margin-bottom: 90px;
+      }
+
+      @include media("mobile-450") {
+        font-size: 12px;
+        margin-bottom: 50px;
+      }
+
+      & input:checked ~ .comments-form__checkmark {
+        border: none;
+        background-color: $main-green;
+      }
+      & input:checked ~ .comments-form__checkmark::after {
+        display: block;
+      }
+    }
+
+    &__checkbox {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    &__checkmark {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      height: 20px;
+      width: 20px;
+      border: 1px solid $light-grey;
+      background-color: transparent;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: none;
+        top: 2px;
+        left: 6.5px;
+        width: 5px;
+        height: 11px;
+        border: solid $main-black;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+
+    &__button {
+      margin-left: auto;
+      margin-right: 36px;
     }
   }
 }
