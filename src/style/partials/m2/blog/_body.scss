@@ -43,6 +43,18 @@
         margin-bottom: 40px;
       }
     }
+
+    &_4 {
+      margin-bottom: 120px;
+
+      @include media(992) {
+        margin-bottom: 75px;
+      }
+
+      @include media("mobile-620") {
+        margin-bottom: 60px;
+      }
+    }
   }
 
   &__important {
@@ -93,6 +105,47 @@
       }
       @include media("mobile-450") {
         height: 190px;
+      }
+    }
+  }
+
+  &-share {
+    padding-top: 40px;
+    border-top: 1px solid $light-grey;
+
+    @include media("mobile") {
+      padding-top: 20px;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+
+      @include media("mobile") {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+    }
+
+    &__li {
+      @include animation;
+
+      @include media(992, false) {
+        &:hover {
+          color: $main-green;
+          @include animation;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 40px;
+
+        @include media("mobile") {
+          margin-right: 20px;
+        }
       }
     }
   }

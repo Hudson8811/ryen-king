@@ -117,6 +117,17 @@
     }
 
     &__li {
+      &_share {
+        @include animation;
+
+        @include media(992, false) {
+          &:hover {
+            color: $main-green;
+            @include animation;
+          }
+        }
+      }
+
       &:not(:last-child) {
         margin-bottom: 20px;
       }
