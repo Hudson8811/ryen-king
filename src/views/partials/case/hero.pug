@@ -1,0 +1,26 @@
+mixin listItem(title, listItems)
+  .hero-description__item
+    p.text.m2text4.manrope.manrope-text2.hero-description__title= title
+    .hero-description__list
+      each listItem in listItems
+        p.m2text1.neue.neue-text1.hero-description__li= listItem.name
+
+section.hero 
+  .m2container
+    .hero-top
+      .m2container-body
+        h1.hero__title.neue.neue-headline1.m2headline1
+          | Gaming Overload
+      .hero-img.hero__img
+        img(src="images/case/case-hero-img.jpg", alt="Photo of a girl").hero-img__item.hero-img__item_case
+
+    .m2container-body
+      .m2container-body__aside 
+        .hero-description.hero__description
+          +listItem('Date', [{'name': 'April 16, 2021'}])
+          +listItem('Services', [{'name': 'Art Direction'}])
+          +listItem('Client', [{'name': 'MacDaniel'}])
+          
+          
+      .m2container-body__main
+          +neueHeadline4('hero__headline', 'First mover advantage accelerator channels angel investor traction. Angel investor pitch metrics scrum project stock. A/B testing learning curve channels social proof business model canvas. Ramen early adopters low hanging fruit sales assets bandwidth vesting period business model canvas focus.')
