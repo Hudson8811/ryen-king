@@ -2,20 +2,30 @@
   padding-bottom: 120px;
 
   @include media(992) {
-    padding-bottom: 50px;
+    padding-bottom: 100px;
+  }
+
+  @include media("mobile-620") {
+    padding-bottom: 54px;
   }
 
   &__image {
     margin-bottom: 120px;
     width: 100%;
+    height: 731px;
     object-fit: cover;
 
     @include media(992) {
-      margin-bottom: 75px;
+      margin-bottom: 60px;
+      height: 300px;
     }
 
     @include media("mobile-620") {
-      margin-bottom: 60px;
+      margin-bottom: 40px;
+    }
+
+    @include media("mobile-450") {
+      height: 230px;
     }
   }
 
@@ -23,8 +33,12 @@
     &_1 {
       margin-bottom: 60px;
 
-      @include media("mobile-620") {
+      @include media(992) {
         margin-bottom: 40px;
+      }
+
+      @include media("mobile-620") {
+        margin-bottom: 20px;
       }
     }
 
@@ -36,19 +50,23 @@
       }
 
       @include media(992) {
-        margin-bottom: 75px;
+        margin-bottom: 60px;
       }
 
       @include media("mobile-620") {
-        margin-bottom: 60px;
+        margin-bottom: 37px;
       }
     }
 
     &_3 {
       margin-bottom: 70px;
 
-      @include media("mobile-620") {
+      @include media(992) {
         margin-bottom: 40px;
+      }
+
+      @include media("mobile-620") {
+        margin-bottom: 20px;
       }
     }
 
@@ -56,12 +74,12 @@
       margin-bottom: 120px;
 
       @include media(992) {
-        margin-bottom: 75px;
-      }
-
-      @include media("mobile-620") {
         margin-bottom: 60px;
       }
+
+      // @include media("mobile-620") {
+      //   margin-bottom: 60px;
+      // }
     }
   }
 
@@ -70,11 +88,14 @@
     color: $main-green;
 
     @include media(992) {
-      margin-bottom: 75px;
+      margin-bottom: 67px;
     }
 
     @include media("mobile-620") {
-      margin-bottom: 60px;
+      margin-bottom: 42px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 140%;
     }
   }
 
@@ -82,17 +103,21 @@
     margin-bottom: 120px;
 
     @include media(992) {
-      margin-bottom: 75px;
+      margin-bottom: 60px;
     }
 
     @include media("mobile-620") {
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     }
   }
 
   &-photos {
     display: flex;
     justify-content: space-between;
+
+    @include media(992) {
+      flex-direction: column;
+    }
 
     &__item {
       width: 506px;
@@ -103,16 +128,23 @@
         width: 48%;
       }
       @include media(992) {
-        height: 386px;
+        width: 100%;
+        height: 300px;
       }
-      @include media("mobile") {
-        height: 296px;
-      }
-      @include media(550) {
-        height: 215px;
-      }
+      // @include media("mobile") {
+      //   height: 296px;
+      // }
+      // @include media(550) {
+      //   height: 215px;
+      // }
       @include media("mobile-450") {
-        height: 190px;
+        height: 200px;
+      }
+
+      &:not(:last-child) {
+        @include media(992) {
+          margin-bottom: 20px;
+        }
       }
     }
   }
@@ -121,14 +153,14 @@
     padding-top: 40px;
     border-top: 1px solid $light-grey;
 
-    @include media("mobile") {
+    @include media(992) {
       padding-top: 20px;
     }
 
     &__title {
       margin-bottom: 20px;
 
-      @include media("mobile") {
+      @include media("tablet") {
         margin-bottom: 10px;
       }
     }
@@ -151,8 +183,8 @@
       &:not(:last-child) {
         margin-right: 40px;
 
-        @include media("mobile") {
-          margin-right: 20px;
+        @include media(992) {
+          margin-right: 30px;
         }
       }
     }

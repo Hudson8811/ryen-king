@@ -6,35 +6,47 @@
   @include media(1900) {
     max-width: 1400px;
   }
+
   @include media("tablet") {
-    max-width: 1140px;
+    max-width: none;
+    width: 100%;
   }
-  @include media("tablet-1200") {
-    max-width: 960px;
-  }
-  @include media(992) {
-    max-width: 700px;
-  }
-  @include media("mobile") {
-    max-width: 576px;
-    width: 92.5%;
-  }
+  // @include media("tablet-1200") {
+  //   max-width: 960px;
+  // }
+  // @include media(992) {
+  //   max-width: 700px;
+  // }
+  // @include media("mobile") {
+  //   max-width: 576px;
+  //   width: 92.5%;
+  // }
 
   &-body {
     display: flex;
     align-items: start;
     justify-content: flex-end;
 
+    @include media("tablet") {
+      padding: 0 45px;
+    }
+
+    @include media("mobile-620") {
+      flex-direction: column;
+      width: 100%;
+      padding: 0 10px;
+    }
+
     &__aside {
       margin-right: 186px;
 
-      @include media(1900) {
+      @include media(992) {
         margin-right: auto;
       }
 
-      @include media("tablet") {
-        margin-right: 0;
-      }
+      // @include media("tablet") {
+      //   margin-right: 0;
+      // }
     }
 
     &__main {
@@ -42,16 +54,20 @@
       flex-shrink: 0;
 
       @include media("tablet") {
-        width: 75%;
+        width: 800px;
       }
 
       @include media(992) {
+        width: 65.2%;
+      }
+
+      @include media("mobile-620") {
+        width: 85%;
+      }
+
+      @include media("mobile-450") {
         width: 100%;
       }
-    }
-
-    @include media("tablet") {
-      flex-direction: column;
     }
   }
 }
@@ -65,36 +81,55 @@
     font-size: 86px;
   }
   @include media(992) {
-    font-size: 60px;
+    font-size: 70px;
+    line-height: 110%;
   }
   @include media("mobile") {
-    font-size: 42px;
+    font-size: 52px;
   }
   @include media("mobile-620") {
-    font-size: 36px;
+    font-size: 37px;
+    line-height: 90%;
   }
   @include media("mobile-450") {
-    font-size: 26px;
+    font-size: 33px;
   }
 }
 
 .m2headline3 {
   @include media("tablet") {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   @include media("mobile-620") {
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 
-.m2text1 {
-  @include media(992) {
+.m2headline4 {
+  @include media("tablet") {
     font-size: 22px;
   }
 
-  @include media("mobile-450") {
-    font-size: 16px;
+  @include media(992) {
+    font-size: 18px;
+    line-height: 140%;
+    font-weight: 500;
+  }
+
+  // @include media("mobile-620") {
+  //   font-size: 22px;
+  // }
+}
+
+.m2text1 {
+  @include media("tablet") {
+    font-size: 18px;
+    line-height: 140%;
+  }
+
+  @include media("mobile-620") {
+    line-height: 120%;
   }
 }
 
@@ -103,28 +138,42 @@
     font-size: 18px;
   }
 
-  @include media("mobile-620") {
-    font-size: 16px;
+  @include media(992) {
+    font-size: 14px;
+    line-height: 134%;
+  }
+
+  @include media("mobile-450") {
+    font-size: 12px;
   }
 }
 
 .m2text4 {
   @include media("tablet") {
-    font-size: 16px;
+    font-size: 14px;
   }
 
-  @include media("mobile-450") {
-    font-size: 14px;
+  @include media("mobile-620") {
+    font-size: 12px;
   }
 }
 
 .m2comment {
+  letter-spacing: 0.65px;
+  line-height: 174%;
+
   @include media("tablet") {
     font-size: 16px;
   }
 
-  @include media("mobile-620") {
+  @include media(992) {
+    letter-spacing: normal;
+    line-height: 140%;
     font-size: 14px;
+  }
+
+  @include media("mobile-620") {
+    font-size: 12px;
   }
 }
 
@@ -154,6 +203,10 @@
 
       @include animation;
     }
+  }
+
+  @include media("mobile-450") {
+    background-size: 18px;
   }
 }
 

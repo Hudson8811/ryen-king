@@ -1,7 +1,7 @@
 mixin listItem(title, listItems, link)
   if (title === 'Share')
     .hero-description__item.hero-description__item_share
-      p.text.manrope.manrope-text2.hero-description__title= title
+      p.text.m2text4.manrope.manrope-text2.hero-description__title= title
       .hero-description__list.hero-description__list_share
         each listItem in listItems
           a(href= listItem.link).m2text1.neue.neue-text1.hero-description__li.hero-description__li_share= listItem.name
@@ -14,8 +14,11 @@ mixin listItem(title, listItems, link)
 
 section.hero 
   .m2container
-    h1.hero__title.neue.neue-headline1.m2headline1 Technology direct mailing startup 
-    img(src="images/blog/blog-hero.jpg", alt="Photo of the balancing objects").hero__img
+    .hero-top
+      .m2container-body
+        h1.hero__title.neue.neue-headline1.m2headline1 Technology direct mailing startup
+      .hero__img
+        img(src="images/blog/blog-hero-img.jpg", alt="Photo of the balancing objects").hero-img__item
 
     .m2container-body
       .m2container-body__aside 
@@ -25,5 +28,5 @@ section.hero
           +listItem('Share', [{'name': 'Facebook', 'link': '#'}, {'name': 'LinkedIn', 'link': '#'}, {'name': 'Twitter', 'link': '#'}], true)
           
       .m2container-body__main
-          +neueHeadline3('hero__headline', 'Marketing technology customer disruptive business model canvas. Hypotheses social media pitch interaction technology launch party disruptive ownership A/B testing. Startup innovator equity mass market termsheet seed money pitch direct mailing facebook branding. Handshake launch party funding metrics.')
+          +neueHeadline4('hero__headline', 'Marketing technology customer disruptive business model canvas. Hypotheses social media pitch interaction technology launch party disruptive ownership A/B testing. Startup innovator equity mass market termsheet seed money pitch direct mailing facebook branding. Handshake launch party funding metrics.')
           +mainText('hero__text', 'Beta crowdsource ecosystem buyer twitter client business-to-business android seed round value proposition. Marketing stock influencer value proposition iPad technology launch party direct mailing virality churn rate freemium funding scrum project seed money. Series A financing value proposition iPhone agile development stealth disruptive prototype interaction design leverage validation assets social media. Infrastructure user experience customer vesting period gen-z.')
