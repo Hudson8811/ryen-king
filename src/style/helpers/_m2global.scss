@@ -40,12 +40,12 @@
     &__aside {
       margin-right: 186px;
 
-      @include media(992) {
+      @include media("tablet-1200") {
         margin-right: auto;
       }
 
-      // @include media("tablet") {
-      //   margin-right: 0;
+      // @include media(992) {
+      //   margin-right: auto;
       // }
     }
 
@@ -57,9 +57,13 @@
         width: 800px;
       }
 
-      @include media(992) {
+      @include media("tablet-1200") {
         width: 65.2%;
       }
+
+      // @include media(992) {
+      //   width: 65.2%;
+      // }
 
       @include media("mobile-620") {
         width: 85%;

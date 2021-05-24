@@ -213,6 +213,8 @@
     &__textarea {
       margin-bottom: 69px;
       flex-basis: 100%;
+      overflow: hidden;
+      resize: none;
 
       @include media(992) {
         margin-bottom: 91px;
