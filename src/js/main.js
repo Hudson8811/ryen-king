@@ -10,3 +10,4 @@
 
 //= partials/pagepiling.js
 // = partials/header.js
+//= partials/validate.js

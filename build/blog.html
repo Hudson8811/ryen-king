@@ -96,12 +96,18 @@
               </div>
               <div class="comments-new comments__new">
                 <h3 class="neue neue-headline3 m2headline3 comments-new__title">Leave your comment</h3>
-                <form class="comments-new__form comments-form" action="#" method="post">
+                <form class="comments-new__form comments-form js-form" action="#" method="post">
                   <div class="comments-form__group">
-                    <input class="manrope manrope-text2 m2text4 comments-form__input" type="text" name="form-name" id="form-name" placeholder="Name">
-                    <input class="manrope manrope-text2 m2text4 comments-form__input" type="email" name="form-email" id="form-email" placeholder="E-mail">
+                    <div class="comments-form__input-group">
+                      <input class="manrope manrope-text2 m2text4 comments-form__input" type="text" name="form-name" id="form-name" placeholder="Name" data-validate-field="name" required>
+                    </div>
+                    <div class="comments-form__input-group">
+                      <input class="manrope manrope-text2 m2text4 comments-form__input" type="email" name="form-email" id="form-email" placeholder="E-mail" data-validate-field="email" required>
+                    </div>
                   </div>
-                  <textarea class="manrope manrope-text2 m2text4 comments-form__input comments-form__textarea" name="form-comment" id="form-comment" placeholder="Your comment" rows="1"></textarea>
+                  <div class="comments-form__input-group comments-form__input-group_textarea">
+                    <textarea class="manrope manrope-text2 m2text4 comments-form__input comments-form__textarea" name="form-comment" id="form-comment" placeholder="Your comment" rows="1" data-validate-field="text" required></textarea>
+                  </div>
                   <label class="manrope manrope-text2 m2text4 comments-form__save" for="save-name">
                     <input class="comments-form__checkbox" type="checkbox" name="save-name" id="save-name">Save my name, email, and website in this browser for the next time I comment.<span class="comments-form__checkmark"></span>
                   </label>

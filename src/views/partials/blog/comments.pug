@@ -72,11 +72,14 @@ section.comments
         .comments-new.comments__new
           h3.neue.neue-headline3.m2headline3.comments-new__title
             | Leave your comment
-          form(action="#" method="post").comments-new__form.comments-form
+          form(action="#" method="post").comments-new__form.comments-form.js-form
             .comments-form__group
-              input(type="text" name="form-name" id="form-name" placeholder="Name").manrope.manrope-text2.m2text4.comments-form__input
-              input(type="email" name="form-email" id="form-email" placeholder="E-mail").manrope.manrope-text2.m2text4.comments-form__input
-            textarea(name="form-comment" id="form-comment" placeholder="Your comment" rows="1").manrope.manrope-text2.m2text4.comments-form__input.comments-form__textarea
+              .comments-form__input-group
+                input(type="text" name="form-name" id="form-name" placeholder="Name" data-validate-field="name" required).manrope.manrope-text2.m2text4.comments-form__input
+              .comments-form__input-group
+                input(type="email" name="form-email" id="form-email" placeholder="E-mail" data-validate-field="email" required).manrope.manrope-text2.m2text4.comments-form__input
+            .comments-form__input-group.comments-form__input-group_textarea
+              textarea(name="form-comment" id="form-comment" placeholder="Your comment" rows="1"  data-validate-field="text" required).manrope.manrope-text2.m2text4.comments-form__input.comments-form__textarea
             label(for="save-name").manrope.manrope-text2.m2text4.comments-form__save
               input(type="checkbox" name="save-name" id="save-name").comments-form__checkbox
               | Save my name, email, and website in this browser for the next time I comment.
