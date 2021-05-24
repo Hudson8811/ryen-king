@@ -4,7 +4,7 @@ mixin comment(date, name, content, reply, temp)
       p.text.manrope.manrope-text2.comments-item__date= date
       p.neue.neue-headline3.m2headline4.comments-item__name= name
       p.manrope.manrope-text2.m2comment.comments-item__content= content
-      a(href="#").neue.neue-link.m2comment.comments-item__reply#reply-button
+      a(href="#").neue.neue-link.m2comment.comments-item__reply
         | Reply
   else
     if (temp)
@@ -12,14 +12,14 @@ mixin comment(date, name, content, reply, temp)
         p.text.manrope.manrope-text2.comments-item__date= date
         p.neue.neue-headline3.m2headline4.comments-item__name= name
         p.manrope.manrope-text2.m2comment.comments-item__content.comments-item__content_temp= content
-        a(href="#").neue.neue-link.m2comment.comments-item__reply#reply-button
+        a(href="#").neue.neue-link.m2comment.comments-item__reply
           | Reply
     else
       .comments__item.comments-item
         p.text.manrope.manrope-text2.comments-item__date= date
         p.neue.neue-headline3.m2headline4.comments-item__name= name
         p.manrope.manrope-text2.m2comment.comments-item__content= content
-        a(href="#").neue.neue-link.m2comment.comments-item__reply#reply-button
+        a(href="#").neue.neue-link.m2comment.comments-item__reply
           | Reply
 
 section.comments
@@ -42,7 +42,7 @@ section.comments
               | Julia Duchamps
             p.manrope.manrope-text2.m2comment.comments-item__content.comments-item__content_temp 
               | Alpha sales MVP business&#8209;to&#8209;consumer strategy client influencer pivot founders assets non&#8209;disclosure agreement social proof paradigm shift scrum project. Venture learning curve customer. Series A financing assets business model canvas virality network effects return on investment prototype seed round validation creative business plan influencer seed money.
-            a(href="#").neue.neue-link.m2comment.comments-item__reply#reply-button
+            a(href="#").neue.neue-link.m2comment.comments-item__reply
               | Reply
 
           .comments__item.comments__item_reply.comments-item.comments-item_reply
@@ -52,7 +52,7 @@ section.comments
               | Judit Quinton
             p.manrope.manrope-text2.m2comment.comments-item__content 
               | Learning curve seed money non-disclosure agreement ownership client A/B&nbsp;testing. Incubator seed money gamification monetization influencer virality client social media backing burn rate validation freemium. Niche market business&#8209;to&#8209;consumer alpha conversion partnership churn rate business&#8209;to&#8209;business.
-            a(href="#").neue.neue-link.m2comment.comments-item__reply#reply-button
+            a(href="#").neue.neue-link.m2comment.comments-item__reply
               | Reply
 
           .comments__item.comments-item
@@ -62,7 +62,7 @@ section.comments
               | Marko Flater
             p.manrope.manrope-text2.m2comment.comments-item__content
               | Success creative innovator. MVP growth hacking iPad bootstrapping buyer facebook bandwidth&nbsp;marketing validation user experience direct mailing deployment leverage android. Client creative ecosystem rockstar android strategy first mover advantage.
-            a(href="#").neue.neue-link.m2comment.comments-item__reply#reply-button
+            a(href="#").neue.neue-link.m2comment.comments-item__reply
               | Reply
 
           //- +comment('April 20, 2021', 'Julia Duchamps', 'Alpha sales MVP business-to-consumer strategy client influencer pivot founders assets non-disclosure agreement social proof paradigm shift scrum project. Venture learning curve customer. Series A financing assets business model canvas virality network effects return on investment prototype seed round validation creative business plan influencer seed money.', false, true)
