@@ -11,5 +11,7 @@
 //= partials/pagepiling.js
 // = partials/header.js
 
-/* Blog form validation */
+/* 
+  Blog form validation 
+*/
 //= partials/validate.js

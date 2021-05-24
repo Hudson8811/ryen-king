@@ -101,18 +101,6 @@
         @include media("tablet") {
           margin-bottom: 40px;
         }
-
-        // @include media(992) {
-        //   margin-right: 22px;
-        // }
-
-        // @include media("mobile") {
-        //   margin-bottom: 50px;
-        // }
-
-        // @include media("mobile-450") {
-        //   margin-bottom: 25px;
-        // }
       }
 
       &:first-child {
@@ -137,16 +125,6 @@
     &__list {
       display: flex;
       flex-direction: column;
-
-      // @include media("tablet") {
-      //   flex-wrap: wrap;
-
-      //   &_share {
-      //     flex-basis: 100%;
-      //     flex-direction: row;
-      //     flex-shrink: 0;
-      //   }
-      // }
     }
 
     &__li {
@@ -172,11 +150,6 @@
           margin-bottom: 5px;
         }
       }
-
-      // @include media("tablet") {
-      //   margin-bottom: 0;
-      //   margin-right: 20px;
-      // }
     }
   }
 }
