@@ -229,20 +229,43 @@
   line-height: 110%;
   text-transform: uppercase;
   color: $main-green;
+  @include animation;
+
+  @include media("tablet-1200") {
+    font-size: 52px;
+    line-height: 120%;
+  }
+
+  @include media(992) {
+    font-size: 24px;
+  }
+
+  @include media(576) {
+    font-size: 22px;
+  }
 
   &__arrow {
     width: 64px;
     height: 32px;
     margin-left: 40px;
     fill: $main-green;
+    @include animation;
+
+    @include media(992) {
+      margin-left: 10px;
+      width: 26px;
+      height: 12.8px;
+    }
   }
 
   @include media(993, false) {
     &:hover {
       color: $main-white;
+      @include animation;
 
       .m2link__arrow {
         fill: $main-white;
+        @include animation;
       }
     }
   }

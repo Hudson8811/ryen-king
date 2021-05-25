@@ -1,5 +1,15 @@
 .case {
   &-body {
+    padding-bottom: 320px;
+
+    @include media(992) {
+      padding-bottom: 150px;
+    }
+
+    @include media(576) {
+      padding-bottom: 120px;
+    }
+
     &__photos {
       margin-bottom: 200px;
 
@@ -57,14 +67,14 @@
     }
 
     &__slider {
-      margin-bottom: 250px;
+      margin-bottom: 243px;
 
       @include media("tablet-1200") {
-        margin-bottom: 120px;
+        margin-bottom: 119px;
       }
 
       @include media(576) {
-        margin-bottom: 100px;
+        margin-bottom: 97px;
       }
     }
   }

@@ -43,3 +43,12 @@ mixin images(imageClass, imageName, imageAlt)
                 +images('case-slider__photo', 'case-slider-1.jpg', "Photo of a girl in red light")
               .swiper-slide.case-slider__slide
                 +images('case-slider__photo', 'case-slider-2.jpg', "Photo of a girl in red light")
+
+    .case-body__next.case-next
+      .m2container-body
+        .m2container-body__aside
+        .m2container-body__main
+          a(href="#").m2link.case-next__link
+            | VIEW NEXT CASE
+            svg.m2link__arrow
+              use(xlink:href="img/sprites.svg#arrow")
