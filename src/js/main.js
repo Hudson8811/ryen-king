@@ -14,4 +14,9 @@
 /* 
   Blog form validation 
 */
-//= partials/validate.js
+//= partials/blogValidate.js
+
+/* 
+  Case slider 
+*/
+//= partials/caseSlider.js
