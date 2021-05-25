@@ -17,8 +17,21 @@
     padding-bottom: 40px;
   }
 
+  &_case {
+    padding-bottom: 156px;
+
+    @include media("tablet-1200") {
+      padding-bottom: 57px;
+    }
+
+    @include media(576) {
+      padding-bottom: 4px;
+    }
+  }
+
   &__title {
     margin-bottom: 88px;
+    width: 100%;
 
     @include media(992) {
       margin-bottom: 99px;
@@ -27,12 +40,23 @@
     @include media("mobile") {
       margin-bottom: 65px;
     }
+
+    &_case {
+      @include media("mobile") {
+        margin-bottom: 62px;
+      }
+    }
   }
 
   &__img {
     margin-bottom: 116px;
     width: 100%;
     height: 800px;
+    overflow: hidden;
+
+    &_case {
+      margin-bottom: 157px;
+    }
 
     @include media(992) {
       margin-bottom: 51px;
@@ -55,6 +79,12 @@
     @include media("mobile-620") {
       margin-bottom: 44px;
     }
+
+    &_case {
+      @include media("mobile-450") {
+        padding-right: 17px;
+      }
+    }
   }
 
   &-img {
@@ -65,6 +95,12 @@
 
       @include media(992) {
         transform: scaleX(-1);
+      }
+
+      &_case {
+        @include media(992) {
+          transform: scaleX(1);
+        }
       }
     }
   }
@@ -94,6 +130,10 @@
       flex-wrap: wrap;
     }
 
+    &_case {
+      padding-top: 3px;
+    }
+
     &__item {
       &:not(:last-child) {
         margin-bottom: 70px;
@@ -109,8 +149,22 @@
         }
       }
 
+      &:last-child {
+        @include media("mobile-620") {
+          flex-basis: 100%;
+        }
+      }
+
       &_share {
         flex-basis: 100%;
+      }
+
+      &_case {
+        &:first-child {
+          @include media("mobile-620") {
+            margin-right: 30px;
+          }
+        }
       }
     }
 

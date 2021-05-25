@@ -1264,10 +1264,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // });
 });
 // = partials/header.js
+
+/* 
+  Blog form validation 
+*/
 document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.js-form')) {
-    console.log(1);
-
     new JustValidate('.js-form', {
       rules: {
         // checkbox: {

@@ -1,26 +1,26 @@
 mixin listItem(title, listItems)
-  .hero-description__item
+  .hero-description__item.hero-description__item_case
     p.text.m2text4.manrope.manrope-text2.hero-description__title= title
     .hero-description__list
       each listItem in listItems
         p.m2text1.neue.neue-text1.hero-description__li= listItem.name
 
-section.hero 
+section.hero.hero_case
   .m2container
-    .hero-top
+    .hero-top.hero-top_case
       .m2container-body
-        h1.hero__title.neue.neue-headline1.m2headline1
+        h1.hero__title.hero__title_case.neue.neue-headline1.m2headline1
           | Gaming Overload
-      .hero-img.hero__img
-        img(src="images/case/case-hero-img.jpg", alt="Photo of a girl").hero-img__item.hero-img__item_case
+      .hero-img.hero__img.hero__img_case
+        img(src="images/case/case-hero.jpg", alt="Photo of a girl").hero-img__item.hero-img__item_case
 
     .m2container-body
-      .m2container-body__aside 
-        .hero-description.hero__description
+      .m2container-body__aside.m2container-body__aside_case
+        .hero-description.hero-description_case.hero__description
           +listItem('Date', [{'name': 'April 16, 2021'}])
           +listItem('Services', [{'name': 'Art Direction'}])
           +listItem('Client', [{'name': 'MacDaniel'}])
           
           
       .m2container-body__main
-          +neueHeadline4('hero__headline', 'First mover advantage accelerator channels angel investor traction. Angel investor pitch metrics scrum project stock. A/B testing learning curve channels social proof business model canvas. Ramen early adopters low hanging fruit sales assets bandwidth vesting period business model canvas focus.')
+          +neueHeadline4('hero__headline hero__headline_case', 'First mover advantage accelerator channels angel investor traction. Angel investor pitch metrics scrum project stock. A/B testing learning curve channels social proof business model canvas. Ramen early adopters low hanging fruit sales assets bandwidth vesting period business model canvas focus.')
