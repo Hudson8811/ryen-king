@@ -1,0 +1,88 @@
+mixin comment(date, name, content, reply, temp)
+  if (reply)
+    .comments__item.comments__item_reply.comments-item.comments-item_reply
+      p.text.manrope.manrope-text2.comments-item__date= date
+      p.neue.neue-headline3.m2headline4.comments-item__name= name
+      p.manrope.manrope-text2.m2comment.comments-item__content= content
+      a(href="#").neue.neue-link.m2comment.comments-item__reply
+        | Reply
+  else
+    if (temp)
+      .comments__item.comments-item
+        p.text.manrope.manrope-text2.comments-item__date= date
+        p.neue.neue-headline3.m2headline4.comments-item__name= name
+        p.manrope.manrope-text2.m2comment.comments-item__content.comments-item__content_temp= content
+        a(href="#").neue.neue-link.m2comment.comments-item__reply
+          | Reply
+    else
+      .comments__item.comments-item
+        p.text.manrope.manrope-text2.comments-item__date= date
+        p.neue.neue-headline3.m2headline4.comments-item__name= name
+        p.manrope.manrope-text2.m2comment.comments-item__content= content
+        a(href="#").neue.neue-link.m2comment.comments-item__reply
+          | Reply
+
+section.comments
+  .m2container
+    .m2container-body
+      .m2container-body__aside
+
+      .m2container-body__main
+        h2.neue.neue-headline3.m2headline3.comments__title.comments-title
+          | Comments (
+          span.comments-title__counter#comments-counter
+            | 3
+          | )
+        
+        .comments-list
+          .comments__item.comments-item
+            p.text.manrope.manrope-text2.comments-item__date
+              | April 20, 2021
+            p.neue.neue-headline3.m2headline4.comments-item__name
+              | Julia Duchamps
+            p.manrope.manrope-text2.m2comment.comments-item__content.comments-item__content_temp 
+              | Alpha sales MVP business&#8209;to&#8209;consumer strategy client influencer pivot founders assets non&#8209;disclosure agreement social proof paradigm shift scrum project. Venture learning curve customer. Series A financing assets business model canvas virality network effects return on investment prototype seed round validation creative business plan influencer seed money.
+            a(href="#").neue.neue-link.m2comment.comments-item__reply
+              | Reply
+
+          .comments__item.comments__item_reply.comments-item.comments-item_reply
+            p.text.manrope.manrope-text2.comments-item__date
+              | April 21, 2021
+            p.neue.neue-headline3.m2headline4.comments-item__name 
+              | Judit Quinton
+            p.manrope.manrope-text2.m2comment.comments-item__content 
+              | Learning curve seed money non-disclosure agreement ownership client A/B&nbsp;testing. Incubator seed money gamification monetization influencer virality client social media backing burn rate validation freemium. Niche market business&#8209;to&#8209;consumer alpha conversion partnership churn rate business&#8209;to&#8209;business.
+            a(href="#").neue.neue-link.m2comment.comments-item__reply
+              | Reply
+
+          .comments__item.comments-item
+            p.text.manrope.manrope-text2.comments-item__date
+              | April 19, 2021
+            p.neue.neue-headline3.m2headline4.comments-item__name
+              | Marko Flater
+            p.manrope.manrope-text2.m2comment.comments-item__content
+              | Success creative innovator. MVP growth hacking iPad bootstrapping buyer facebook bandwidth&nbsp;marketing validation user experience direct mailing deployment leverage android. Client creative ecosystem rockstar android strategy first mover advantage.
+            a(href="#").neue.neue-link.m2comment.comments-item__reply
+              | Reply
+
+          //- +comment('April 20, 2021', 'Julia Duchamps', 'Alpha sales MVP business-to-consumer strategy client influencer pivot founders assets non-disclosure agreement social proof paradigm shift scrum project. Venture learning curve customer. Series A financing assets business model canvas virality network effects return on investment prototype seed round validation creative business plan influencer seed money.', false, true)
+          //- +comment('April 21, 2021', 'Judit Quinton', 'Learning curve seed money non-disclosure agreement ownership client A/B testing. Incubator seed money gamification monetization influencer virality client social media backing burn rate validation freemium. Niche market business-to-consumer alpha conversion partnership churn rate business-to-business.', true)
+          //- +comment('April 19, 2021', 'Marko Flater', 'Success creative innovator. MVP growth hacking iPad bootstrapping buyer facebook bandwidth marketing validation user experience direct mailing deployment leverage android. Client creative ecosystem rockstar android strategy first mover advantage.')
+          
+        .comments-new.comments__new
+          h3.neue.neue-headline3.m2headline3.comments-new__title
+            | Leave your comment
+          form(action="#" method="post").comments-new__form.comments-form.js-form
+            .comments-form__group
+              .comments-form__input-group
+                input(type="text" name="form-name" id="form-name" placeholder="Name" data-validate-field="name" required).manrope.manrope-text2.m2text4.comments-form__input
+              .comments-form__input-group
+                input(type="email" name="form-email" id="form-email" placeholder="E-mail" data-validate-field="email" required).manrope.manrope-text2.m2text4.comments-form__input
+            .comments-form__input-group.comments-form__input-group_textarea
+              textarea(name="form-comment" id="form-comment" placeholder="Your comment" rows="1"  data-validate-field="text" required).manrope.manrope-text2.m2text4.comments-form__input.comments-form__textarea
+            label(for="save-name").manrope.manrope-text2.m2text4.comments-form__save
+              input(type="checkbox" name="save-name" id="save-name").comments-form__checkbox
+              | Save my name, email, and website in this browser for the next time I comment.
+              span.comments-form__checkmark
+            button(type='submit' id='new-submit').m2button.comments-form__button
+              | send

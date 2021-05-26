@@ -12,8 +12,12 @@
 //= partials/header.js
 //= partials/swiper.js
 
+/* 
+  Blog form validation 
+*/
+//= partials/blogValidate.js
 
-
-
-
-
+/* 
+  Case slider 
+*/
+//= partials/caseSlider.js

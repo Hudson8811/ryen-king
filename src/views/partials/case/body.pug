@@ -1,0 +1,54 @@
+mixin images(imageClass, imageName, imageAlt)
+  img(src="images/case/" + imageName, alt= imageAlt, class= imageClass)
+
+.case-body
+  .m2container
+    .m2container-body
+      .case-body__photos.case-photos
+        +images('case-photos__item', 'case-photo-0.jpg', 'Photo of a girl')
+        +images('case-photos__item', 'case-photo-1.jpg', 'Photo of a girl')
+        +images('case-photos__item', 'case-photo-2.jpg', 'Photo of a girl')
+    
+    .case-body__text1.case-text1
+      .m2container-body
+        .m2container-body__aside
+        .m2container-body__main
+          +mainText('case-text1__item', 'Traction graphical user interface client stealth user experience channels. Focus termsheet user experience early adopters. Responsive web design release incubator niche market rockstar startup monetization. Business-to-consumer buyer MVP. Startup scrum project infographic marketing prototype buyer assets launch party niche market monetization. Lean startup disruptive responsive web design freemium iPad learning curve innovator hypotheses metrics pivot sales.')
+
+    .case-body__presentation.case-presentation
+      .m2container-body
+        .m2container-body__aside.m2container-body__aside_presentation
+          +images('case-presentation__item case-presentation__item_aside', 'case-photo-3.jpg', 'Photo of a girl')
+        .m2container-body__main
+          +images('case-presentation__item case-presentation__item_main', 'case-photo-4.jpg', 'Photo of a girl')
+
+    .case-body__text2.case-text2
+      .m2container-body
+        .m2container-body__aside
+        .m2container-body__main
+          p(class="text m2text3 manrope manrope-text1 case-text2__item")
+            | Market launch party holy grail facebook pitch user experience product management crowdfunding agile development investor direct mailing client business&#8209;to&#8209;consumer. Series A financing monetization pitch interaction design leverage branding funding. Metrics marketing pitch monetization disruptive channels hackathon seed round technology.
+          //- +mainText('case-text2__item', 'Market launch party holy grail facebook pitch user experience product management crowdfunding agile development investor direct mailing client business-to-consumer. Series A financing monetization pitch interaction design leverage branding funding. Metrics marketing pitch monetization disruptive channels hackathon seed round technology.')
+          +mainText('case-text2__item', 'Buyer backing churn rate rockstar supply chain responsive web design marketing. Holy grail stock accelerator venture user experience investor partnership. Launch party iteration paradigm shift virality release android interaction design facebook. Freemium analytics marketing mass market launch party. Analytics founders crowdfunding. Funding ramen launch party prototype.')
+          
+    .case-body__slider.case-slider
+      .m2container-body
+        .m2container-body__aside
+        .m2container-body__main
+          .swiper-container.case-slider__container
+            .swiper-wrapper
+              .swiper-slide.case-slider__slide
+                +images('case-slider__photo', 'case-slider-0.jpg', "Photo of a girl in red light")
+              .swiper-slide.case-slider__slide
+                +images('case-slider__photo', 'case-slider-1.jpg', "Photo of a girl in red light")
+              .swiper-slide.case-slider__slide
+                +images('case-slider__photo', 'case-slider-2.jpg', "Photo of a girl in red light")
+
+    .case-body__next.case-next
+      .m2container-body
+        .m2container-body__aside
+        .m2container-body__main
+          a(href="#").m2link.case-next__link
+            | VIEW NEXT CASE
+            svg.m2link__arrow
+              use(xlink:href="img/sprites.svg#arrow")

@@ -1330,3 +1330,84 @@ let swiper2 = new Swiper('.swiper-container2', {
         prevEl: '.swiper-button-prev2',
     },
 });
+
+/* 
+  Blog form validation 
+*/
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('.js-form')) {
+    new JustValidate('.js-form', {
+      rules: {
+        // checkbox: {
+        //   required: true
+        // },
+        email: {
+          required: true,
+          email: true,
+        },
+        name: {
+          required: true,
+          minLength: 2,
+        },
+        messages: {
+          name: {
+            minLength: 'My custom message about only minLength rule',
+          },
+          email:
+            'My custom message about error (one error message for all rules)',
+        },
+      },
+    });
+  }
+});
+
+/* 
+  Case slider 
+*/
+document.addEventListener('DOMContentLoaded', () => {
+  const caseSlider = new Swiper('.case-slider__container', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    breakpoints: {
+      320: {
+        slidesPerView: 1.5,
+        spaceBetween: 10,
+      },
+      321: {
+        // ok
+        slidesPerView: 1.6,
+        spaceBetween: 10,
+      },
+      351: {
+        // ok
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      767: {
+        // ok
+        slidesPerView: 1.1,
+        spaceBetween: 30,
+      },
+      769: {
+        // ok
+        slidesPerView: 1,
+        spaceBetween: 30,
+      },
+      1200: {
+        // ok
+        slidesPerView: 1.22,
+        spaceBetween: 40,
+      },
+      1559: {
+        // ok
+        slidesPerView: 1.5,
+        spaceBetween: 40,
+      },
+      1900: {
+        // ok
+        slidesPerView: 1.6,
+        spaceBetween: 40,
+      },
+    },
+  });
+});

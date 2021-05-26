@@ -2,11 +2,10 @@
 @import "helpers/reset.scss";
 @import "helpers/fonts.scss";
 @import "helpers/layout.scss";
-@import "helpers/setting.scss";
 @import "helpers/variables.scss";
-@import "helpers/_uikit.scss";
 @import "helpers/tipography.scss";
-
+@import "helpers/_uikit.scss";
+@import "helpers/setting.scss";
 
 @import "libs/jquery.fancybox.min.css";
 @import "libs/just-validate.min.css";
@@ -14,3 +13,10 @@
 
 @import "partials/footer.scss";
 @import "partials/header.scss";
+
+// Main2 only styles
+@import "helpers/m2global";
+@import "partials/m2/hero";
+@import "partials/m2/blog/body";
+@import "partials/m2/blog/comments";
+@import "partials/m2/case/body";

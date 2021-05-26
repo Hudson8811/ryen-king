@@ -1,62 +1,91 @@
 .neue {
-    font-family: "NeueMachina", sans-serif;
-    font-style: normal;
+  font-family: "NeueMachina", sans-serif;
+  font-style: normal;
 
-    &-headline1 {
-        font-weight: 500;
-        font-size: 140px;
-        line-height: 90%;
-        text-transform: uppercase;
+  &-headline1 {
+    font-weight: 500;
+    font-size: 140px;
+    line-height: 90%;
+    text-transform: uppercase;
+  }
+
+  &-headline2 {
+    font-weight: 500;
+    font-size: 70px;
+    line-height: 110%;
+    text-transform: uppercase;
+
+    &-green {
+      color: $main-green;
+      font-weight: 500;
+      font-size: 70px;
+      line-height: 110%;
+      text-transform: uppercase;
     }
+  }
 
-    &-headline2 {
-        font-weight: 500;
-        font-size: 70px;
-        line-height: 110%;
-        text-transform: uppercase;
+  &-headline3 {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 120%;
+  }
 
-        &-green {
-            color: $main-green;
-            font-weight: 500;
-            font-size: 70px;
-            line-height: 110%;
-            text-transform: uppercase;
-        }
+  &-text1 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+  }
+
+  &-text2 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+  }
+
+  &-link {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: $main-green;
+
+    @include animation;
+
+    @include media(993, false) {
+      &:hover {
+        color: $main-white;
+
+        @include animation;
+      }
     }
-
-    &-headline3 {
-        font-weight: 400;
-        font-size: 40px;
-        line-height: 120%;
-        text-transform: uppercase;
-    }
-
-    &-text1 {
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 120%;
-    }
-
-    &-text2 {
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 140%;
-    }
+  }
 }
 
 .manrope {
-    font-family: "Manrope", sans-serif;
-    font-style: normal;
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
 
-    &-text1 {
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 130%;
-    }
+  &-text1 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+  }
 
-    &-text2 {
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 140%;
-    }
+  &-text2 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+  }
+}
+
+.text {
+  color: $light-grey;
+}
+
+.sfpro {
+  font-family: "SFProDisplay", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 140%;
 }

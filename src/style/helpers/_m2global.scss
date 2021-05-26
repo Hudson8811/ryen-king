@@ -1,0 +1,272 @@
+// main2 only styles
+.m2container {
+  margin: 0 auto;
+  max-width: 1779px;
+
+  @include media(1900) {
+    max-width: 1400px;
+  }
+
+  @include media("tablet") {
+    max-width: none;
+    width: 100%;
+  }
+
+  &-body {
+    display: flex;
+    align-items: start;
+    justify-content: flex-end;
+
+    @include media("tablet") {
+      padding: 0 45px;
+    }
+
+    @include media("mobile-620") {
+      flex-direction: column;
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    &__aside {
+      margin-right: 186px;
+
+      @include media("tablet-1200") {
+        margin-right: auto;
+      }
+
+      &_case {
+        margin-right: 191px;
+
+        @include media("tablet-1200") {
+          margin-right: auto;
+        }
+      }
+
+      &_presentation {
+        margin-right: 40px;
+
+        @include media("tablet-1200") {
+          margin-right: 30px;
+        }
+
+        @include media("mobile-620") {
+          width: 85%;
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        @include media("mobile-450") {
+          width: 100%;
+        }
+      }
+    }
+
+    &__main {
+      width: 1050px;
+      flex-shrink: 0;
+
+      @include media("tablet") {
+        width: 800px;
+      }
+
+      @include media("tablet-1200") {
+        width: 65.2%;
+      }
+
+      @include media("mobile-620") {
+        width: 85%;
+      }
+
+      @include media("mobile-450") {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Probably project global styles
+.m2headline1 {
+  @include media(1900) {
+    font-size: 120px;
+  }
+  @include media("tablet") {
+    font-size: 86px;
+  }
+  @include media(992) {
+    font-size: 70px;
+    line-height: 110%;
+  }
+  @include media("mobile") {
+    font-size: 52px;
+  }
+  @include media("mobile-620") {
+    font-size: 37px;
+    line-height: 90%;
+  }
+  @include media("mobile-450") {
+    font-size: 33px;
+  }
+}
+
+.m2headline3 {
+  @include media("tablet") {
+    font-size: 24px;
+  }
+
+  @include media("mobile-620") {
+    font-size: 24px;
+  }
+}
+
+.m2headline4 {
+  @include media("tablet") {
+    font-size: 22px;
+  }
+
+  @include media(992) {
+    font-size: 18px;
+    line-height: 140%;
+    font-weight: 500;
+  }
+}
+
+.m2text1 {
+  @include media("tablet") {
+    font-size: 18px;
+    line-height: 140%;
+  }
+
+  @include media("mobile-620") {
+    line-height: 120%;
+  }
+}
+
+.m2text3 {
+  @include media("tablet") {
+    font-size: 18px;
+  }
+
+  @include media(992) {
+    font-size: 14px;
+    line-height: 134%;
+  }
+
+  @include media("mobile-450") {
+    font-size: 12px;
+  }
+}
+
+.m2text4 {
+  @include media("tablet") {
+    font-size: 14px;
+  }
+
+  @include media("mobile-620") {
+    font-size: 12px;
+  }
+}
+
+.m2comment {
+  letter-spacing: 0.65px;
+  line-height: 174%;
+
+  @include media("tablet") {
+    font-size: 16px;
+  }
+
+  @include media(992) {
+    letter-spacing: normal;
+    line-height: 140%;
+    font-size: 14px;
+  }
+
+  @include media("mobile-620") {
+    font-size: 12px;
+  }
+}
+
+.m2button {
+  display: flex;
+  align-items: center;
+  width: 158px;
+  height: 60px;
+  padding-left: 27px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: $main-black;
+
+  background: url("../images/arrow-right.svg") no-repeat;
+  background-position: right 28px center;
+  background-color: $main-green;
+
+  cursor: pointer;
+
+  @include animation;
+
+  @include media(993, false) {
+    &:hover {
+      background-color: $main-white;
+
+      @include animation;
+    }
+  }
+
+  @include media("mobile-450") {
+    background-size: 18px;
+  }
+}
+
+// Temporary contains duplicated Neue Headline2 styles
+.m2link {
+  display: flex;
+  align-items: center;
+  font-family: "NeueMachina", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: $main-green;
+  @include animation;
+
+  @include media("tablet-1200") {
+    font-size: 52px;
+    line-height: 120%;
+  }
+
+  @include media(992) {
+    font-size: 24px;
+  }
+
+  @include media(576) {
+    font-size: 22px;
+  }
+
+  &__arrow {
+    width: 64px;
+    height: 32px;
+    margin-left: 40px;
+    fill: $main-green;
+    @include animation;
+
+    @include media(992) {
+      margin-left: 10px;
+      width: 26px;
+      height: 12.8px;
+    }
+  }
+
+  @include media(993, false) {
+    &:hover {
+      color: $main-white;
+      @include animation;
+
+      .m2link__arrow {
+        fill: $main-white;
+        @include animation;
+      }
+    }
+  }
+}
