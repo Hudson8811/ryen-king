@@ -1,0 +1,135 @@
+.contact {
+
+    &__container {}
+
+    &__row {
+        display: flex;
+
+        @include media('tablet-1200', true) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+
+        &:first-child {
+            width: 680/1780 * 100%;
+            padding-right: 50px;
+
+            @include media('tablet-1200', true) {
+                width: 100%;
+            }
+        }
+
+        &:last-child {
+            width: 1100/1780 * 100%;
+
+            @include media('tablet-1200', true) {
+                width: 100%;
+                margin-bottom: toVh(50);
+
+            }
+        }
+    }
+
+    &__work {
+        max-width: 506px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+
+        @include media('tablet-1200', true) {
+            max-width: 100%;
+        }
+    }
+
+    &__work-text {
+        justify-self: flex-end;
+        color: $light-grey;
+        margin-bottom: toVh(230);
+
+        @include media('tablet-1200', true) {
+            margin-bottom: 20px;
+            max-width: 506px;
+        }
+    }
+
+    &__button-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__button {}
+
+    &__title {
+        margin-bottom: toVh(100);
+
+        @include media('tablet', true) {
+            font-size: 64px;
+        }
+    }
+
+    &__inner {}
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+    }
+
+    &__contact {
+        max-width: 383px;
+
+        &:not(:last-child) {
+            margin-bottom: toVh(100);
+
+            @include media('tablet-1200', true) {
+                margin-bottom: toVh(35);
+            }
+        }
+
+    }
+
+    &__contact-title {
+        margin-bottom: toVh(20);
+        color: $light-grey;
+    }
+
+    &__contact-item {}
+
+    &__adress {}
+
+    &__tel {}
+
+    &__mail {
+        text-transform: none;
+    }
+
+    &__follow {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__follow-link {
+        text-transform: none;
+
+        &:not(:last-child) {
+            margin-bottom: toVh(20);
+        }
+    }
+
+    &__private {
+        position: fixed;
+        bottom: 50px;
+        left: 70px;
+        color: $light-grey;
+    }
+}

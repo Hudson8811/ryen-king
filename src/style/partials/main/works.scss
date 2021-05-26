@@ -1,0 +1,71 @@
+    .works {
+
+        &__container {
+            position: relative;
+        }
+
+        &__row {}
+
+        &__title {
+            margin-bottom: 70px;
+        }
+
+        &__swiper-container {
+            cursor: url('../img/main/cursor.svg') 62 62, pointer;
+            margin-right: -70px;
+            overflow: hidden;
+
+            &:hover {
+                // cursor: url('../img/main/cursor.svg') 62 62, pointer;
+
+            }
+        }
+
+        &__swiper-wrapper {
+            &:hover {
+                // cursor: url('../../img/main/cursor.svg'), pointer;
+            }
+        }
+
+        &__swiper-slide {}
+
+        &__card {
+            height: 630px;
+            position: relative;
+        }
+
+        &__img {}
+
+        &__text {
+            position: absolute;
+            left: 30px;
+            bottom: 20px;
+            text-transform: none;
+
+        }
+
+        &__swiper-button-prev {}
+
+        &__swiper-button-next {}
+    }
+
+    .swiper-container2 {}
+
+    .swiper-wrapper {}
+
+    .swiper-slide {
+        width: auto;
+    }
+
+    .swiper-button-prev2 {
+        margin-right: 10px;
+    }
+
+    .swiper-button-next2 {}
+
+    .swiper-button-wrapper {
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }

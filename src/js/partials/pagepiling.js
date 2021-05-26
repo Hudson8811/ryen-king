@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
             $('#pagepiling').pagepiling({
                 anchors: anchors,
                 verticalCentered: false,
-                scrollingSpeed: 150,
+                scrollingSpeed: 700,
                 easing: 'swing',
                 menu: '#myMenu',
                 // sectionsColor: ['#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000'],

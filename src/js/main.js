@@ -9,7 +9,8 @@
 /* Partials */
 
 //= partials/pagepiling.js
-// = partials/header.js
+//= partials/header.js
+//= partials/swiper.js
 
 /* 
   Blog form validation 

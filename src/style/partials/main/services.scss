@@ -1,0 +1,32 @@
+.services {
+
+    &__container {}
+
+    &__title {
+        text-align: center;
+    }
+
+    &__row {}
+
+    &__card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 32px;
+        border-bottom: 1px solid $light-grey;
+    }
+
+    &__card-title {
+        display: flex;
+
+        span {
+            margin-right: 10px;
+        }
+    }
+
+    &__card-desc {
+        max-width: 337px;
+        width: 100%;
+        display: none;
+    }
+}
