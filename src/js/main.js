@@ -10,6 +10,8 @@
 
 //= partials/pagepiling.js
 //= partials/header.js
+//= partials/swiper.js
+
 
 
 
