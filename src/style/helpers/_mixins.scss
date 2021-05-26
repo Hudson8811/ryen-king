@@ -13,11 +13,11 @@
   transition: all ease-out 0.3s;
 }
 
-$media-list: (
-  "mobile-350": 350,
+$media-list: ("mobile-350": 350,
   "mobile-450": 450,
   "mobile-620": 620,
   "mobile": 767,
+  "tablet-993": 993,
   "tablet-1000": 1000,
   "tablet-1200": 1200,
   "tablet": 1559,
@@ -29,10 +29,14 @@ $media-list: (
 
     @if $maxmin {
       @return $width;
-    } @else {
-      @return $width + 1;
     }
-  } @else {
+
+    @else {
+      @return $width+1;
+    }
+  }
+
+  @else {
     @return $width;
   }
 }
@@ -44,7 +48,9 @@ $media-list: (
     @media only screen and (max-width: $width + "px") {
       @content;
     }
-  } @else {
+  }
+
+  @else {
     @media only screen and (min-width: $width + "px") {
       @content;
     }
@@ -64,19 +70,19 @@ $media-list: (
 $resolutiond: 1920;
 
 @function vwd($px) {
-  @return (($px/$resolutiond) * 100) + vw;
+  @return (($px/$resolutiond) * 100)+vw;
 }
 
 @function vwx($px) {
-  @return (($px/$resolutiond) * 80) + vw;
+  @return (($px/$resolutiond) * 80)+vw;
 }
 
 @function novwx($px) {
-  @return ($px) + px;
+  @return ($px)+px;
 }
 
 $baseHeight: 1080;
 
 @function toVh($px) {
-  @return (($px/$baseHeight) * 100) + vh;
+  @return (($px/$baseHeight) * 100)+vh;
 }
