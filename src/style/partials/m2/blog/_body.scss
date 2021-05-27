@@ -96,7 +96,7 @@
   }
 
   &__photos {
-    margin-bottom: 120px;
+    margin-bottom: 90px;
 
     @include media(992) {
       margin-bottom: 60px;
@@ -110,6 +110,7 @@
   &-photos {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     @include media(992) {
       flex-direction: column;
@@ -123,6 +124,7 @@
       @include media("tablet") {
         width: 48%;
       }
+
       @include media(992) {
         width: 100%;
         height: 300px;
@@ -133,6 +135,8 @@
       }
 
       &:not(:last-child) {
+        margin-bottom: 30px;
+
         @include media(992) {
           margin-bottom: 20px;
         }

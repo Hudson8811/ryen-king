@@ -153,6 +153,12 @@
         }
       }
 
+      @include media(320) {
+        &:first-child {
+          margin-bottom: 57px;
+        }
+      }
+
       &_textarea {
         flex-basis: 100%;
         margin-bottom: 69px;
@@ -297,13 +303,15 @@
         margin-left: 0;
         margin-right: auto;
         height: 80px;
-        width: 149px;
+        // width: 149px;
+        padding-right: 67px;
         font-size: 20px;
       }
 
       @include media("mobile-450") {
-        width: 117px;
+        // width: 117px;
         height: 60px;
+        padding-right: 57px;
         font-size: 12px;
       }
     }
