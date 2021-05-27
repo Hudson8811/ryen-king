@@ -1302,18 +1302,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 })
-// let swiper = new Swiper('.swiper-container', {
-//     // Optional parameters
-//     direction: 'horizontal',
-//     loop: true,
+let swiper = new Swiper('.swiper-container1', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
 
-//     // Navigation arrows
-//     navigation: {
-//         nextEl: '.swiper-button-next',
-//         prevEl: '.swiper-button-prev',
-//     },
-
-// });
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
 
 let swiper2 = new Swiper('.swiper-container2', {
   // Optional parameters
@@ -1330,6 +1329,12 @@ let swiper2 = new Swiper('.swiper-container2', {
   },
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const commentsCounter = document.getElementById('comments-counter');
+
+  commentsCounter.textContent =
+    document.querySelectorAll('.comments-item').length;
+});
 /* 
   Blog form validation 
 */

@@ -12,6 +12,7 @@
 //= partials/header.js
 //= partials/swiper.js
 
+//= partials/blogCommentsCounter.js
 /* 
   Blog form validation 
 */
