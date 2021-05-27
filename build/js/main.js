@@ -1329,12 +1329,6 @@ let swiper2 = new Swiper('.swiper-container2', {
   },
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const commentsCounter = document.getElementById('comments-counter');
-
-  commentsCounter.textContent =
-    document.querySelectorAll('.comments-item').length;
-});
 /* 
   Blog form validation 
 */
