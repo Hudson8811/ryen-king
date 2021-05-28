@@ -3,33 +3,50 @@
     &__container {}
 
     &__row {
-        display: flex;
-    }
+        width: 100%;
 
-    &__column {
-        &:not(:last-child) {
-            width: 688/1780 * 100%;
-            padding-right: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
+        @include media('tablet', false) {
+            display: grid;
+            grid-template-rows: 1fr auto;
+            grid-template-columns: calc(40% - 40px) calc(40% - 40px) 20%;
+            column-gap: 40px;
+            grid-template-areas:
+                "title img-wrapper work-info"
+                "skills img-wrapper work-info";
         }
 
-        &:last-child {
-            width: 340/1780 * 100%;
+        @include media('tablet-1200', false) {
+            display: grid;
+            grid-template-rows: 1fr auto;
+            grid-template-columns: calc(30% - 40px) calc(50% - 40px) 20%;
+            column-gap: 40px;
+            grid-template-areas:
+                "title img-wrapper work-info"
+                "skills img-wrapper work-info";
         }
     }
 
-    &__title {}
+    &__title {
+        grid-area: title;
+    }
 
     &__skills {
         display: flex;
+        grid-area: skills;
+
+        @include media('tablet', true) {
+            flex-direction: column;
+        }
     }
 
     &__skill {
         &:not(:last-child) {
             margin-right: 40px;
+
+            @include media('tablet', true) {
+                margin-right: 0;
+                margin-bottom: 60px;
+            }
         }
     }
 
@@ -37,6 +54,10 @@
         display: flex;
         align-items: center;
         margin-bottom: 84px;
+
+        @include media('tablet', true) {
+            margin-bottom: 30px;
+        }
 
         div {
             margin-right: 10px;
@@ -46,9 +67,10 @@
     &__skill-desc {}
 
     &__img-wrapper {
+        grid-area: img-wrapper;
         position: relative;
         width: 100%;
-        height: toVh(870);
+        height: toVh(980);
         margin-top: -70px;
     }
 
@@ -65,5 +87,7 @@
     &__work-info {
         margin-top: 240px;
         text-transform: none;
+        grid-area: work-info;
+
     }
 }

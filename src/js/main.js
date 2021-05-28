@@ -11,13 +11,14 @@
 //= partials/pagepiling.js
 //= partials/header.js
 //= partials/swiper.js
+//= partials/services.js
 
-/* 
-  Blog form validation 
+/*
+  Blog form validation
 */
 //= partials/blogValidate.js
 
-/* 
-  Case slider 
+/*
+  Case slider
 */
 //= partials/caseSlider.js

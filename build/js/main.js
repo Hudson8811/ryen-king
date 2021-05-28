@@ -1153,99 +1153,84 @@ document.addEventListener('DOMContentLoaded', function () {
     // }
 
     function initPaging() {
+        // [...document.querySelectorAll('.header__menu-item')].forEach(element => {
+        //     if (element.classList.contains('active')) {
+        //         element.classList.remove('active')
+        //     }
+        //     if (document.getElementById('pagepiling')) {
+        //         scrollToSection();
+        //         moveToContacts()
+        //     }
+        // });
+        // if (document.getElementById('pagepiling')) {
+        //     window.addEventListener('scroll', onScroll)
 
-        if (isTablet() && isInited) {
-            isInited = false
+        // }
+        // if (document.getElementById('pagepiling')) {
+        //     window.removeEventListener('scroll', onScroll)
+        // }
 
-            if ($.fn.pagepiling.destroy) {
-                $.fn.pagepiling.destroy('all');
-            }
+        const anchors = ['home', 'about', 'experience', 'works', 'services', 'recognition', 'testimonials', 'blog', 'contacts']
 
-            document.querySelector('body').style.overflow = 'auto';
-            document.querySelector('html').style.overflow = 'auto';
+        // function setLabel(index) {
+        //     const label = labels[index];
 
-            // [...document.querySelectorAll('.header__menu-item')].forEach(element => {
-            //     if (element.classList.contains('active')) {
-            //         element.classList.remove('active')
-            //     }
-            //     if (document.getElementById('pagepiling')) {
-            //         scrollToSection();
-            //         moveToContacts()
-            //     }
-            // });
-            // if (document.getElementById('pagepiling')) {
-            //     window.addEventListener('scroll', onScroll)
+        //     [...document.querySelectorAll('.js-page-label')].forEach(element => {
+        //         element.textContent = label
+        //     });
+        // }
 
-            // }
-        } else if (!isTablet() && !isInited && document.getElementById('pagepiling')) {
-            isInited = true
-
-            // if (document.getElementById('pagepiling')) {
-            //     window.removeEventListener('scroll', onScroll)
-            // }
-
-            const anchors = ['home', 'about', 'experience', 'works', 'services', 'recognition', 'testimonials', 'blog', 'contacts']
-
-            // function setLabel(index) {
-            //     const label = labels[index];
-
-            //     [...document.querySelectorAll('.js-page-label')].forEach(element => {
-            //         element.textContent = label
-            //     });
-            // }
-
-            function setPageNumber(index) {
-                [...document.querySelectorAll('.js-page-number')].forEach(element => {
-                    element.textContent = `${index + 1}/${anchors.length}`
-                });
-            }
-
-            // function setActiveMenu(index) {
-            //     const anchor = anchors[index];
-            //     const header = document.querySelector('.header__menu')
-
-            //     header.classList.remove('active')
-            //     document.querySelector(`[data-menuanchor="${anchor}"]`).classList.add('active')
-            // }
-
-            function progressBar(index) {
-                const progressBar = document.querySelector('.progress-line-js');
-
-                progressBar.style.width = 100 / 9 * index + '%';
-            }
-            // function animationActiveSection(index) {
-            //     const anchor = anchors[index];
-            //     const activeSection = document.getElementById(anchor);
-            //     console.log('work')
-
-            //     if (activeSection.classList.contains('active')) {
-            //         setTimeout(activeSection.querySelector('.section-main').style.opacity = 1, 300)
-            //     }
-            // }
-
-            $('#pagepiling').pagepiling({
-                anchors: anchors,
-                verticalCentered: false,
-                scrollingSpeed: 700,
-                easing: 'swing',
-                menu: '#myMenu',
-                // sectionsColor: ['#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000'],
-                onLeave: function (index, nextIndex, direction) {
-                    setPageNumber(nextIndex - 1)
-                    // setLabel(nextIndex - 1)
-                    progressBar(nextIndex)
-                    // animationActiveSection(index - 1)
-                },
-
-                afterRender: function () {
-                    setPageNumber(0)
-                    // setLabel(0)
-                    // setActiveMenu(0)
-                    progressBar(1)
-                    // animationActiveSection(0)
-                }
+        function setPageNumber(index) {
+            [...document.querySelectorAll('.js-page-number')].forEach(element => {
+                element.textContent = `${index + 1}/${anchors.length}`
             });
         }
+
+        // function setActiveMenu(index) {
+        //     const anchor = anchors[index];
+        //     const header = document.querySelector('.header__menu')
+
+        //     header.classList.remove('active')
+        //     document.querySelector(`[data-menuanchor="${anchor}"]`).classList.add('active')
+        // }
+
+        function progressBar(index) {
+            const progressBar = document.querySelector('.progress-line-js');
+
+            progressBar.style.width = 100 / 9 * index + '%';
+        }
+        // function animationActiveSection(index) {
+        //     const anchor = anchors[index];
+        //     const activeSection = document.getElementById(anchor);
+        //     console.log('work')
+
+        //     if (activeSection.classList.contains('active')) {
+        //         setTimeout(activeSection.querySelector('.section-main').style.opacity = 1, 300)
+        //     }
+        // }
+
+        $('#pagepiling').pagepiling({
+            anchors: anchors,
+            verticalCentered: false,
+            scrollingSpeed: 700,
+            easing: 'swing',
+            menu: '#myMenu',
+            // sectionsColor: ['#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000'],
+            onLeave: function (index, nextIndex, direction) {
+                setPageNumber(nextIndex - 1)
+                // setLabel(nextIndex - 1)
+                progressBar(nextIndex)
+                // animationActiveSection(index - 1)
+            },
+
+            afterRender: function () {
+                setPageNumber(0)
+                // setLabel(0)
+                // setActiveMenu(0)
+                progressBar(1)
+                // animationActiveSection(0)
+            }
+        });
     }
 
     initPaging()
@@ -1330,9 +1315,43 @@ let swiper2 = new Swiper('.swiper-container2', {
         prevEl: '.swiper-button-prev2',
     },
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const controls = [...document.querySelectorAll(".js-services-control")]
+    const tabs = [...document.querySelectorAll('.js-services-tab')]
+    controls[0].classList.add('active')
+    tabs[0].classList.add('active')
 
-/* 
-  Blog form validation 
+    let prevControl = controls[0]
+    let prevTab = tabs[0]
+    controls.forEach(control => {
+        control.addEventListener('mouseover', () => {
+            if (control === prevControl) return
+
+            if (prevControl === null) {
+                prevControl = control
+                control.classList.add('active')
+            }
+
+            if (control !== prevControl) prevControl.classList.remove('active')
+
+            prevControl = control
+            control.classList.add('active')
+            tabs.forEach(tab => {
+                if (control.dataset.control === tab.dataset.tab) {
+                    if (prevTab === null) prevTab = tab
+                    if (prevTab === tab) return
+                    if (prevTab !== tab) prevTab.classList.remove('active')
+
+                    tab.classList.add('active')
+                    prevTab = tab
+                }
+            })
+        })
+    })
+})
+
+/*
+  Blog form validation
 */
 document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.js-form')) {
@@ -1361,8 +1380,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-/* 
-  Case slider 
+/*
+  Case slider
 */
 document.addEventListener('DOMContentLoaded', () => {
   const caseSlider = new Swiper('.case-slider__container', {

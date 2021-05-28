@@ -15,12 +15,36 @@
     line-height: 110%;
     text-transform: uppercase;
 
+    @include media('tablet', true) {
+      font-size: 56px;
+    }
+
+    @include media('tablet-1000', true) {
+      font-size: 50px;
+    }
+
+    @include media('mobile', true) {
+      font-size: 36px;
+    }
+
     &-green {
       color: $main-green;
       font-weight: 500;
       font-size: 70px;
       line-height: 110%;
       text-transform: uppercase;
+
+      @include media('tablet', true) {
+        font-size: 56px;
+      }
+
+      @include media('tablet-1000', true) {
+        font-size: 50px;
+      }
+
+      @include media('mobile', true) {
+        font-size: 36px;
+      }
     }
   }
 
@@ -28,6 +52,14 @@
     font-weight: 400;
     font-size: 40px;
     line-height: 120%;
+
+    @include media('tablet', true) {
+      font-size: 32px;
+    }
+
+    @include media('tablet-1000', true) {
+      font-size: 24px;
+    }
   }
 
   &-text1 {
@@ -51,7 +83,7 @@
 
     @include animation;
 
-    @include media(993, false) {
+    @include media(tablet-1000, false) {
       &:hover {
         color: $main-white;
 
@@ -75,6 +107,14 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 140%;
+
+    @include media('tablet-1200', true) {
+      font-size: 16px;
+    }
+
+    @include media('tablet-1000', true) {
+      font-size: 14px;
+    }
   }
 }
 

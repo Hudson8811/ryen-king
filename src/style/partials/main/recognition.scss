@@ -3,23 +3,37 @@
     &__container {}
 
     &__row {
-        display: flex;
-        justify-content: space-between;
+
+        @include media('tablet-1200', false) {
+            display: grid;
+            grid-template-rows: 1fr auto;
+            grid-template-columns: 40% 60%;
+            column-gap: 40px;
+            grid-template-areas:
+                "title inner"
+                "contact-me inner";
+        }
     }
 
-    &__title {}
+    &__title {
+        grid-area: title;
+
+        @include media('tablet-1200', true) {
+            margin-bottom: 60px;
+        }
+    }
 
     &__contact-me {
-        width: 600/1780 * 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        max-width: 330px;
+        grid-area: contact-me;
+
+        @include media('tablet-1200', true) {
+            padding-bottom: 30px;
+
+        }
     }
 
-    &__contact-bottom {
-        max-width: 330px;
-        margin-top: auto;
-    }
+    &__contact-bottom {}
 
     &__contact-text {
         margin-bottom: toVh(70);
@@ -32,7 +46,7 @@
     }
 
     &__inner {
-        width: 1051/1780 * 100%;
+        grid-area: inner;
     }
 
     &__img-wrapper {
@@ -41,6 +55,14 @@
         height: toVh(317);
         width: 100%;
         overflow: hidden;
+
+        @include media('tablet-1200', true) {
+            height: 317px;
+            margin-right: -45px;
+            margin-left: -45px;
+            width: auto;
+
+        }
     }
 
     &__img {
@@ -49,6 +71,11 @@
         left: 0;
         width: 1051px;
         height: 317px;
+
+        @include media('tablet-1200', true) {
+            width: 100%;
+        }
+
         object-position: center;
         object-fit: cover;
     }
@@ -56,11 +83,20 @@
     &__resource {
         display: flex;
         justify-content: space-between;
+
+        @include media('tablet-1200', true) {
+            margin-bottom: 30px;
+        }
     }
 
     &__resource-list {
         &:last-child {
             margin-right: 100px;
+
+            @include media('tablet', true) {
+                margin-right: 0px;
+
+            }
         }
     }
 

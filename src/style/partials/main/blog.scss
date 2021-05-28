@@ -13,11 +13,24 @@
     &__swiper-container {
         margin-right: -70px;
         overflow: hidden;
+
+        @include media('tablet-1200', true) {
+            margin-right: -45px;
+        }
+
     }
 
     &__swiper-wrapper {}
 
-    &__swiper-slide {}
+    &__swiper-slide {
+        &-sm {}
+
+        &-xl {
+            @include media('tablet-1000', true) {
+                display: none;
+            }
+        }
+    }
 
     &__card {
         &-md {

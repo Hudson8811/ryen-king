@@ -2,22 +2,31 @@
 
     &__container {}
 
-    &__title {
-        text-align: center;
+    &__row {
+        display: flex;
     }
 
-    &__row {}
+    &__column {
+        width: calc(80% - 40px);
+    }
 
     &__card {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 32px;
-        border-bottom: 1px solid $light-grey;
+
+        &:not(:last-child) {
+            margin-bottom: 80px;
+        }
     }
 
     &__card-title {
         display: flex;
+        transition: color .3s ease;
+
+        &.active {
+            color: $main-green;
+        }
 
         span {
             margin-right: 10px;
@@ -28,5 +37,30 @@
         max-width: 337px;
         width: 100%;
         display: none;
+    }
+
+    &__tabs {
+        width: 20%;
+    }
+
+    &__tab {
+        max-width: 324px;
+        width: 100%;
+        // transition: opacity .3s ease;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__tab-img-wrapper {}
+
+    &__tab-img {
+        margin-bottom: 40px;
+    }
+
+    &__tab-desc {
+        color: $light-grey;
     }
 }
