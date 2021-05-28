@@ -68,99 +68,84 @@ document.addEventListener('DOMContentLoaded', function () {
     // }
 
     function initPaging() {
+        // [...document.querySelectorAll('.header__menu-item')].forEach(element => {
+        //     if (element.classList.contains('active')) {
+        //         element.classList.remove('active')
+        //     }
+        //     if (document.getElementById('pagepiling')) {
+        //         scrollToSection();
+        //         moveToContacts()
+        //     }
+        // });
+        // if (document.getElementById('pagepiling')) {
+        //     window.addEventListener('scroll', onScroll)
 
-        if (isTablet() && isInited) {
-            isInited = false
+        // }
+        // if (document.getElementById('pagepiling')) {
+        //     window.removeEventListener('scroll', onScroll)
+        // }
 
-            if ($.fn.pagepiling.destroy) {
-                $.fn.pagepiling.destroy('all');
-            }
+        const anchors = ['home', 'about', 'experience', 'works', 'services', 'recognition', 'testimonials', 'blog', 'contacts']
 
-            document.querySelector('body').style.overflow = 'auto';
-            document.querySelector('html').style.overflow = 'auto';
+        // function setLabel(index) {
+        //     const label = labels[index];
 
-            // [...document.querySelectorAll('.header__menu-item')].forEach(element => {
-            //     if (element.classList.contains('active')) {
-            //         element.classList.remove('active')
-            //     }
-            //     if (document.getElementById('pagepiling')) {
-            //         scrollToSection();
-            //         moveToContacts()
-            //     }
-            // });
-            // if (document.getElementById('pagepiling')) {
-            //     window.addEventListener('scroll', onScroll)
+        //     [...document.querySelectorAll('.js-page-label')].forEach(element => {
+        //         element.textContent = label
+        //     });
+        // }
 
-            // }
-        } else if (!isTablet() && !isInited && document.getElementById('pagepiling')) {
-            isInited = true
-
-            // if (document.getElementById('pagepiling')) {
-            //     window.removeEventListener('scroll', onScroll)
-            // }
-
-            const anchors = ['home', 'about', 'experience', 'works', 'services', 'recognition', 'testimonials', 'blog', 'contacts']
-
-            // function setLabel(index) {
-            //     const label = labels[index];
-
-            //     [...document.querySelectorAll('.js-page-label')].forEach(element => {
-            //         element.textContent = label
-            //     });
-            // }
-
-            function setPageNumber(index) {
-                [...document.querySelectorAll('.js-page-number')].forEach(element => {
-                    element.textContent = `${index + 1}/${anchors.length}`
-                });
-            }
-
-            // function setActiveMenu(index) {
-            //     const anchor = anchors[index];
-            //     const header = document.querySelector('.header__menu')
-
-            //     header.classList.remove('active')
-            //     document.querySelector(`[data-menuanchor="${anchor}"]`).classList.add('active')
-            // }
-
-            function progressBar(index) {
-                const progressBar = document.querySelector('.progress-line-js');
-
-                progressBar.style.width = 100 / 9 * index + '%';
-            }
-            // function animationActiveSection(index) {
-            //     const anchor = anchors[index];
-            //     const activeSection = document.getElementById(anchor);
-            //     console.log('work')
-
-            //     if (activeSection.classList.contains('active')) {
-            //         setTimeout(activeSection.querySelector('.section-main').style.opacity = 1, 300)
-            //     }
-            // }
-
-            $('#pagepiling').pagepiling({
-                anchors: anchors,
-                verticalCentered: false,
-                scrollingSpeed: 700,
-                easing: 'swing',
-                menu: '#myMenu',
-                // sectionsColor: ['#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000'],
-                onLeave: function (index, nextIndex, direction) {
-                    setPageNumber(nextIndex - 1)
-                    // setLabel(nextIndex - 1)
-                    progressBar(nextIndex)
-                    // animationActiveSection(index - 1)
-                },
-
-                afterRender: function () {
-                    setPageNumber(0)
-                    // setLabel(0)
-                    // setActiveMenu(0)
-                    progressBar(1)
-                    // animationActiveSection(0)
-                }
+        function setPageNumber(index) {
+            [...document.querySelectorAll('.js-page-number')].forEach(element => {
+                element.textContent = `${index + 1}/${anchors.length}`
             });
         }
+
+        // function setActiveMenu(index) {
+        //     const anchor = anchors[index];
+        //     const header = document.querySelector('.header__menu')
+
+        //     header.classList.remove('active')
+        //     document.querySelector(`[data-menuanchor="${anchor}"]`).classList.add('active')
+        // }
+
+        function progressBar(index) {
+            const progressBar = document.querySelector('.progress-line-js');
+
+            progressBar.style.width = 100 / 9 * index + '%';
+        }
+        // function animationActiveSection(index) {
+        //     const anchor = anchors[index];
+        //     const activeSection = document.getElementById(anchor);
+        //     console.log('work')
+
+        //     if (activeSection.classList.contains('active')) {
+        //         setTimeout(activeSection.querySelector('.section-main').style.opacity = 1, 300)
+        //     }
+        // }
+
+        $('#pagepiling').pagepiling({
+            anchors: anchors,
+            verticalCentered: false,
+            scrollingSpeed: 700,
+            easing: 'swing',
+            menu: '#myMenu',
+            // sectionsColor: ['#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000'],
+            onLeave: function (index, nextIndex, direction) {
+                setPageNumber(nextIndex - 1)
+                // setLabel(nextIndex - 1)
+                progressBar(nextIndex)
+                // animationActiveSection(index - 1)
+            },
+
+            afterRender: function () {
+                setPageNumber(0)
+                // setLabel(0)
+                // setActiveMenu(0)
+                progressBar(1)
+                // animationActiveSection(0)
+            }
+        });
     }
 
     initPaging()

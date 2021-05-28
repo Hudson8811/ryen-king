@@ -4,6 +4,16 @@
 	align-items: center;
 	justify-content: space-between;
 
+	@include media('tablet-1200', true) {
+		padding: 20px 45px;
+	}
+
+	@include media('mobile', true) {
+		flex-direction: row-reverse;
+	}
+
+
+
 	&__wrapper {
 		position: fixed;
 		top: 0;
@@ -22,6 +32,7 @@
 		width: 50px;
 		height: 14px;
 		position: relative;
+		cursor: pointer;
 
 		span {
 			width: 100%;
@@ -52,6 +63,10 @@
 		font-size: 24px;
 		line-height: 120%;
 
+		@include media('mobile', true) {
+			display: none;
+		}
+
 		li {
 			&:not(:last-child) {
 				margin-right: 150px;
@@ -73,6 +88,10 @@
 		line-height: 120%;
 		transition: .3s;
 		transform: translateX(-100%);
+
+		@include media('mobile', true) {
+			width: 100vw;
+		}
 
 		&-list {
 			opacity: 0;
