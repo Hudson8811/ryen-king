@@ -88,6 +88,9 @@
     transition: 0.3s;
     transform: translateX(-100%);
 
+    // Added
+    overflow-y: auto;
+
     @include media("mobile", true) {
       width: 100vw;
     }
@@ -108,10 +111,12 @@
 
     &-content {
       position: relative;
+      // Changed and added
       // padding-top: toVh(150);
       padding-top: 178px;
       padding-left: 250px;
-      height: 100%;
+      padding-bottom: 136px;
+      // height: 100%;
     }
 
     &-exit {
@@ -152,29 +157,40 @@
       &.active {
         & a::after {
           right: 0;
+
+          // Added
+          background-color: $main-black;
         }
       }
 
       &:not(:first-child) {
-        margin-top: toVh(30);
-        margin-top: 42px;
+        // Changed
+        // margin-top: toVh(30);
+        margin-top: 31px;
       }
     }
 
     &-link {
+      // Added
+      position: relative;
+      padding-bottom: 11px;
+
       color: #0d0d0c;
       transition: transform 0.3s ease;
       display: inline-block;
 
-      // &::after {
-      // 	content: '';
-      // 	position: absolute;
-      // 	transition: .3s ease;
-      // 	bottom: 0;
-      // 	left: 0;
-      // 	height: 1px;
-      // 	background-color: transparent;
-      // }
+      &::after {
+      	content: '';
+      	position: absolute;
+      	transition: .3s ease;
+      	bottom: 0;
+      	left: 0;
+
+        // Changed
+      	height: 2px;
+
+      	background-color: transparent;
+      }
       &:hover {
         transform: translate(40px, 0);
       }
