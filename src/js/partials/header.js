@@ -18,11 +18,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (target.classList.contains('header__burger')) {
       menu.classList.add('active');
-    }
-
-    if (
+    } else if (
       target.classList.contains('header__menu-exit') ||
       target.closest('.header__menu-item')
+    ) {
+      menu.classList.remove('active');
+    } else if (
+      menu.classList.contains('active') &&
+      !target.closest('.header__menu')
     ) {
       menu.classList.remove('active');
     }
