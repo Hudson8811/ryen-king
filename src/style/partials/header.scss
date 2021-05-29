@@ -8,7 +8,7 @@
     padding: 20px 45px;
   }
 
-  @include media("mobile", true) {
+  @include media(768, true) {
     flex-direction: row-reverse;
   }
 
@@ -61,7 +61,7 @@
     font-size: 24px;
     line-height: 120%;
 
-    @include media("mobile", true) {
+    @include media(768, true) {
       display: none;
     }
 
@@ -91,6 +91,13 @@
     // Added
     overflow-y: auto;
 
+    @include media(768, true) {
+      width: 369px;
+      left: auto;
+      right: 0;
+      transform: translateX(100%);
+    }
+
     @include media("mobile", true) {
       width: 100vw;
     }
@@ -117,6 +124,23 @@
       padding-left: 250px;
       padding-bottom: 136px;
       // height: 100%;
+
+      @include media(768, true) {
+        padding-top: 99px;
+        padding-left: 118px;
+        padding-bottom: 90px;
+        font-size: 24px;
+        line-height: 120%;
+      }
+
+      @include media('mobile-620') {
+        padding-top: 74px;
+        padding-left: 60px;
+        padding-bottom: 60px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 140%;
+      }
     }
 
     &-exit {
@@ -128,6 +152,11 @@
       transition: 0.3s ease;
       cursor: pointer;
       z-index: 3;
+
+      @include media(768, true) {
+        left: auto;
+        right: 46px;
+      }
 
       &:hover {
         opacity: 0.7;
@@ -167,6 +196,14 @@
         // Changed
         // margin-top: toVh(30);
         margin-top: 31px;
+
+        @include media(768) {
+          margin-top: 21px;
+        }
+
+        @include media('mobile-620') {
+          margin-top: 20px;
+        }
       }
     }
 
@@ -178,6 +215,10 @@
       color: #0d0d0c;
       transition: transform 0.3s ease;
       display: inline-block;
+
+      @include media("mobile-620") {
+        padding-bottom: 0;
+      }
 
       &::after {
       	content: '';
