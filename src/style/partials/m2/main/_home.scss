@@ -194,10 +194,16 @@
     right: 0;
     width: 90%;
     overflow: hidden;
+
     color: $main-green;
 
     @include media("tablet") {
       top: 35%;
+      width: 96%;
+    }
+
+    @include media(1366) {
+      width: 100%;
     }
 
     @include media(1024) {
@@ -215,7 +221,7 @@
     &__wrapper {
       display: flex;
       width: 200%;
-      animation: moveTicker 5s linear infinite;
+      // animation: moveTicker 5s linear infinite;
     }
 
     &__text {

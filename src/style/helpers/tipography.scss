@@ -19,13 +19,13 @@
       font-size: 56px;
     }
 
-    @include media("tablet-1000", true) {
-      font-size: 50px;
+    @include media(992) {
+      font-size: 22px;
     }
 
-    @include media("mobile", true) {
-      font-size: 36px;
-    }
+    // @include media("mobile", true) {
+    //   font-size: 36px;
+    // }
 
     &-green {
       color: $main-green;
