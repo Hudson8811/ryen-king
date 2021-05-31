@@ -1,62 +1,68 @@
 .home {
-    &__container {
-        overflow: hidden;
-    }
+  &__container {
+    overflow: hidden;
+  }
 
-    &__img-author {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        z-index: 10;
-    }
+  &__img-author {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 10;
 
-    &__row {
-        height: 100%;
-        padding-left: 740px;
-    }
+    // Added
+    object-fit: cover;
 
-    &__author-info {
-        max-width: 324px;
-        width: 100%;
-        margin-left: auto;
-        margin-bottom: 115px;
+    @include media("tablet") {
     }
+  }
 
-    &__designer {
-        white-space: nowrap;
+  &__row {
+    height: 100%;
+    padding-left: 740px;
+  }
 
-        // Added
-        // transform: translateX(125%);
-    }
+  &__author-info {
+    max-width: 324px;
+    width: 100%;
+    margin-left: auto;
+    margin-bottom: 115px;
+  }
 
-    &__designer-wrapper {
-        display: flex;
-        flex-wrap: nowrap;
-        animation: linear runTitle 6s infinite;
-        margin-bottom: 130px;
-    }
+  &__designer {
+    white-space: nowrap;
 
-    &__author-wrapper {
-        display: flex;
-        height: auto;
-    }
+    // Added
+    // transform: translateX(125%);
+  }
 
-    &__author-name {
-        margin-top: auto;
-        max-width: 500px;
-    }
+  &__designer-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: linear runTitle 6s infinite;
+    margin-bottom: 130px;
+  }
+
+  &__author-wrapper {
+    display: flex;
+    height: auto;
+  }
+
+  &__author-name {
+    margin-top: auto;
+    max-width: 500px;
+  }
 }
 
 @keyframes runTitle {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    100% {
-        transform: translateX(-100%);
+  100% {
+    transform: translateX(-100%);
 
-        // Changed
-        // transform: translateX(-200%);
-    }
+    // Changed
+    // transform: translateX(-200%);
+  }
 }
