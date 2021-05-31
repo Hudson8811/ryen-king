@@ -15,15 +15,15 @@
     line-height: 110%;
     text-transform: uppercase;
 
-    @include media('tablet', true) {
+    @include media("tablet", true) {
       font-size: 56px;
     }
 
-    @include media('tablet-1000', true) {
+    @include media("tablet-1000", true) {
       font-size: 50px;
     }
 
-    @include media('mobile', true) {
+    @include media("mobile", true) {
       font-size: 36px;
     }
 
@@ -34,17 +34,17 @@
       line-height: 110%;
       text-transform: uppercase;
 
-      @include media('tablet', true) {
+      @include media("tablet", true) {
         font-size: 56px;
       }
 
-      @include media('tablet-1000', true) {
+      @include media("tablet-1000", true) {
         font-size: 50px;
       }
 
-      @include media('mobile', true) {
-        font-size: 36px;
-      }
+      // @include media('mobile', true) {
+      //   font-size: 36px;
+      // }
     }
   }
 
@@ -53,11 +53,11 @@
     font-size: 40px;
     line-height: 120%;
 
-    @include media('tablet', true) {
+    @include media("tablet", true) {
       font-size: 32px;
     }
 
-    @include media('tablet-1000', true) {
+    @include media("tablet-1000", true) {
       font-size: 24px;
     }
   }
@@ -108,12 +108,16 @@
     font-size: 18px;
     line-height: 140%;
 
-    @include media('tablet-1200', true) {
+    @include media("tablet-1200", true) {
       font-size: 16px;
     }
 
-    @include media('tablet-1000', true) {
+    @include media("tablet-1000", true) {
       font-size: 14px;
+    }
+
+    @include media("mobile-620", true) {
+      font-size: 12px;
     }
   }
 }

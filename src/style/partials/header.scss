@@ -257,7 +257,7 @@
       color: $main-black;
       transform: rotate(-90deg);
 
-      @include media(768) {
+      @include media("mobile") {
         display: block;
       }
     }
