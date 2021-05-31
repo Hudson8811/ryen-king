@@ -190,8 +190,8 @@
     position: absolute;
     top: 391px;
     left: 0;
+    width: 100%;
     overflow: hidden;
-    white-space: nowrap;
     color: $main-green;
 
     @include media("tablet") {
@@ -210,8 +210,28 @@
       top: 74px;
     }
 
-    &__text {
-      font-size: 22px;
+    &__wrapper {
+      display: flex;
+      width: 272%;
+      animation: moveTicker 5s linear infinite;
     }
+
+    &__text {
+      white-space: nowrap;
+      width: 136%;
+
+      @include media(1024) {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@keyframes moveTicker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
