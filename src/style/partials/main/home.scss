@@ -27,7 +27,7 @@
         white-space: nowrap;
 
         // Added
-        transform: translateX(50%);
+        transform: translateX(125%);
     }
 
     &__designer-wrapper {
@@ -50,14 +50,12 @@
 
 @keyframes runTitle {
     0% {
-        // Changed
-        // transform: translateX(0);
-        transform: translateX(50%);
+        transform: translateX(0);
     }
 
     100% {
         // Changed
         // transform: translateX(-100%);
-        transform: translateX(-330%);
+        transform: translateX(-200%);
     }
 }
