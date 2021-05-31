@@ -214,15 +214,27 @@
       display: flex;
       width: 272%;
       animation: moveTicker 5s linear infinite;
+
+      // @include media("tablet") {
+      //   width: 300%;
+      // }
+
+      // @include media(1024) {
+      //   width: 270%;
+      // }
     }
 
     &__text {
       white-space: nowrap;
       width: 136%;
 
-      @include media(1024) {
-        font-size: 22px;
-      }
+      // @include media("tablet") {
+      //   width: 300%;
+      // }
+
+      // @include media(1024) {
+      //   width: 100%;
+      // }
     }
   }
 }
