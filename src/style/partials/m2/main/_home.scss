@@ -9,6 +9,8 @@
   &-container {
     position: relative;
     display: flex;
+    margin: 0 auto;
+    max-width: 1920px;
     height: 100%;
 
     @include media(1024) {
@@ -189,8 +191,8 @@
   &-ticker {
     position: absolute;
     top: 391px;
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: 90%;
     overflow: hidden;
     color: $main-green;
 
@@ -212,29 +214,13 @@
 
     &__wrapper {
       display: flex;
-      width: 272%;
+      width: 200%;
       animation: moveTicker 5s linear infinite;
-
-      // @include media("tablet") {
-      //   width: 300%;
-      // }
-
-      // @include media(1024) {
-      //   width: 270%;
-      // }
     }
 
     &__text {
       white-space: nowrap;
-      width: 136%;
-
-      // @include media("tablet") {
-      //   width: 300%;
-      // }
-
-      // @include media(1024) {
-      //   width: 100%;
-      // }
+      width: 100%;
     }
   }
 }
