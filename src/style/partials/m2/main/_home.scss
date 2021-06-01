@@ -192,18 +192,18 @@
     position: absolute;
     top: 391px;
     right: 0;
-    width: 90%;
+    width: 90.5%;
     overflow: hidden;
 
     color: $main-green;
 
     @include media("tablet") {
       top: 35%;
-      width: 96%;
+      width: 96.5%;
     }
 
     @include media(1366) {
-      width: 100%;
+      width: 102%;
     }
 
     @include media(1024) {
@@ -221,12 +221,72 @@
     &__wrapper {
       display: flex;
       width: 200%;
-      // animation: moveTicker 5s linear infinite;
+      animation: moveTicker 10s linear infinite;
+
+      @include media(1024) {
+        width: 800%;
+      }
+
+      @include media(992) {
+        width: 380%;
+      }
+
+      @include media(768) {
+        width: 420%;
+      }
+
+      @include media(540) {
+        width: 400%;
+      }
+
+      @include media("mobile-450") {
+        width: 390%;
+      }
+
+      @include media(375) {
+        width: 865%;
+      }
+
+      @include media(360) {
+        width: 900%;
+      }
+
+      @include media(320) {
+        width: 848%;
+      }
     }
 
     &__text {
       white-space: nowrap;
       width: 100%;
+
+      @include media(1024) {
+        width: 400%;
+      }
+
+      @include media(992) {
+        width: 190%;
+      }
+
+      @include media(540) {
+        width: 210%;
+      }
+
+      @include media("mobile-450") {
+        width: 195%;
+      }
+
+      @include media(375) {
+        width: 432.5%;
+      }
+
+      @include media(360) {
+        width: 450%;
+      }
+
+      @include media(320) {
+        width: 424%;
+      }
     }
   }
 }
