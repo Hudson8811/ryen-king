@@ -86,8 +86,16 @@
         margin-right: 150px;
       }
 
-      // a {
-      // }
+      @include media(993, false) {
+        @include animation;
+        
+        &:hover {
+          color: $main-green;
+
+          @include animation;
+        }
+      }
+
     }
   }
 

@@ -27,25 +27,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Start of set menu item link active
-  function setActiveLink() {
-    menuLinks.forEach((item, index) => {
-      if (item.getAttribute('href') === location.hash) {
-        menuLinks[index].closest('.header__menu-item').classList.add('active');
-      }
+
+  if (document.body.classList.contains('js-header-main')) {
+    // Start of set menu item link active
+    function setActiveLink() {
+      menuLinks.forEach((item, index) => {
+        if (item.getAttribute('href') === location.hash) {
+          menuLinks[index]
+            .closest('.header__menu-item')
+            .classList.add('active');
+        }
+      });
+    }
+
+    if (location.hash === '') {
+      menuLinks[0].closest('.header__menu-item').classList.add('active');
+    } else {
+      setActiveLink();
+    }
+
+    window.addEventListener('hashchange', () => {
+      setActiveLink();
     });
+    // End of set menu item link active
   }
-
-  if (location.hash === '') {
-    menuLinks[0].closest('.header__menu-item').classList.add('active');
-  } else {
-    setActiveLink();
-  }
-
-  window.addEventListener('hashchange', () => {
-    setActiveLink();
-  });
-  // End of set menu item link active
+  
 
   if (header.classList.contains('header-js')) {
     window.addEventListener('scroll', () => {
