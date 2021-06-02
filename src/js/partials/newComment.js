@@ -117,8 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <a class="neue neue-link m2comment comments-item__reply" href="#">Reply</a>
         `;
 
-        console.log(newCommentItem);
-
         document.querySelector('.comments-list').prepend(newCommentItem);
 
         // Temporary
