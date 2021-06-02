@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
+  if (document.getElementById('pagepiling')) {
     function isTablet() {
-        return window.matchMedia('(max-width: 1000px)').matches
+      return window.matchMedia('(max-width: 1000px)').matches;
     }
 
-    let isInited = window.matchMedia('(max-width: 1000px)').matches
+    let isInited = window.matchMedia('(max-width: 1000px)').matches;
     // const sections = [...document.querySelectorAll('.js-section')]
 
     // function onScroll() {
@@ -36,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //         event.preventDefault()
     //         const { top, bottom } = searchSection.getBoundingClientRect()
 
-
     //         window.scrollTo({
     //             top: window.scrollY + top,
     //             behavior: "smooth"
@@ -68,89 +68,99 @@ document.addEventListener('DOMContentLoaded', function () {
     // }
 
     function initPaging() {
-        // [...document.querySelectorAll('.header__menu-item')].forEach(element => {
-        //     if (element.classList.contains('active')) {
-        //         element.classList.remove('active')
-        //     }
-        //     if (document.getElementById('pagepiling')) {
-        //         scrollToSection();
-        //         moveToContacts()
-        //     }
-        // });
-        // if (document.getElementById('pagepiling')) {
-        //     window.addEventListener('scroll', onScroll)
+      // [...document.querySelectorAll('.header__menu-item')].forEach(element => {
+      //     if (element.classList.contains('active')) {
+      //         element.classList.remove('active')
+      //     }
+      //     if (document.getElementById('pagepiling')) {
+      //         scrollToSection();
+      //         moveToContacts()
+      //     }
+      // });
+      // if (document.getElementById('pagepiling')) {
+      //     window.addEventListener('scroll', onScroll)
 
-        // }
-        // if (document.getElementById('pagepiling')) {
-        //     window.removeEventListener('scroll', onScroll)
-        // }
+      // }
+      // if (document.getElementById('pagepiling')) {
+      //     window.removeEventListener('scroll', onScroll)
+      // }
 
-        const anchors = ['home', 'about', 'experience', 'works', 'services', 'recognition', 'testimonials', 'blog', 'contacts']
+      const anchors = [
+        'home',
+        'about',
+        'experience',
+        'works',
+        'services',
+        'recognition',
+        'testimonials',
+        'blog',
+        'contacts',
+      ];
 
-        // function setLabel(index) {
-        //     const label = labels[index];
+      // function setLabel(index) {
+      //     const label = labels[index];
 
-        //     [...document.querySelectorAll('.js-page-label')].forEach(element => {
-        //         element.textContent = label
-        //     });
-        // }
+      //     [...document.querySelectorAll('.js-page-label')].forEach(element => {
+      //         element.textContent = label
+      //     });
+      // }
 
-        function setPageNumber(index) {
-            [...document.querySelectorAll('.js-page-number')].forEach(element => {
-                element.textContent = `${index + 1}/${anchors.length}`
-            });
-        }
-
-        // function setActiveMenu(index) {
-        //     const anchor = anchors[index];
-        //     const header = document.querySelector('.header__menu')
-
-        //     header.classList.remove('active')
-        //     document.querySelector(`[data-menuanchor="${anchor}"]`).classList.add('active')
-        // }
-
-        function progressBar(index) {
-            const progressBar = document.querySelector('.progress-line-js');
-
-            progressBar.style.width = 100 / 9 * index + '%';
-        }
-        // function animationActiveSection(index) {
-        //     const anchor = anchors[index];
-        //     const activeSection = document.getElementById(anchor);
-        //     console.log('work')
-
-        //     if (activeSection.classList.contains('active')) {
-        //         setTimeout(activeSection.querySelector('.section-main').style.opacity = 1, 300)
-        //     }
-        // }
-
-        $('#pagepiling').pagepiling({
-            anchors: anchors,
-            verticalCentered: false,
-            scrollingSpeed: 700,
-            easing: 'swing',
-            menu: '#myMenu',
-            // sectionsColor: ['#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000'],
-            onLeave: function (index, nextIndex, direction) {
-                setPageNumber(nextIndex - 1)
-                // setLabel(nextIndex - 1)
-                progressBar(nextIndex)
-                // animationActiveSection(index - 1)
-            },
-
-            afterRender: function () {
-                setPageNumber(0)
-                // setLabel(0)
-                // setActiveMenu(0)
-                progressBar(1)
-                // animationActiveSection(0)
-            }
+      function setPageNumber(index) {
+        [...document.querySelectorAll('.js-page-number')].forEach((element) => {
+          element.textContent = `${index + 1}/${anchors.length}`;
         });
+      }
+
+      // function setActiveMenu(index) {
+      //     const anchor = anchors[index];
+      //     const header = document.querySelector('.header__menu')
+
+      //     header.classList.remove('active')
+      //     document.querySelector(`[data-menuanchor="${anchor}"]`).classList.add('active')
+      // }
+
+      function progressBar(index) {
+        const progressBar = document.querySelector('.progress-line-js');
+
+        progressBar.style.width = (100 / 9) * index + '%';
+      }
+      // function animationActiveSection(index) {
+      //     const anchor = anchors[index];
+      //     const activeSection = document.getElementById(anchor);
+      //     console.log('work')
+
+      //     if (activeSection.classList.contains('active')) {
+      //         setTimeout(activeSection.querySelector('.section-main').style.opacity = 1, 300)
+      //     }
+      // }
+
+      $('#pagepiling').pagepiling({
+        anchors: anchors,
+        verticalCentered: false,
+        scrollingSpeed: 700,
+        easing: 'swing',
+        menu: '#myMenu',
+        // sectionsColor: ['#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000'],
+        onLeave: function (index, nextIndex, direction) {
+          setPageNumber(nextIndex - 1);
+          // setLabel(nextIndex - 1)
+          progressBar(nextIndex);
+          // animationActiveSection(index - 1)
+        },
+
+        afterRender: function () {
+          setPageNumber(0);
+          // setLabel(0)
+          // setActiveMenu(0)
+          progressBar(1);
+          // animationActiveSection(0)
+        },
+      });
     }
 
-    initPaging()
+    initPaging();
 
-    window.addEventListener('resize', initPaging)
+    window.addEventListener('resize', initPaging);
 
     // function disabledPreloader() {
     //     document.getElementById('preloader').style.display = 'none';
@@ -162,4 +172,5 @@ document.addEventListener('DOMContentLoaded', function () {
     //     type: 'iframe',
     //     allowfullscreen: 'true'
     // });
+  }
 });
