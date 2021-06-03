@@ -1,10 +1,14 @@
-const scrollToTop = document.getElementById('totop');
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('.js-to-top')) {
+    const scrollToTop = document.getElementById('totop');
 
-scrollToTop.addEventListener('click', (event) => {
-  event.preventDefault();
+    scrollToTop.addEventListener('click', (event) => {
+      event.preventDefault();
 
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    });
+  }
 });
