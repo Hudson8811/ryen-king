@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const menu = document.querySelector('.header__menu');
   const menuExit = document.querySelector('.header__menu-exit');
   const main = document.querySelector('.main');
-  const header = document.querySelector('.header');
+  const header = document.querySelector('.header__wrapper');
   const menuLinks = document.querySelectorAll('.header__menu-link');
 
   //   burger.addEventListener('click', function () {
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //   });
 
   // Menu Handler
-  document.addEventListener('click', event => {
+  document.addEventListener('click', (event) => {
     const target = event.target;
 
     if (target.classList.contains('header__burger')) {
@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
       menu.classList.remove('active');
     }
   });
-
 
   if (document.body.classList.contains('js-header-main')) {
     // Start of set menu item link active
@@ -51,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     // End of set menu item link active
   }
-  
 
   if (header.classList.contains('header-js')) {
     window.addEventListener('scroll', () => {
