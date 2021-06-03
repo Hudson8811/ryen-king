@@ -26,6 +26,13 @@ html {
     padding-bottom: 25px;
     padding-top: 100px;
   }
+
+  @include media("mobile-620", true) {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0;
+    padding-top: 72px;
+  }
 }
 
 .container {

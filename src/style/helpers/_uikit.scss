@@ -6,7 +6,33 @@
   justify-content: center;
   padding: 13px 28px;
   cursor: pointer;
-  transition: bacground 0.3s linear;
+  transition: background 0.3s linear;
+  max-width: 244px;
+  min-width: 244px;
+
+  @include media('tablet-1000', true) {
+    max-width: 227px;
+    min-width: 227px;
+    padding: 23px 28px;
+  }
+
+  @include media('mobile-450', true) {
+    max-width: 164px;
+    min-width: 164px;
+    padding: 23px 28px;
+  }
+
+  img {
+    @include media('tablet-1000', true) {
+      width: 28px;
+      height: 16px;
+    }
+
+    @include media('mobile-450', true) {
+      width: 18px;
+      height: 9px;
+    }
+  }
 
   span {
     font-style: normal;
@@ -22,6 +48,10 @@
 
     @include media('mobile', true) {
       font-size: 18px;
+    }
+
+    @include media('mobile-450', true) {
+      font-size: 12px;
     }
   }
 

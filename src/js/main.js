@@ -12,6 +12,7 @@
 //= partials/header.js
 //= partials/swiper.js
 //= partials/services.js
+//= partials/experience.js
 
 /*
   Blog form validation

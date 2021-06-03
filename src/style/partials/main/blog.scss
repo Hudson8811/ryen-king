@@ -8,6 +8,14 @@
 
     &__title {
         margin-bottom: 70px;
+
+        @include media('tablet-1000', true) {
+            margin-bottom: 60px;
+        }
+
+        @include media('mobile', true) {
+            margin-bottom: 40px;
+        }
     }
 
     &__swiper-container {
@@ -18,6 +26,9 @@
             margin-right: -45px;
         }
 
+        @include media('mobile-620', true) {
+            margin-right: -10px;
+        }
     }
 
     &__swiper-wrapper {}
@@ -38,17 +49,35 @@
         }
 
         &-sm {
-            max-width: 344px;
+            max-width: 324px;
+
+            @include media('mobile', true) {
+                max-width: 300px;
+            }
         }
     }
 
     &__card-img {
         margin-bottom: 40px;
+        height: 470px;
+
+        @include media('tablet-1000', true) {
+            margin-bottom: 30px;
+        }
+
+        @include media('mobile', true) {
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
     }
 
     &__card-date {
         margin-bottom: 20px;
         color: $light-grey;
+
+        @include media('tablet-1000', true) {
+            margin-bottom: 10px;
+        }
     }
 
     &__card-title {

@@ -4,7 +4,9 @@
             .recognition__title.neue-headline2-green recognition
             .recognition__inner
                 .recognition__img-wrapper
-                    img.recognition__img(src="img/main/recognition/img1.jpg")
+                    picture.recognition__img(src="img/main/recognition/img1.jpg")
+                        source.recognition__img(srcset="img/main/recognition/img1.jpg" media="(min-width:767px)")
+                        img.recognition__img(src="img/main/recognition/img1-adapt.jpg")
                 .recognition__resource
                     ul.recognition__resource-list.manrope-text2
                         li.recognition__resource-list-title.neue-headline3

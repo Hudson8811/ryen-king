@@ -9,6 +9,10 @@
         right: 70px;
         z-index: 100;
         width: 350px;
+
+        @include media('mobile', true) {
+            display: none;
+        }
     }
 
     &__line {

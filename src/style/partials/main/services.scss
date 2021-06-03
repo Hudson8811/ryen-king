@@ -4,25 +4,49 @@
 
     &__row {
         display: flex;
+        justify-content: space-between;
     }
 
     &__column {
         width: calc(80% - 40px);
+
+        @include media('tablet-1000', true) {
+            width: 100%;
+        }
     }
 
     &__card {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        display: grid;
+        cursor: pointer;
 
         &:not(:last-child) {
             margin-bottom: 80px;
+
+            @include media('tablet-1000', true) {
+                margin-bottom: 60px;
+            }
+        }
+
+        .services__tab {
+            display: none;
+
+            @include media('tablet-1000', true) {
+                display: block;
+            }
         }
     }
 
     &__card-title {
         display: flex;
         transition: color .3s ease;
+
+        @include media('tablet-1000', true) {
+            margin-bottom: 40px;
+        }
+
+        @include media('mobile-450', true) {
+            flex-direction: column;
+        }
 
         &.active {
             color: $main-green;
@@ -40,24 +64,67 @@
     }
 
     &__tabs {
-        width: 20%;
-    }
-
-    &__tab {
+        flex: 1 0 auto;
+        position: relative;
         max-width: 324px;
-        width: 100%;
-        // transition: opacity .3s ease;
-        display: none;
 
-        &.active {
-            display: block;
+        @include media('tablet-1000', true) {
+            display: none;
         }
     }
 
-    &__tab-img-wrapper {}
+    &__tab {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 324px;
+        width: 100%;
+        opacity: 0;
+        transition: opacity .3s ease, height .3s ease;
+
+        @include media('tablet-1000', true) {
+            position: static;
+            max-width: 100%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        &.active {
+            opacity: 1;
+
+            @include media('tablet-1000', true) {
+                position: static;
+                opacity: 1;
+                max-width: 100%;
+            }
+        }
+    }
+
+    &__tab-img-wrapper {
+        @include media('tablet-1000', true) {
+            position: relative;
+            margin-bottom: 40px;
+
+            &::after {
+                display: block;
+                content: '';
+                padding-top: 400/678 * 100%;
+            }
+        }
+    }
 
     &__tab-img {
         margin-bottom: 40px;
+
+        @include media('tablet-1000', true) {
+            margin-bottom: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+        }
     }
 
     &__tab-desc {

@@ -21,6 +21,7 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-start;
+        margin-bottom: 20px;
 
         @include media('tablet-1200', true) {
             width: 60%;
@@ -32,17 +33,33 @@
             margin-bottom: 40px;
         }
 
-        @include media('mobile-520', true) {
+        @include media('mobile-620', true) {
             width: 100%;
             margin-bottom: 40px;
         }
     }
 
     &__resume-text {
+        color: $light-grey;
         margin-bottom: toVh(70);
+
+        @include media('mobile-620', true) {
+            width: 100%;
+            margin-bottom: 40px;
+        }
     }
 
-    &__resume-button {}
+    &__resume-button {
+        min-width: 323px;
+
+        @include media('mobile', true) {
+            min-width: 299px;
+        }
+
+        @include media('mobile-450', true) {
+            min-width: 207px;
+        }
+    }
 
     &__history {
         width: 1052/1780 * 100%;
@@ -50,12 +67,43 @@
         @include media('tablet-1200', true) {
             width: 100%;
         }
+
+        @include media('mobile', true) {
+            margin-bottom: 40px;
+        }
     }
 
     &__card {
+        padding: 50px 0;
+        color: $dark-grey-2;
+        transition: color .3s linear, border .3s linear;
+        cursor: url('../img/main/experience/cursor1.png') 62 62, pointer;
+        z-index: 10;
+        position: relative;
+        display: block;
+
+        &.active {
+            color: $main-white;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $light-grey;
+            }
+        }
+
+        @include media('tablet-1000', true) {
+            padding: 30px 0;
+        }
+
+        @include media('mobile-620', true) {
+            padding: 20px 0;
+        }
+
         &:not(:last-child) {
-            border-bottom: 1px solid $light-grey;
-            margin-bottom: toVh(50);
+            border-bottom: 1px solid $dark-grey-2;
+        }
+
+        &:hover {
+            // cursor: url('../img/main/experience/cursor1.png') 62 62, pointer;
         }
     }
 
@@ -65,11 +113,25 @@
         margin-bottom: 10px;
     }
 
-    &__position {}
+    &__position {
+        @include media('mobile-620', true) {
+            width: 50%;
+        }
+    }
 
-    &__company {}
+    &__company {
+        align-items: center;
+    }
 
     &__date {
-        margin-bottom: toVh(50);
+        // margin-bottom: toVh(50);
+
+        // @include media('tablet-1000', true) {
+        //     margin-bottom: 30px;
+        // }
+
+        // @include media('mobile-620', true) {
+        //     margin-bottom: 20px;
+        // }
     }
 }
