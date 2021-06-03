@@ -4,8 +4,7 @@
   }
 
   &__slide {
-    &-sm {
-    }
+    &-sm {}
 
     &-xs {
       @include media("tablet-1000", true) {
@@ -15,6 +14,8 @@
   }
 
   &__row {
+    cursor: url("../img/cursor-slider.png") 62 62, auto;
+
   }
 
   &__title {
@@ -26,7 +27,6 @@
   }
 
   &__swiper-container {
-    cursor: url("../img/cursor-slider.png") 62 62, auto;
     margin-right: -70px;
     overflow: hidden;
 
@@ -49,8 +49,7 @@
     }
   }
 
-  &__swiper-slide {
-  }
+  &__swiper-slide {}
 
   &__card {
     height: 630px;
@@ -66,8 +65,7 @@
     }
   }
 
-  &__img {
-  }
+  &__img {}
 
   &__text {
     position: absolute;
@@ -85,18 +83,14 @@
     }
   }
 
-  &__swiper-button-prev {
-  }
+  &__swiper-button-prev {}
 
-  &__swiper-button-next {
-  }
+  &__swiper-button-next {}
 }
 
-.swiper-container2 {
-}
+.swiper-container2 {}
 
-.swiper-wrapper {
-}
+.swiper-wrapper {}
 
 .swiper-slide {
   width: auto;
@@ -106,8 +100,7 @@
   margin-right: 10px;
 }
 
-.swiper-button-next2 {
-}
+.swiper-button-next2 {}
 
 .swiper-button-wrapper {
   display: flex;
