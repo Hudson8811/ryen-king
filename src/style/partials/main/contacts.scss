@@ -1,264 +1,270 @@
 .contacts {
+  &__container {
+    position: relative;
+  }
 
-    &__container {
-        position: relative;
+  &__row {
+    display: flex;
+
+    @include media("tablet-1200", true) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+
+    &:first-child {
+      width: calc(40%);
+      padding-right: 40px;
+
+      @include media("tablet-1200", true) {
+        width: 100%;
+        margin-bottom: 110px;
+        padding-right: 0;
+      }
+
+      @include media("mobile", true) {
+        width: 100%;
+        margin-bottom: 77px;
+        padding-right: 0;
+      }
     }
 
-    &__row {
-        display: flex;
+    &:last-child {
+      width: 60%;
 
-        @include media('tablet-1200', true) {
-            flex-direction: column-reverse;
-        }
-    }
-
-    &__column {
-        display: flex;
-        flex-direction: column;
-
-        &:first-child {
-            width: calc(40%);
-            padding-right: 40px;
-
-            @include media('tablet-1200', true) {
-                width: 100%;
-                margin-bottom: 110px;
-                padding-right: 0;
-            }
-
-            @include media('mobile', true) {
-                width: 100%;
-                margin-bottom: 77px;
-                padding-right: 0;
-            }
-        }
-
-        &:last-child {
-            width: 60%;
-
-            @include media('tablet-1200', true) {
-                width: 100%;
-                margin-bottom: 100px;
-            }
-
-            @include media('mobile', true) {
-                margin-bottom: 60px;
-            }
-        }
-    }
-
-    &__work {
-        max-width: 506px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        height: 100%;
-
-        @include media('tablet-1200', true) {
-            max-width: 100%;
-        }
-    }
-
-    &__work-text {
-        justify-self: flex-end;
-        color: $light-grey;
-        margin-bottom: 180px;
-
-        @include media('tablet', true) {
-            margin-bottom: 100px;
-        }
-
-        @include media('tablet-1200', true) {
-            margin-bottom: 20px;
-            max-width: 506px;
-        }
-
-        @include media('tablet-1000', true) {
-            margin-bottom: 20px;
-            max-width: 60%;
-        }
-
-        @include media('mobile', true) {
-            margin-bottom: 40px;
-            max-width: 80%;
-        }
-
-        @include media('mobile-450', true) {
-            margin-bottom: 40px;
-            max-width: 90%;
-        }
-    }
-
-    &__button-wrapper {
-        display: flex;
-        justify-content: flex-end;
-        overflow: hidden;
-
-        @include media('tablet-1200', true) {
-            margin-right: 120px;
-        }
-
-        @include media('mobile', true) {
-            margin-right: 0;
-        }
-    }
-
-    &__button {
-        @include run-circle;
-
-        svg {
-            @include media('tablet-1000', true) {
-                width: 150px;
-                height: 150px;
-            }
-
-            @include media('mobile-450', true) {
-                width: 120px;
-                height: 120px;
-            }
-        }
-    }
-
-    &__title {
+      @include media("tablet-1200", true) {
+        width: 100%;
         margin-bottom: 100px;
+      }
 
-        @include media('tablet-1200', true) {
-            margin-bottom: 60px;
-        }
+      @include media("mobile", true) {
+        margin-bottom: 60px;
+      }
+    }
+  }
 
-        @include media('mobile', true) {
-            margin-bottom: 40px;
-        }
+  &__work {
+    max-width: 506px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+
+    @include media("tablet-1200", true) {
+      max-width: 100%;
+    }
+  }
+
+  &__work-text {
+    justify-self: flex-end;
+    color: $light-grey;
+    margin-bottom: 180px;
+
+    @include media("tablet", true) {
+      margin-bottom: 100px;
     }
 
-    &__inner {}
-
-    &__wrapper {
-        display: flex;
-
-        @include media('mobile', true) {
-            flex-direction: column;
-        }
+    @include media("tablet-1200", true) {
+      margin-bottom: 20px;
+      max-width: 506px;
     }
 
-    &__contacts {
-        display: flex;
-        flex-direction: column;
-        width: 70%;
-
-        @include media('mobile', true) {
-            margin-bottom: 50px;
-            width: 100%;
-        }
+    @include media("tablet-1000", true) {
+      margin-bottom: 20px;
+      max-width: 60%;
     }
 
-    &__contact {
-        max-width: 383px;
-
-        @include media('tablet', true) {
-            max-width: 325px;
-
-        }
-
-        &:not(:last-child) {
-            margin-bottom: 100px;
-
-            @include media('tablet-1200', true) {
-                margin-bottom: 40px;
-            }
-
-            @include media('mobile', true) {
-                margin-bottom: 30px;
-            }
-        }
-
+    @include media("mobile", true) {
+      margin-bottom: 40px;
+      max-width: 80%;
     }
 
-    &__contact-title {
-        margin-bottom: 20px;
-        color: $light-grey;
+    @include media("mobile-450", true) {
+      margin-bottom: 40px;
+      max-width: 90%;
+      font-size: 12px;
+    }
+  }
 
-        @include media('mobile', true) {
-            margin-bottom: 10px;
-        }
+  &__button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+
+    @include media("tablet-1200", true) {
+      margin-right: 120px;
     }
 
-    &__contact-item {}
+    @include media("mobile", true) {
+      margin-right: 0;
+    }
+  }
 
-    &__adress {}
+  &__button {
+    @include run-circle;
 
-    &__tel {
-        @include hover-link
+    svg {
+      @include media("tablet-1000", true) {
+        width: 150px;
+        height: 150px;
+      }
+
+      @include media("mobile-450", true) {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 100px;
+
+    @include media("tablet-1200", true) {
+      margin-bottom: 60px;
     }
 
-    &__mail {
-        text-transform: none;
-        position: relative;
-        @include hover-link
+    @include media("mobile", true) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__inner {
+  }
+
+  &__wrapper {
+    display: flex;
+
+    @include media(767) {
+      flex-direction: column;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+
+    @include media("mobile", true) {
+      margin-bottom: 50px;
+      width: 100%;
+    }
+  }
+
+  &__contact {
+    max-width: 383px;
+
+    @include media("tablet", true) {
+      max-width: 325px;
     }
 
-    &__follow {
-        width: 30%;
-        display: flex;
-        flex-direction: column;
+    &:not(:last-child) {
+      margin-bottom: 100px;
 
-        @include media('mobile', true) {
-            width: 100%;
-        }
+      @include media("tablet-1200", true) {
+        margin-bottom: 40px;
+      }
+
+      @include media("mobile", true) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__contact-title {
+    margin-bottom: 20px;
+    color: $light-grey;
+
+    @include media("mobile", true) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__contact-item {
+  }
+
+  &__adress {
+  }
+
+  &__tel {
+    @include hover-link;
+  }
+
+  &__mail {
+    text-transform: none;
+    position: relative;
+    @include hover-link;
+  }
+
+  &__follow {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+    @include media("mobile", true) {
+      width: 100%;
+    }
+  }
+
+  &__follow-link-wrapper {
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @include media("tablet-1200", true) {
+        margin-bottom: 10px;
+      }
+
+      @include media("mobile", true) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__follow-link {
+    text-transform: none;
+    position: relative;
+
+    @include hover-link;
+  }
+
+  &__private {
+    position: fixed;
+    bottom: 50px;
+    left: 70px;
+    color: $light-grey;
+
+    @include media("tablet-1200", true) {
+      left: 45px;
+      bottom: 50px;
     }
 
-    &__follow-link-wrapper {
-        cursor: pointer;
-
-        &:not(:last-child) {
-            margin-bottom: 20px;
-
-            @include media('tablet-1200', true) {
-                margin-bottom: 10px;
-            }
-
-            @include media('mobile', true) {
-                margin-bottom: 5px;
-            }
-        }
+    @include media("mobile", true) {
+      font-size: 14px;
+      left: 45px;
+      bottom: 30px;
     }
 
-    &__follow-link {
-        text-transform: none;
-        position: relative;
-
-        @include hover-link
+    @include media("mobile-620", true) {
+      left: 10px;
+      bottom: 15px;
     }
 
-    &__private {
-        position: fixed;
-        bottom: 50px;
-        left: 70px;
-        color: $light-grey;
+    @include media("mobile-450") {
+      font-size: 12px;
+    }
+  }
 
-        @include media('tablet-1200', true) {
-            left: 45px;
-            bottom: 50px;
-        }
-
-        @include media('mobile', true) {
-            left: 45px;
-            bottom: 30px;
-        }
-
-        @include media('mobile-620', true) {
-            left: 10px;
-            bottom: 15px;
-        }
+  @keyframes animation-circle {
+    0% {
+      transform: rotate(0);
     }
 
-    @keyframes animation-circle {
-        0% {
-            transform: rotate(0);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
+    100% {
+      transform: rotate(360deg);
     }
+  }
 }

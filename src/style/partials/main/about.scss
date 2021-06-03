@@ -1,178 +1,201 @@
 .about {
+  &__container {
+  }
 
-    &__container {}
+  &__row {
+    width: 100%;
 
-    &__row {
-        width: 100%;
-
-        @include media('mobile', false) {
-            display: grid;
-            grid-template-rows: 1fr auto;
-            grid-template-columns: 60% calc(40% - 40px);
-            column-gap: 40px;
-            grid-template-areas:
-                "title title"
-                "work-info work-info"
-                "img-wrapper skills";
-        }
-
-        @include media('tablet-1200', false) {
-            display: grid;
-            grid-template-rows: 1fr auto;
-            grid-template-columns: calc(30% - 40px) calc(50% - 40px) 20%;
-            column-gap: 40px;
-            grid-template-areas:
-                "title img-wrapper work-info"
-                "skills img-wrapper work-info";
-        }
-
-        @include media('tablet', false) {
-            display: grid;
-            grid-template-rows: 1fr auto;
-            grid-template-columns: calc(40% - 40px) calc(40% - 40px) 20%;
-            column-gap: 40px;
-            grid-template-areas:
-                "title img-wrapper work-info"
-                "skills img-wrapper work-info";
-        }
+    @include media("mobile", false) {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      grid-template-columns: 60% calc(40% - 40px);
+      column-gap: 40px;
+      grid-template-areas:
+        "title title"
+        "work-info work-info"
+        "img-wrapper skills";
     }
 
-    &__title {
-        grid-area: title;
-
-
-        @include media('tablet-1200', true) {
-            margin-bottom: 60px;
-        }
+    @include media("tablet-1200", false) {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      grid-template-columns: calc(30% - 40px) calc(50% - 40px) 20%;
+      column-gap: 40px;
+      grid-template-areas:
+        "title img-wrapper work-info"
+        "skills img-wrapper work-info";
     }
 
-    &__skills {
-        grid-area: skills;
-        display: grid;
-        grid-template-rows: 1fr auto;
-        grid-template-columns: calc(50% - 20px) calc(50% - 20px);
-        column-gap: 40px;
-        grid-template-areas:
-            "title-one title-two"
-            "desc-one desc-two";
+    @include media("tablet", false) {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      grid-template-columns: calc(40% - 40px) calc(40% - 40px) 20%;
+      column-gap: 40px;
+      grid-template-areas:
+        "title img-wrapper work-info"
+        "skills img-wrapper work-info";
+    }
+  }
 
-        @include media('tablet-1200', true) {}
+  &__title {
+    grid-area: title;
 
-        @include media('tablet', true) {
-            display: grid;
-            grid-template-columns: 100%;
-            column-gap: 0px;
-            grid-template-rows: auto;
-            grid-template-areas:
-                "title-one"
-                "desc-one"
-                "title-two"
-                "desc-two";
-        }
+    @include media("tablet-1200", true) {
+      margin-bottom: 60px;
+    }
+  }
 
-        @include media('mobile', true) {
-            display: grid;
-            grid-template-columns: calc(50% - 15px) calc(50% - 15px);
-            column-gap: 30px;
-            grid-template-rows: auto;
-            grid-template-areas:
-                "title-one title-two"
-                "desc-one desc-two";
-        }
+  &__skills {
+    grid-area: skills;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: calc(50% - 20px) calc(50% - 20px);
+    column-gap: 40px;
+    grid-template-areas:
+      "title-one title-two"
+      "desc-one desc-two";
 
-        @include media('520', true) {
-            display: grid;
-            grid-template-columns: 50%;
-            column-gap: 30px;
-            grid-template-rows: auto;
-            grid-template-areas:
-                "title-one title-two"
-                "desc-one desc-one"
-                "desc-two desc-two";
-        }
+    @include media("tablet-1200", true) {
     }
 
-
-    &__skill-title {
-        display: flex;
-        align-items: center;
-        margin-bottom: 84px;
-
-        @include media('tablet', true) {
-            margin-bottom: 30px;
-        }
-
-        div {
-            margin-right: 10px;
-        }
-
-        &-one {
-            grid-area: title-one;
-        }
-
-        &-two {
-            grid-area: title-two;
-        }
+    @include media("tablet", true) {
+      display: grid;
+      grid-template-columns: 100%;
+      column-gap: 0px;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "title-one"
+        "desc-one"
+        "title-two"
+        "desc-two";
     }
 
-    &__skill-desc {
-        &-one {
-            grid-area: desc-one;
-
-            @include media('tablet', true) {
-                margin-bottom: 40px;
-            }
-        }
-
-        &-two {
-            grid-area: desc-two;
-
-            @include media('tablet', true) {
-                margin-bottom: 40px;
-            }
-        }
+    @include media("mobile", true) {
+      display: grid;
+      grid-template-columns: calc(50% - 15px) calc(50% - 15px);
+      column-gap: 30px;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "title-one title-two"
+        "desc-one desc-two";
     }
 
-    &__img-wrapper {
-        grid-area: img-wrapper;
-        position: relative;
-        width: 100%;
-        height: toVh(980);
-        margin-top: -70px;
+    @include media("520", true) {
+      display: grid;
+      grid-template-columns: 50%;
+      column-gap: 30px;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "title-one title-two"
+        "desc-one desc-one"
+        "desc-two desc-two";
+    }
+  }
 
-        @include media('tablet-1200', true) {
-            margin-top: 0;
-        }
+  &__skill-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 84px;
 
-        @include media('mobile', true) {
-            margin-bottom: 60px;
-            height: toVh(900);
-        }
+    @include media("tablet", true) {
+      margin-bottom: 30px;
     }
 
-    &__img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        object-position: center;
+    div {
+      margin-right: 10px;
     }
 
-    &__work-info {
-        margin-top: 240px;
-        text-transform: none;
-        grid-area: work-info;
-
-        @include media('tablet-1200', true) {
-            width: 60%;
-            margin-top: 0;
-            margin-bottom: 40px;
-        }
-
-        @include media('mobile', true) {
-            width: 100%;
-        }
+    &-one {
+      grid-area: title-one;
     }
+
+    &-two {
+      grid-area: title-two;
+    }
+  }
+
+  &__skill-desc {
+    @include media("mobile-450") {
+      font-size: 12px;
+    }
+
+    &-one {
+      grid-area: desc-one;
+
+      @include media("tablet", true) {
+        margin-bottom: 40px;
+      }
+    }
+
+    &-two {
+      grid-area: desc-two;
+
+      @include media("tablet", true) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__skill-counter {
+    @include media("mobile") {
+      font-size: 50px;
+    }
+
+    @include media("mobile-450") {
+      font-size: 40px;
+    }
+  }
+
+  &__skill-name {
+    @include media("mobile") {
+      font-size: 14px;
+    }
+
+    @include media("mobile-450") {
+      font-size: 12px;
+    }
+  }
+
+  &__img-wrapper {
+    grid-area: img-wrapper;
+    position: relative;
+    width: 100%;
+    height: toVh(980);
+    margin-top: -70px;
+
+    @include media("tablet-1200", true) {
+      margin-top: 0;
+    }
+
+    @include media("mobile", true) {
+      margin-bottom: 60px;
+      height: toVh(900);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__work-info {
+    margin-top: 240px;
+    text-transform: none;
+    grid-area: work-info;
+
+    @include media("tablet-1200", true) {
+      width: 60%;
+      margin-top: 0;
+      margin-bottom: 40px;
+    }
+
+    @include media("mobile", true) {
+      width: 100%;
+    }
+  }
 }

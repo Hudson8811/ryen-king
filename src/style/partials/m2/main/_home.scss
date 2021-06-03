@@ -97,7 +97,7 @@
 
     &__name {
       order: 1;
-      max-width: 527px;
+      max-width: 400px;
 
       @include media("tablet") {
         max-width: 300px;
@@ -151,15 +151,16 @@
       height: 200px;
       background: url("../img/main/home/button.svg") no-repeat;
       background-size: contain;
-      @include animation;
+      @include run-circle;
+      // @include animation;
 
       // Hover
-      @include media(993, false) {
-        &:hover {
-          transform: rotate(45deg);
-          @include animation;
-        }
-      }
+      // @include media(993, false) {
+      //   &:hover {
+      //     transform: rotate(45deg);
+      //     @include animation;
+      //   }
+      // }
 
       @include media(1900) {
         right: 5%;
