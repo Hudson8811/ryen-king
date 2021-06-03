@@ -122,7 +122,7 @@
       transform: translateX(100%);
     }
 
-    @include media(767, true) {
+    @include media("mobile-450", true) {
       width: 100vw;
     }
 
