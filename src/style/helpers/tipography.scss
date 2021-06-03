@@ -66,6 +66,10 @@
         font-size: 50px;
       }
 
+      @include media("mobile", true) {
+        font-size: 22px;
+      }
+
       // @include media('mobile', true) {
       //   font-size: 36px;
       // }

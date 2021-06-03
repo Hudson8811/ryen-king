@@ -79,6 +79,10 @@
       font-size: 24px;
       line-height: 120%;
     }
+
+    @include media("mobile-450") {
+      font-size: 18px;
+    }
   }
 
   &__swiper-button-prev {

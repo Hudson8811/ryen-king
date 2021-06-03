@@ -85,6 +85,7 @@
     @include media("mobile-450", true) {
       margin-bottom: 40px;
       max-width: 90%;
+      font-size: 12px;
     }
   }
 
@@ -250,6 +251,10 @@
     @include media("mobile-620", true) {
       left: 10px;
       bottom: 15px;
+    }
+
+    @include media("mobile-450") {
+      font-size: 12px;
     }
   }
 

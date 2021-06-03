@@ -47,6 +47,10 @@
       width: 100%;
       margin-bottom: 40px;
     }
+
+    @include media("mobile-450") {
+      font-size: 12px;
+    }
   }
 
   &__resume-button {
@@ -127,9 +131,23 @@
       font-size: 18px;
       line-height: 140%;
     }
+
+    @include media("mobile-450") {
+      font-size: 12px;
+    }
+    @include media("mobile-450") {
+      font-size: 12px;
+    }
+    @include media("mobile-450") {
+      font-size: 12px;
+    }
   }
 
   &__date {
+    @include media("mobile-450") {
+      font-size: 12px;
+      color: $light-grey;
+    }
     // margin-bottom: toVh(50);
 
     // @include media('tablet-1000', true) {

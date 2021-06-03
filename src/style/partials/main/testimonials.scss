@@ -1,163 +1,179 @@
-    .testimonials {
+.testimonials {
+  &__container {
+  }
 
-        &__container {}
+  &__row {
+    padding-left: calc(10% - 20px);
 
-        &__row {
-            padding-left: calc(10% - 20px);
+    @include media("1920", true) {
+      padding-left: 0;
+    }
+  }
 
-            @include media('1920', true) {
-                padding-left: 0;
-            }
-        }
+  &__title {
+    margin-bottom: 100px;
+    text-align: center;
 
-        &__title {
-            margin-bottom: 100px;
-            text-align: center;
-
-            @include media('tablet-1000', true) {
-                margin-bottom: 60px;
-                text-align: left;
-            }
-
-            @include media('mobile-620', true) {
-                margin-bottom: 40px;
-            }
-        }
-
-        &__swiper-container {
-            overflow: hidden;
-            cursor: url('../img/cursor-slider.png') 62 62, auto;
-        }
-
-        &__swiper-wrapper {}
-
-        &__swiper-slide {}
-
-        &__card {
-            display: flex;
-
-            @include media('tablet', true) {
-                flex-direction: column;
-            }
-        }
-
-        &__img-wrapper {
-            margin-right: 40px;
-
-            @include media('tablet', true) {
-                margin-right: 0;
-                margin-bottom: 30px;
-            }
-
-            @include media('tablet-1000', true) {
-                width: 324px;
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-
-            @include media('mobile-450', true) {
-                margin-bottom: 10px;
-                max-width: 300px;
-            }
-
-        }
-
-        &__img {}
-
-        &__content {
-            padding: 70px;
-            max-width: 870px;
-            width: 100%;
-            height: 580px;
-            background-color: $dark-grey-1;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: space-between;
-
-            @include media('tablet', true) {
-                max-width: 506px;
-                padding: 46px 30px;
-                margin-bottom: 20px;
-                height: auto;
-                min-height: 588px;
-            }
-
-            @include media('tablet-1200', true) {
-                padding: 46px 30px;
-                margin-bottom: 20px;
-                height: auto;
-                min-height: 408px;
-            }
-
-            @include media('tablet-1000', true) {
-                max-width: 324px;
-                padding: 46px 30px;
-                margin-bottom: 20px;
-                height: auto;
-                min-height: 408px;
-            }
-
-            @include media('mobile-450', true) {
-                max-width: 300px;
-                padding: 40px 23px;
-                margin-bottom: 20px;
-                height: auto;
-                min-height: 314px;
-            }
-        }
-
-        &__inner {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        &__swiper-button-wrapper {
-            display: flex;
-            align-items: flex-end;
-
-            @include media('tablet-1000', true) {
-                display: none !important;
-            }
-        }
-
-        &__content-img {
-            margin-bottom: 40px;
-
-            @include media('tablet-1000', true) {
-                width: 19px;
-                height: 18px;
-            }
-        }
-
-        &__content-text {
-            margin-bottom: 70px;
-
-            @include media('tablet-1000', true) {
-                margin-bottom: 40px;
-            }
-        }
-
-        &__content-author {
-            margin-bottom: 10px;
-        }
-
-        &__content-company {}
-
-        &__swiper-button-prev {
-            margin-right: 10px;
-        }
-
-        &__swiper-button-next {}
+    @include media("tablet-1000", true) {
+      margin-bottom: 60px;
+      text-align: left;
     }
 
-    .swiper-container2 {}
+    @include media("mobile-620", true) {
+      margin-bottom: 40px;
+    }
+  }
 
-    .swiper-wrapper {}
+  &__swiper-container {
+    overflow: hidden;
+    cursor: url("../img/cursor-slider.png") 62 62, auto;
+  }
 
-    .swiper-slide {}
+  &__swiper-wrapper {
+  }
 
-    .swiper-button-prev2 {}
+  &__swiper-slide {
+  }
 
-    .swiper-button-next2 {}
+  &__card {
+    display: flex;
+
+    @include media("tablet", true) {
+      flex-direction: column;
+    }
+  }
+
+  &__img-wrapper {
+    margin-right: 40px;
+
+    @include media("tablet", true) {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+
+    @include media("tablet-1000", true) {
+      width: 324px;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    @include media("mobile-450", true) {
+      margin-bottom: 10px;
+      max-width: 300px;
+    }
+  }
+
+  &__img {
+  }
+
+  &__content {
+    padding: 70px;
+    max-width: 870px;
+    width: 100%;
+    height: 580px;
+    background-color: $dark-grey-1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include media("tablet", true) {
+      max-width: 506px;
+      padding: 46px 30px;
+      margin-bottom: 20px;
+      height: auto;
+      min-height: 588px;
+    }
+
+    @include media("tablet-1200", true) {
+      padding: 46px 30px;
+      margin-bottom: 20px;
+      height: auto;
+      min-height: 408px;
+    }
+
+    @include media("tablet-1000", true) {
+      max-width: 324px;
+      padding: 46px 30px;
+      margin-bottom: 20px;
+      height: auto;
+      min-height: 408px;
+    }
+
+    @include media("mobile-450", true) {
+      max-width: 300px;
+      padding: 40px 23px;
+      margin-bottom: 20px;
+      height: auto;
+      min-height: 314px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__swiper-button-wrapper {
+    display: flex;
+    align-items: flex-end;
+
+    @include media("tablet-1000", true) {
+      display: none !important;
+    }
+  }
+
+  &__content-img {
+    margin-bottom: 40px;
+
+    @include media("tablet-1000", true) {
+      width: 19px;
+      height: 18px;
+    }
+  }
+
+  &__content-text {
+    margin-bottom: 70px;
+
+    @include media("tablet-1000", true) {
+      margin-bottom: 40px;
+    }
+
+    @include media("mobile-450") {
+      font-size: 12px;
+    }
+  }
+
+  &__content-author {
+    margin-bottom: 10px;
+  }
+
+  &__content-company {
+    @include media("mobile-450") {
+      font-size: 12px;
+    }
+  }
+
+  &__swiper-button-prev {
+    margin-right: 10px;
+  }
+
+  &__swiper-button-next {
+  }
+}
+
+.swiper-container2 {
+}
+
+.swiper-wrapper {
+}
+
+.swiper-slide {
+}
+
+.swiper-button-prev2 {
+}
+
+.swiper-button-next2 {
+}

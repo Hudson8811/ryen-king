@@ -84,6 +84,10 @@
     @include media("mobile") {
       font-size: 14px;
     }
+
+    @include media("mobile-450") {
+      font-size: 12px;
+    }
   }
 
   &__card-title {
@@ -91,6 +95,10 @@
 
     @include media("mobile") {
       font-size: 24px;
+    }
+
+    @include media("mobile-450") {
+      font-size: 18px;
     }
   }
 

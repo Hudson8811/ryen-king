@@ -115,6 +115,10 @@
   }
 
   &__skill-desc {
+    @include media("mobile-450") {
+      font-size: 12px;
+    }
+
     &-one {
       grid-area: desc-one;
 
@@ -136,11 +140,19 @@
     @include media("mobile") {
       font-size: 50px;
     }
+
+    @include media("mobile-450") {
+      font-size: 40px;
+    }
   }
 
   &__skill-name {
     @include media("mobile") {
       font-size: 14px;
+    }
+
+    @include media("mobile-450") {
+      font-size: 12px;
     }
   }
 

@@ -69,6 +69,11 @@
       font-size: 70px;
       line-height: 110%;
     }
+
+    @include media("mobile-450") {
+      font-size: 32px;
+      line-height: 90%;
+    }
   }
 
   &__card-desc {
@@ -143,5 +148,9 @@
 
   &__tab-desc {
     color: $light-grey;
+
+    @include media("mobile-450") {
+      font-size: 12px;
+    }
   }
 }
