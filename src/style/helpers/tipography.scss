@@ -66,23 +66,13 @@
         font-size: 50px;
       }
 
-<<<<<<< HEAD
       @include media("mobile", true) {
-        font-size: 22px;
-      }
-
-      // @include media('mobile', true) {
-      //   font-size: 36px;
-      // }
-=======
-      @include media('mobile', true) {
         font-size: 36px;
       }
 
-      @include media('mobile-450', true) {
+      @include media("mobile-450", true) {
         font-size: 22px;
       }
->>>>>>> 952adf208f54a7c08f2dad75f7fe4416c3cd121f
     }
   }
 
