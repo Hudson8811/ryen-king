@@ -109,6 +109,7 @@
     font-size: 40px;
     line-height: 120%;
     transition: 0.3s;
+    opacity: 0;
     transform: translateX(-100%);
 
     // Added
@@ -132,6 +133,7 @@
     }
 
     &.active {
+      opacity: 1;
       transform: translateX(0);
 
       .header__menu-list {
