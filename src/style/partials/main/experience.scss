@@ -1,137 +1,143 @@
 .experience {
+  &__container {
+  }
 
-    &__container {}
+  &__title {
+    margin-bottom: toVh(50);
+  }
 
-    &__title {
-        margin-bottom: toVh(50);
+  &__row {
+    display: flex;
+    justify-content: space-between;
+
+    @include media("tablet-1200", true) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__resume {
+    width: 550/1780 * 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+    @include media("tablet-1200", true) {
+      width: 60%;
+      margin-bottom: 40px;
     }
 
-    &__row {
-        display: flex;
-        justify-content: space-between;
-
-        @include media('tablet-1200', true) {
-            flex-direction: column-reverse;
-        }
+    @include media("mobile", true) {
+      width: 80%;
+      margin-bottom: 40px;
     }
 
-    &__resume {
-        width: 550/1780 * 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        margin-bottom: 20px;
+    @include media("mobile-620", true) {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+  }
 
-        @include media('tablet-1200', true) {
-            width: 60%;
-            margin-bottom: 40px;
-        }
+  &__resume-text {
+    color: $light-grey;
+    margin-bottom: toVh(70);
 
-        @include media('mobile', true) {
-            width: 80%;
-            margin-bottom: 40px;
-        }
+    @include media("mobile-620", true) {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+  }
 
-        @include media('mobile-620', true) {
-            width: 100%;
-            margin-bottom: 40px;
-        }
+  &__resume-button {
+    min-width: 323px;
+
+    @include media("mobile", true) {
+      min-width: 299px;
     }
 
-    &__resume-text {
-        color: $light-grey;
-        margin-bottom: toVh(70);
+    @include media("mobile-450", true) {
+      min-width: 207px;
+    }
+  }
 
-        @include media('mobile-620', true) {
-            width: 100%;
-            margin-bottom: 40px;
-        }
+  &__history {
+    width: 1052/1780 * 100%;
+
+    @include media("tablet-1200", true) {
+      width: 100%;
     }
 
-    &__resume-button {
-        min-width: 323px;
+    @include media("mobile", true) {
+      margin-bottom: 40px;
+    }
+  }
 
-        @include media('mobile', true) {
-            min-width: 299px;
-        }
+  &__card {
+    padding: 50px 0;
+    color: $dark-grey-2;
+    transition: color 0.3s linear, border 0.3s linear;
+    cursor: url("../img/main/experience/cursor1.png") 62 62, pointer;
+    z-index: 10;
+    position: relative;
+    display: block;
 
-        @include media('mobile-450', true) {
-            min-width: 207px;
-        }
+    &.active {
+      color: $main-white;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $light-grey;
+      }
     }
 
-    &__history {
-        width: 1052/1780 * 100%;
-
-        @include media('tablet-1200', true) {
-            width: 100%;
-        }
-
-        @include media('mobile', true) {
-            margin-bottom: 40px;
-        }
+    @include media("tablet-1000", true) {
+      padding: 30px 0;
     }
 
-    &__card {
-        padding: 50px 0;
-        color: $dark-grey-2;
-        transition: color .3s linear, border .3s linear;
-        cursor: url('../img/main/experience/cursor1.png') 62 62, pointer;
-        z-index: 10;
-        position: relative;
-        display: block;
-
-        &.active {
-            color: $main-white;
-
-            &:not(:last-child) {
-                border-bottom: 1px solid $light-grey;
-            }
-        }
-
-        @include media('tablet-1000', true) {
-            padding: 30px 0;
-        }
-
-        @include media('mobile-620', true) {
-            padding: 20px 0;
-        }
-
-        &:not(:last-child) {
-            border-bottom: 1px solid $dark-grey-2;
-        }
-
-        &:hover {
-            // cursor: url('../img/main/experience/cursor1.png') 62 62, pointer;
-        }
+    @include media("mobile-620", true) {
+      padding: 20px 0;
     }
 
-    &__card-top {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
+    &:not(:last-child) {
+      border-bottom: 1px solid $dark-grey-2;
     }
 
-    &__position {
-        @include media('mobile-620', true) {
-            width: 50%;
-        }
+    &:hover {
+      // cursor: url('../img/main/experience/cursor1.png') 62 62, pointer;
     }
+  }
 
-    &__company {
-        align-items: center;
+  &__card-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &__position {
+    @include media("mobile-620", true) {
+      width: 50%;
     }
+  }
 
-    &__date {
-        // margin-bottom: toVh(50);
+  &__company {
+    align-items: center;
 
-        // @include media('tablet-1000', true) {
-        //     margin-bottom: 30px;
-        // }
-
-        // @include media('mobile-620', true) {
-        //     margin-bottom: 20px;
-        // }
+    @include media("mobile") {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 140%;
     }
+  }
+
+  &__date {
+    // margin-bottom: toVh(50);
+
+    // @include media('tablet-1000', true) {
+    //     margin-bottom: 30px;
+    // }
+
+    // @include media('mobile-620', true) {
+    //     margin-bottom: 20px;
+    // }
+  }
 }
