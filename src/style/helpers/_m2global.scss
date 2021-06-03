@@ -86,6 +86,9 @@
 
 // Probably project global styles
 .m2headline1 {
+  @include media(1920) {
+    font-size: 140px;
+  }
   @include media(1900) {
     font-size: 120px;
   }
