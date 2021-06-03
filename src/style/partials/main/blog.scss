@@ -17,6 +17,9 @@
       margin-bottom: 40px;
     }
   }
+  &__row {
+    cursor: url("../img/cursor-slider.png") 62 62, auto;
+  }
 
   &__swiper-container {
     margin-right: -70px;
