@@ -1,147 +1,145 @@
 .blog {
-  &__container {
-    position: relative;
-  }
-
-  &__row {
-  }
-
-  &__title {
-    margin-bottom: 70px;
-
-    @include media("tablet-1000", true) {
-      margin-bottom: 60px;
+    &__container {
+        position: relative;
     }
 
-    @include media("mobile", true) {
-      margin-bottom: 40px;
-    }
-  }
-  &__row {
-    cursor: url("../img/cursor-slider.png") 62 62, auto;
-  }
+    &__row {}
 
-  &__swiper-container {
-    margin-right: -70px;
-    overflow: hidden;
+    &__title {
+        margin-bottom: 60px;
 
-    @include media("tablet-1200", true) {
-      margin-right: -45px;
+        @include media("tablet-1000", true) {
+            margin-bottom: 50px;
+        }
+
+        @include media("mobile", true) {
+            margin-bottom: 40px;
+        }
     }
 
-    @include media("mobile-620", true) {
-      margin-right: -10px;
-    }
-  }
-
-  &__swiper-wrapper {
-  }
-
-  &__swiper-slide {
-    &-sm {
+    &__row {
+        cursor: url("../img/cursor-slider.png") 62 62, auto;
     }
 
-    &-xl {
-      @include media("tablet-1000", true) {
-        display: none;
-      }
-    }
-  }
+    &__swiper-container {
+        margin-right: -70px;
+        overflow: hidden;
 
-  &__card {
-    &-md {
-      max-width: 688px;
-    }
+        @include media("tablet-1200", true) {
+            margin-right: -45px;
+        }
 
-    &-sm {
-      max-width: 324px;
-
-      @include media("mobile", true) {
-        max-width: 300px;
-      }
-    }
-  }
-
-  &__card-img {
-    margin-bottom: 40px;
-    height: 470px;
-
-    @include media("tablet-1000", true) {
-      margin-bottom: 30px;
+        @include media("mobile-620", true) {
+            margin-right: -10px;
+        }
     }
 
-    @include media("mobile", true) {
-      max-width: 300px;
-      margin-bottom: 20px;
-    }
-  }
+    &__swiper-wrapper {}
 
-  &__card-date {
-    margin-bottom: 20px;
-    color: $light-grey;
+    &__swiper-slide {
+        &-sm {}
 
-    @include media("tablet-1000", true) {
-      margin-bottom: 10px;
+        &-xl {
+            @include media("tablet-1000", true) {
+                display: none;
+            }
+        }
     }
 
-    @include media("mobile") {
-      font-size: 14px;
+    &__card {
+        &-md {
+            max-width: 688px;
+        }
+
+        &-sm {
+            max-width: 324px;
+
+            @include media("mobile", true) {
+                max-width: 300px;
+            }
+
+            @include media("mobile-450", true) {
+                max-width: 200px;
+            }
+        }
     }
 
-    @include media("mobile-450") {
-      font-size: 12px;
+    &__card-img {
+        margin-bottom: 40px;
+        height: 470px;
+
+        @include media("tablet-1000", true) {
+            margin-bottom: 30px;
+        }
+
+        @include media("mobile", true) {
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+
+        @include media("mobile-450", true) {
+            max-width: 200px;
+            height: 300px;
+        }
     }
-  }
 
-  &__card-title {
-    text-transform: none;
+    &__card-date {
+        margin-bottom: 20px;
+        color: $light-grey;
 
-    @include media("mobile") {
-      font-size: 24px;
+        @include media("tablet-1000", true) {
+            margin-bottom: 10px;
+        }
+
+        @include media("mobile") {
+            font-size: 14px;
+        }
+
+        @include media("mobile-450") {
+            font-size: 12px;
+        }
     }
 
-    @include media("mobile-450") {
-      font-size: 18px;
+    &__card-title {
+        text-transform: none;
+
+        @include media("mobile") {
+            font-size: 24px;
+        }
+
+        @include media("mobile-450") {
+            font-size: 18px;
+        }
     }
-  }
 
-  &__swiper-button-prev {
-  }
+    &__swiper-button-prev {}
 
-  &__swiper-button-next {
-  }
+    &__swiper-button-next {}
 }
 
 .section {
-  &__blog {
-  }
+    &__blog {}
 }
 
-.swiper-container2 {
-}
+.swiper-container2 {}
 
-.swiper-wrapper {
-}
+.swiper-wrapper {}
 
-.swiper-slide {
-}
+.swiper-slide {}
 
-.neue-headline3 {
-}
+.neue-headline3 {}
 
-.neue-text2 {
-}
+.neue-text2 {}
 
 .swiper-button-prev2 {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
-.swiper-button-next2 {
-}
+.swiper-button-next2 {}
 
 .swiper-button-wrapper {
-  display: flex;
-  position: absolute;
-  right: 0;
-  top: 0;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
 }

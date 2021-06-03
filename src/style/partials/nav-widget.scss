@@ -10,7 +10,7 @@
         z-index: 100;
         width: 350px;
 
-        @include media('mobile', true) {
+        @include media('tablet-1000', true) {
             display: none;
         }
     }
