@@ -4,7 +4,10 @@
         position: relative;
     }
 
-    &__row {}
+    &__row {
+        cursor: url('../img/cursor-slider.png') 62 62, auto;
+
+    }
 
     &__title {
         margin-bottom: 70px;

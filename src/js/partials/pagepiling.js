@@ -124,15 +124,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         progressBar.style.width = (100 / 9) * index + '%';
       }
-      // function animationActiveSection(index) {
-      //     const anchor = anchors[index];
-      //     const activeSection = document.getElementById(anchor);
-      //     console.log('work')
 
-      //     if (activeSection.classList.contains('active')) {
-      //         setTimeout(activeSection.querySelector('.section-main').style.opacity = 1, 300)
-      //     }
-      // }
+      function animationActiveSection(index) {
+        const anchor = anchors[index];
+        const activeSection = document.getElementById(anchor);
+        console.log('work')
+
+        if (activeSection.classList.contains('active')) {
+          setTimeout(activeSection.querySelector('.section-main').style.opacity = 1, 300)
+        }
+      }
 
       $('#pagepiling').pagepiling({
         anchors: anchors,
@@ -145,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
           setPageNumber(nextIndex - 1);
           // setLabel(nextIndex - 1)
           progressBar(nextIndex);
-          // animationActiveSection(index - 1)
+          animationActiveSection(index - 1)
         },
 
         afterRender: function () {
@@ -153,20 +154,20 @@ document.addEventListener('DOMContentLoaded', function () {
           // setLabel(0)
           // setActiveMenu(0)
           progressBar(1);
-          // animationActiveSection(0)
+          animationActiveSection(0)
         },
       });
     }
 
     initPaging();
 
-    window.addEventListener('resize', initPaging);
+    // window.addEventListener('resize', initPaging);
 
-    // function disabledPreloader() {
-    //     document.getElementById('preloader').style.display = 'none';
-    // }
+    function disabledPreloader() {
+      document.getElementById('preloader').style.display = 'none';
+    }
 
-    // setTimeout(disabledPreloader, 1000);
+    setTimeout(disabledPreloader, 1000);
 
     // $("a.fancybox").fancybox({
     //     type: 'iframe',
