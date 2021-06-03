@@ -1,4 +1,4 @@
-.contact {
+.contacts {
 
     &__container {
         position: relative;
@@ -17,26 +17,32 @@
         flex-direction: column;
 
         &:first-child {
-            width: 680/1780 * 100%;
-            padding-right: 50px;
+            width: calc(40%);
+            padding-right: 40px;
 
             @include media('tablet-1200', true) {
                 width: 100%;
-                margin-bottom: toVh(150);
+                margin-bottom: 110px;
+                padding-right: 0;
+            }
+
+            @include media('mobile', true) {
+                width: 100%;
+                margin-bottom: 77px;
                 padding-right: 0;
             }
         }
 
         &:last-child {
-            width: 1100/1780 * 100%;
+            width: 60%;
 
             @include media('tablet-1200', true) {
                 width: 100%;
-                margin-bottom: toVh(100);
+                margin-bottom: 100px;
             }
 
             @include media('mobile', true) {
-                margin-bottom: 50px;
+                margin-bottom: 60px;
             }
         }
     }
@@ -56,10 +62,10 @@
     &__work-text {
         justify-self: flex-end;
         color: $light-grey;
-        margin-bottom: toVh(230);
+        margin-bottom: 180px;
 
         @include media('tablet', true) {
-            margin-bottom: toVh(100);
+            margin-bottom: 100px;
         }
 
         @include media('tablet-1200', true) {
@@ -73,29 +79,55 @@
         }
 
         @include media('mobile', true) {
-            max-width: 100%;
+            margin-bottom: 40px;
+            max-width: 80%;
+        }
+
+        @include media('mobile-450', true) {
+            margin-bottom: 40px;
+            max-width: 90%;
         }
     }
 
     &__button-wrapper {
         display: flex;
         justify-content: flex-end;
+        overflow: hidden;
+
+        @include media('tablet-1200', true) {
+            margin-right: 120px;
+        }
+
+        @include media('mobile', true) {
+            margin-right: 0;
+        }
     }
 
     &__button {
+        @include run-circle;
+
         svg {
             @include media('tablet-1000', true) {
                 width: 150px;
                 height: 150px;
             }
+
+            @include media('mobile-450', true) {
+                width: 120px;
+                height: 120px;
+            }
         }
     }
 
     &__title {
-        margin-bottom: toVh(100);
+        margin-bottom: 100px;
+
+        @include media('tablet-1200', true) {
+            margin-bottom: 60px;
+        }
 
         @include media('mobile', true) {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
     }
 
@@ -123,29 +155,46 @@
     &__contact {
         max-width: 383px;
 
+        @include media('tablet', true) {
+            max-width: 325px;
+
+        }
+
         &:not(:last-child) {
-            margin-bottom: toVh(100);
+            margin-bottom: 100px;
 
             @include media('tablet-1200', true) {
-                margin-bottom: toVh(35);
+                margin-bottom: 40px;
+            }
+
+            @include media('mobile', true) {
+                margin-bottom: 30px;
             }
         }
 
     }
 
     &__contact-title {
-        margin-bottom: toVh(20);
+        margin-bottom: 20px;
         color: $light-grey;
+
+        @include media('mobile', true) {
+            margin-bottom: 10px;
+        }
     }
 
     &__contact-item {}
 
     &__adress {}
 
-    &__tel {}
+    &__tel {
+        @include hover-link
+    }
 
     &__mail {
         text-transform: none;
+        position: relative;
+        @include hover-link
     }
 
     &__follow {
@@ -158,12 +207,27 @@
         }
     }
 
-    &__follow-link {
-        text-transform: none;
+    &__follow-link-wrapper {
+        cursor: pointer;
 
         &:not(:last-child) {
-            margin-bottom: toVh(20);
+            margin-bottom: 20px;
+
+            @include media('tablet-1200', true) {
+                margin-bottom: 10px;
+            }
+
+            @include media('mobile', true) {
+                margin-bottom: 5px;
+            }
         }
+    }
+
+    &__follow-link {
+        text-transform: none;
+        position: relative;
+
+        @include hover-link
     }
 
     &__private {
@@ -171,5 +235,30 @@
         bottom: 50px;
         left: 70px;
         color: $light-grey;
+
+        @include media('tablet-1200', true) {
+            left: 45px;
+            bottom: 50px;
+        }
+
+        @include media('mobile', true) {
+            left: 45px;
+            bottom: 30px;
+        }
+
+        @include media('mobile-620', true) {
+            left: 10px;
+            bottom: 15px;
+        }
+    }
+
+    @keyframes animation-circle {
+        0% {
+            transform: rotate(0);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
     }
 }

@@ -7,7 +7,7 @@
         @include media('tablet-1200', false) {
             display: grid;
             grid-template-rows: 1fr auto;
-            grid-template-columns: 40% 60%;
+            grid-template-columns: calc(40% - 40px) 60%;
             column-gap: 40px;
             grid-template-areas:
                 "title inner"
@@ -20,6 +20,10 @@
 
         @include media('tablet-1200', true) {
             margin-bottom: 60px;
+        }
+
+        @include media('mobile', true) {
+            margin-bottom: 40px;
         }
     }
 
@@ -36,14 +40,16 @@
     &__contact-bottom {}
 
     &__contact-text {
+        color: $light-grey;
         margin-bottom: toVh(70);
+
+        @include media('mobile', true) {
+            margin-bottom: 40px;
+        }
     }
 
 
-    &__contact-button {
-        max-width: 244px;
-        min-width: 244px;
-    }
+    &__contact-button {}
 
     &__inner {
         grid-area: inner;
@@ -52,7 +58,7 @@
     &__img-wrapper {
         position: relative;
         margin-bottom: toVh(70);
-        height: toVh(317);
+        height: 317px;
         width: 100%;
         overflow: hidden;
 
@@ -61,16 +67,32 @@
             margin-right: -45px;
             margin-left: -45px;
             width: auto;
-
+            margin-bottom: 60px;
         }
+
+        @include media('mobile', true) {
+            height: 189px;
+        }
+
+        @include media('mobile-620', true) {
+            margin-right: -10px;
+            margin-left: -10px;
+            margin-bottom: 40px;
+        }
+
     }
 
     &__img {
         position: absolute;
         top: 0;
         left: 0;
-        width: 1051px;
+        width: 100%;
         height: 317px;
+
+        @include media('mobile', true) {
+            width: 100%;
+            height: 189px;
+        }
 
         @include media('tablet-1200', true) {
             width: 100%;
@@ -85,7 +107,12 @@
         justify-content: space-between;
 
         @include media('tablet-1200', true) {
-            margin-bottom: 30px;
+            margin-bottom: 90px;
+        }
+
+        @include media('mobile-620', true) {
+            flex-wrap: wrap;
+            margin-bottom: 60px;
         }
     }
 
@@ -95,18 +122,58 @@
 
             @include media('tablet', true) {
                 margin-right: 0px;
-
             }
+
+            @include media('tablet-1200', true) {
+                margin-right: 80px;
+            }
+
+            @include media('mobile', true) {
+                margin-right: 0px;
+            }
+        }
+
+        &:nth-child(2) {
+            @include media('mobile-450', true) {
+                margin-right: 0px;
+            }
+        }
+
+        &:not(:last-child) {
+            @include media('mobile-620', true) {
+                margin-right: 40px;
+                margin-bottom: 50px;
+            }
+
+            @include media('mobile-450', true) {
+                margin-right: 40px;
+            }
+
+            @include media('mobile-350', true) {
+                margin-right: 10px;
+            }
+        }
+
+        a {
+            @include hover-link
         }
     }
 
     &__resource-list-title {
         margin-bottom: 40px;
+
+        @include media('tablet-1000', true) {
+            margin-bottom: 20px;
+        }
     }
 
     &__resource-list-item {
         &:not(:last-child) {
-            margin-bottom: toVh(30);
+            margin-bottom: 30px;
+
+            @include media('tablet-1000', true) {
+                margin-bottom: 10px;
+            }
         }
     }
 }

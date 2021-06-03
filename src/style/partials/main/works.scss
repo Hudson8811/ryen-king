@@ -33,6 +33,10 @@
                 margin-right: -45px;
             }
 
+            @include media('mobile-620', true) {
+                margin-right: -10px;
+            }
+
             &:hover {
                 cursor: url('../img/cursor-slider.png') 62 62, auto;
 
@@ -53,6 +57,11 @@
 
             @include media('tablet-1000', true) {
                 height: 550px;
+            }
+
+            @include media('mobile-450', true) {
+                width: 200px;
+                height: 400px;
             }
         }
 
@@ -90,4 +99,8 @@
         position: absolute;
         right: 0;
         top: 0;
+
+        @include media('tablet-1000', true) {
+            display: none !important;
+        }
     }

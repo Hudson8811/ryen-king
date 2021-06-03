@@ -12,16 +12,16 @@
 @import "libs/just-validate.min.css";
 @import "libs/swiper.min.scss";
 
-@import "partials/main/home.scss";
-@import "partials/main/about.scss";
-@import "partials/main/works.scss";
-@import "partials/main/experience.scss";
+@import "./partials/main/home.scss";
+@import "./partials/main/about.scss";
+@import "./partials/main/works.scss";
+@import "./partials/main/experience.scss";
 @import "./partials/main/recognition.scss";
-@import "partials/main/contacts.scss";
-@import "partials/main/services.scss";
-@import "partials/main/blog.scss";
-@import "partials/main/testimonials.scss";
+@import "./partials/main/contacts.scss";
+@import "./partials/main/services.scss";
+@import "./partials/main/blog.scss";
+@import "./partials/main/testimonials.scss";
 
-@import "partials/footer.scss";
-@import "partials/header.scss";
-@import "partials/nav-widget.scss";
+@import "./partials/footer.scss";
+@import "./partials/header.scss";
+@import "./partials/nav-widget.scss";

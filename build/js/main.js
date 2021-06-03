@@ -1291,12 +1291,13 @@ let swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
-
+    autoHeight: true,
     // Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+
 
 });
 
@@ -1306,48 +1307,136 @@ let swiper2 = new Swiper('.swiper-container2', {
     direction: 'horizontal',
     loop: true,
     slidesPerView: 'auto',
-    spaceBetween: 40,
-    // slidesPerGroup: 3,
-    // freeMode: true,
-    // Navigation arrows
+    spaceBetween: 10,
     navigation: {
         nextEl: '.swiper-button-next2',
         prevEl: '.swiper-button-prev2',
+    },
+
+    breakpoints: {
+        450: {
+            // ok
+            spaceBetween: 10,
+        },
+        767: {
+            // ok
+            spaceBetween: 20,
+        },
+        1000: {
+            // ok
+            spaceBetween: 30,
+        },
+
+        1920: {
+            // ok
+            spaceBetween: 40,
+        },
     },
 });
 document.addEventListener('DOMContentLoaded', () => {
     const controls = [...document.querySelectorAll(".js-services-control")]
     const tabs = [...document.querySelectorAll('.js-services-tab')]
-    controls[0].classList.add('active')
-    tabs[0].classList.add('active')
+    const akks = [...document.querySelectorAll('.js-services-akk')]
 
-    let prevControl = controls[0]
-    let prevTab = tabs[0]
-    controls.forEach(control => {
-        control.addEventListener('mouseover', () => {
-            if (control === prevControl) return
+    let prevControl = null
+    let prevTab = null
+    let prevAkk = null
 
-            if (prevControl === null) {
-                prevControl = control
-                control.classList.add('active')
+    const isTablet = window.matchMedia('(max-width: 1000px)').matches
+
+    function activateTabAndControl(control, tab) {
+        if (control === prevControl) return
+        if (prevTab === tab) return
+        if (prevControl) prevControl.classList.remove('active')
+        if (prevTab) prevTab.classList.remove('active')
+
+        prevControl = control
+        control.classList.add('active')
+
+        tab.classList.add('active')
+        prevTab = tab
+    }
+
+    function activateAccordionItem(control, akk) {
+        if (control === prevControl) return
+        if (prevAkk === akk) return
+        if (prevControl) prevControl.classList.remove('active')
+        if (prevAkk) {
+            prevAkk.classList.remove('active')
+            prevAkk.style.height = 0
+        }
+
+        prevControl = control
+        control.classList.add('active')
+        console.log(akk.scrollHeight)
+        akk.style.height = akk.scrollHeight + 'px'
+        akk.classList.add('active')
+        prevAkk = akk
+    }
+    // document.addEventListener('resize', () => {
+
+    // })
+
+    if (isTablet) {
+        controls.forEach((control, i) => {
+            const akk = akks.find(akk => akk.dataset.item === control.dataset.control)
+            if (i === 0) {
+                activateAccordionItem(control, akk)
             }
+            control.addEventListener('mouseover', () => {
+                activateAccordionItem(control, akk)
+            })
+        })
+    } else {
+        controls.forEach((control, i) => {
+            const tab = tabs.find(tab => tab.dataset.tab === control.dataset.control)
+            if (i === 0) {
+                activateTabAndControl(control, tab)
+            }
+            control.addEventListener('mouseover', () => {
+                activateTabAndControl(control, tab)
+            })
+        })
+    }
+})
+document.addEventListener('DOMContentLoaded', () => {
+    const items = [...document.querySelectorAll('.experience__card')]
+    let currentItem = null;
+    let currentItemPos = null;
+    const history = document.querySelector('.experience__history')
 
-            if (control !== prevControl) prevControl.classList.remove('active')
+    // history.addEventListener('mouseout', () => {
+    //     items.forEach(item => {
+    //         setTimeout(() => {
+    //             item.classList.add('active')
+    //         }, 1200);
+    //     });
+    // })
 
-            prevControl = control
-            control.classList.add('active')
-            tabs.forEach(tab => {
-                if (control.dataset.control === tab.dataset.tab) {
-                    if (prevTab === null) prevTab = tab
-                    if (prevTab === tab) return
-                    if (prevTab !== tab) prevTab.classList.remove('active')
+    items.forEach((item, i) => {
+        item.addEventListener('mouseover', () => {
+            if (currentItem === item) return
 
-                    tab.classList.add('active')
-                    prevTab = tab
+            currentItem = item
+            currentItemPos = i
+
+            currentItem.classList.add('active')
+
+            items.forEach((item, k) => {
+                if (!(currentItem === item)) {
+                    item.classList.remove('active')
                 }
+                if (currentItemPos - 1 === k || currentItemPos === k && k !== items.length - 1) {
+                    item.style.borderBottom = '1px solid #C2C2C2'
+                } else if (k !== items.length - 1) {
+                    item.style.borderBottom = '1px solid #484848'
+                }
+
             })
         })
     })
+
+
 })
 
 /*
