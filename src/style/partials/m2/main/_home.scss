@@ -1,10 +1,5 @@
 .home {
   height: 100vh;
-  overflow: hidden;
-
-  @include media("mobile") {
-    height: auto;
-  }
 
   &-container {
     position: relative;
@@ -85,7 +80,7 @@
       padding: 40px 40px 52px 48px;
     }
 
-    @include media("mobile") {
+    @include media(767) {
       height: 42vh;
     }
 

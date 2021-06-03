@@ -105,7 +105,7 @@
         height: 450px;
       }
 
-      @include media("mobile") {
+      @include media(767) {
         min-width: auto;
       }
 
@@ -218,7 +218,7 @@
         width: 440px !important;
       }
 
-      @include media("mobile") {
+      @include media(767) {
         width: 100% !important;
       }
 

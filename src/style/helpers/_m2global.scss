@@ -99,7 +99,7 @@
     font-size: 70px;
     line-height: 110%;
   }
-  @include media("mobile") {
+  @include media(767) {
     font-size: 52px;
   }
   @include media("mobile-620") {

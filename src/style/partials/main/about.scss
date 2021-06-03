@@ -137,7 +137,7 @@
   }
 
   &__skill-counter {
-    @include media("mobile") {
+    @include media(992) {
       font-size: 50px;
     }
 
@@ -147,7 +147,7 @@
   }
 
   &__skill-name {
-    @include media("mobile") {
+    @include media(992) {
       font-size: 14px;
     }
 
