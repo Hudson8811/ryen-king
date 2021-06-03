@@ -1,157 +1,164 @@
 .services {
-  &__container {
-  }
+    &__container {}
 
-  &__row {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__column {
-    width: calc(80% - 40px);
-
-    @include media("tablet-1000", true) {
-      margin-bottom: 40px;
-      width: 100%;
-    }
-  }
-
-  &__card {
-    display: grid;
-    cursor: pointer;
-
-    &:not(:last-child) {
-      margin-bottom: 80px;
-
-      @include media("tablet-1000", true) {
-        margin-bottom: 60px;
-      }
+    &__row {
+        display: flex;
+        justify-content: space-between;
     }
 
-    .services__tab {
-      display: none;
+    &__column {
+        width: calc(80% - 40px);
 
-      @include media("tablet-1000", true) {
-        display: block;
-      }
-    }
-  }
-
-  &__card-title {
-    display: flex;
-    transition: color 0.3s ease;
-
-    @include media("tablet-1000", true) {
-      margin-bottom: 40px;
+        @include media("tablet-1000", true) {
+            margin-bottom: 40px;
+            width: 100%;
+        }
     }
 
-    @include media("mobile-450", true) {
-      flex-direction: column;
+    &__card {
+        display: grid;
+        cursor: pointer;
+
+        &:not(:last-child) {
+            margin-bottom: 80px;
+
+            @include media("tablet-1000", true) {
+                margin-bottom: 60px;
+            }
+
+            @include media("mobile", true) {
+                margin-bottom: 30px;
+            }
+        }
+
+        .services__tab {
+            display: none;
+
+            @include media("tablet-1000", true) {
+                display: block;
+            }
+        }
     }
 
-    &.active {
-      color: $main-green;
+    &__card-title {
+        display: flex;
+        transition: color 0.3s ease;
+
+        @include media("tablet-1000", true) {
+            margin-bottom: 40px;
+        }
+
+        @include media("mobile", true) {
+            margin-bottom: 20px;
+        }
+
+        @include media("mobile-450", true) {
+            flex-direction: column;
+        }
+
+        &.active {
+            color: $main-green;
+        }
+
+        span {
+            margin-right: 10px;
+        }
     }
 
-    span {
-      margin-right: 10px;
-    }
-  }
-
-  &__card-number {
-    @include media("mobile") {
-      font-size: 12px;
-      line-height: 140%;
-    }
-  }
-
-  &__card-name {
-    @include media("mobile") {
-      font-size: 70px;
-      line-height: 110%;
+    &__card-number {
+        @include media("mobile") {
+            font-size: 12px;
+            line-height: 140%;
+        }
     }
 
-    @include media("mobile-450") {
-      font-size: 32px;
-      line-height: 90%;
-    }
-  }
+    &__card-name {
+        // @include media("mobile") {
+        //     font-size: 70px;
+        //     line-height: 110%;
+        // }
 
-  &__card-desc {
-    max-width: 337px;
-    width: 100%;
-    display: none;
-  }
-
-  &__tabs {
-    flex: 1 0 auto;
-    position: relative;
-    max-width: 324px;
-
-    @include media("tablet-1000", true) {
-      display: none;
-    }
-  }
-
-  &__tab {
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-width: 324px;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease, height 0.3s ease;
-
-    @include media("tablet-1000", true) {
-      position: static;
-      max-width: 100%;
-      height: 0;
-      overflow: hidden;
+        @include media("mobile-450") {
+            font-size: 32px;
+            line-height: 90%;
+        }
     }
 
-    &.active {
-      opacity: 1;
-
-      @include media("tablet-1000", true) {
-        position: static;
-        opacity: 1;
-        max-width: 100%;
-      }
+    &__card-desc {
+        max-width: 337px;
+        width: 100%;
+        display: none;
     }
-  }
 
-  &__tab-img-wrapper {
-    @include media("tablet-1000", true) {
-      position: relative;
-      margin-bottom: 40px;
+    &__tabs {
+        flex: 1 0 auto;
+        position: relative;
+        max-width: 324px;
 
-      &::after {
-        display: block;
-        content: "";
-        padding-top: 400/678 * 100%;
-      }
+        @include media("tablet-1000", true) {
+            display: none;
+        }
     }
-  }
 
-  &__tab-img {
-    margin-bottom: 40px;
+    &__tab {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 324px;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease, height 0.3s ease;
 
-    @include media("tablet-1000", true) {
-      margin-bottom: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      object-fit: cover;
-      object-position: center;
-      width: 100%;
+        @include media("tablet-1000", true) {
+            position: static;
+            max-width: 100%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        &.active {
+            opacity: 1;
+
+            @include media("tablet-1000", true) {
+                position: static;
+                opacity: 1;
+                max-width: 100%;
+            }
+        }
     }
-  }
 
-  &__tab-desc {
-    color: $light-grey;
+    &__tab-img-wrapper {
+        @include media("tablet-1000", true) {
+            position: relative;
+            margin-bottom: 40px;
 
-    @include media("mobile-450") {
-      font-size: 12px;
+            &::after {
+                display: block;
+                content: "";
+                padding-top: 400/678 * 100%;
+            }
+        }
     }
-  }
+
+    &__tab-img {
+        margin-bottom: 40px;
+
+        @include media("tablet-1000", true) {
+            margin-bottom: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+        }
+    }
+
+    &__tab-desc {
+        color: $light-grey;
+
+        @include media("mobile-450") {
+            font-size: 12px;
+        }
+    }
 }
