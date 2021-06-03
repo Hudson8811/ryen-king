@@ -42,12 +42,12 @@
       margin-bottom: 99px;
     }
 
-    @include media("mobile") {
+    @include media(767) {
       margin-bottom: 65px;
     }
 
     &--case {
-      @include media("mobile") {
+      @include media(767) {
         margin-bottom: 62px;
       }
     }
