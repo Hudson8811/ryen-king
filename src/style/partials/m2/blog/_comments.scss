@@ -60,7 +60,7 @@
   }
 
   &-item {
-    &_reply {
+    &--reply {
       margin-left: 180px;
       margin-top: 30px;
 
@@ -159,7 +159,7 @@
         }
       }
 
-      &_textarea {
+      &--textarea {
         flex-basis: 100%;
         margin-bottom: 69px;
 

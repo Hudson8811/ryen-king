@@ -1,6 +1,6 @@
 mixin comment(date, name, content, reply)
   if (reply)
-    .comments-item.comments-item_reply
+    .comments-item.comments-item--reply
       p.text.manrope.manrope-text2.comments-item__date= date
       p.neue.neue-headline3.m2headline4.comments-item__name= name
       p.manrope.manrope-text2.m2comment.comments-item__content= content
@@ -35,13 +35,13 @@ section.comments.js-comments
                 | April 20, 2021
               p.neue.neue-headline3.m2headline4.comments-item__name
                 | Julia Duchamps
-              p.manrope.manrope-text2.m2comment.comments-item__content.comments-item__content_temp 
+              p.manrope.manrope-text2.m2comment.comments-item__content
                 | Alpha sales MVP business&#8209;to&#8209;consumer strategy client influencer pivot founders assets non&#8209;disclosure agreement social proof paradigm shift scrum project. Venture learning curve customer. Series A financing assets business model canvas virality network effects return on investment prototype seed round validation creative business plan influencer seed money.
               a(href="#").neue.neue-link.m2comment.comments-item__reply
                 | Reply
 
             //- Reply to the previous comment
-            .comments-item.comments-item_reply
+            .comments-item.comments-item--reply
               p.text.manrope.manrope-text2.comments-item__date
                 | April 21, 2021
               p.neue.neue-headline3.m2headline4.comments-item__name 
@@ -76,7 +76,7 @@ section.comments.js-comments
                 input(type="text" name="form-name" id="form-name" placeholder="Name" data-validate-field="name" required).manrope.manrope-text2.m2text4.comments-form__input
               .comments-form__input-group
                 input(type="email" name="form-email" id="form-email" placeholder="E-mail" data-validate-field="email" required).manrope.manrope-text2.m2text4.comments-form__input
-            .comments-form__input-group.comments-form__input-group_textarea
+            .comments-form__input-group.comments-form__input-group--textarea
               textarea(name="form-comment" id="form-comment" placeholder="Your comment" rows="1"  data-validate-field="text" required).manrope.manrope-text2.m2text4.comments-form__input.comments-form__textarea
             label(for="save-name").manrope.manrope-text2.m2text4.comments-form__save
               input(type="checkbox" name="save-name" id="save-name").comments-form__checkbox

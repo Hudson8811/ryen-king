@@ -1,10 +1,10 @@
 mixin listItem(title, listItems, link)
   if (title === 'Share')
-    .hero-description__item.hero-description__item_share
+    .hero-description__item.hero-description__item--share
       p.text.m2text4.manrope.manrope-text2.hero-description__title= title
-      .hero-description__list.hero-description__list_share
+      .hero-description__list.hero-description__list--share
         each listItem in listItems
-          a(href= listItem.link).m2text1.neue.neue-text1.hero-description__li.hero-description__li_share= listItem.name
+          a(href= listItem.link).m2text1.neue.neue-text1.hero-description__li.hero-description__li--share= listItem.name
   else
     .hero-description__item
       p.text.m2text4.manrope.manrope-text2.hero-description__title= title
