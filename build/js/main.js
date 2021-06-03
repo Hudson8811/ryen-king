@@ -1346,7 +1346,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     initPaging();
 
-    window.addEventListener('resize', initPaging);
+    // window.addEventListener('resize', initPaging);
 
     // function disabledPreloader() {
     //     document.getElementById('preloader').style.display = 'none';

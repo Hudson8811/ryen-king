@@ -97,7 +97,7 @@
 
     &__name {
       order: 1;
-      max-width: 527px;
+      max-width: 400px;
 
       @include media("tablet") {
         max-width: 300px;
