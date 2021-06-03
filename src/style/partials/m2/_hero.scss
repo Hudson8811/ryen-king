@@ -17,7 +17,7 @@
     padding-bottom: 40px;
   }
 
-  &_case {
+  &--case {
     padding-bottom: 156px;
 
     @include media("tablet-1200") {
@@ -41,7 +41,7 @@
       margin-bottom: 65px;
     }
 
-    &_case {
+    &--case {
       @include media("mobile") {
         margin-bottom: 62px;
       }
@@ -54,7 +54,7 @@
     height: 800px;
     overflow: hidden;
 
-    &_case {
+    &--case {
       margin-bottom: 157px;
     }
 
@@ -80,7 +80,7 @@
       margin-bottom: 44px;
     }
 
-    &_case {
+    &--case {
       @include media("mobile-450") {
         padding-right: 17px;
       }
@@ -97,7 +97,7 @@
         transform: scaleX(-1);
       }
 
-      &_case {
+      &--case {
         @include media(992) {
           transform: scaleX(1);
         }
@@ -130,7 +130,7 @@
       flex-wrap: wrap;
     }
 
-    &_case {
+    &--case {
       padding-top: 3px;
     }
 
@@ -155,11 +155,11 @@
         }
       }
 
-      &_share {
+      &--share {
         flex-basis: 100%;
       }
 
-      &_case {
+      &--case {
         &:first-child {
           @include media("mobile-620") {
             margin-right: 30px;
@@ -170,6 +170,10 @@
 
     &__title {
       margin-bottom: 20px;
+      max-width: 140px;
+      white-space: nowrap;
+      overflow-x: hidden !important;
+      text-overflow: ellipsis;
 
       @include media("tablet") {
         margin-bottom: 10px;
@@ -182,7 +186,7 @@
     }
 
     &__li {
-      &_share {
+      &--share {
         @include animation;
 
         @include media(993, false) {

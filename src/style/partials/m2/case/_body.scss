@@ -1,6 +1,6 @@
 .case {
   &-body {
-    padding-bottom: 320px;
+    padding-bottom: 324px;
 
     @include media(992) {
       padding-bottom: 150px;
@@ -11,14 +11,14 @@
     }
 
     &__photos {
-      margin-bottom: 200px;
+      margin-bottom: 161px;
 
       @include media("tablet") {
-        margin-bottom: 120px;
+        margin-bottom: 89px;
       }
 
       @include media("tablet-1200") {
-        margin-bottom: 60px;
+        margin-bottom: 31px;
       }
 
       @include media(576) {
@@ -83,12 +83,15 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     @include media(576) {
       flex-direction: column;
     }
 
     &__item {
+      margin-bottom: 39px;
+      width: 567px;
       object-fit: cover;
 
       @include media(1900) {
@@ -96,6 +99,7 @@
       }
 
       @include media("tablet-1200") {
+        margin-bottom: 29px;
         width: 30%;
         min-width: 206px;
         height: 450px;
@@ -106,6 +110,7 @@
       }
 
       @include media(576) {
+        margin-bottom: 0;
         width: 100%;
       }
 
@@ -113,7 +118,7 @@
         height: 350px;
       }
 
-      &:not(:last-child) {
+      &:not(:nth-child(3n)) {
         margin-right: 39px;
 
         @include media(1900) {
@@ -151,6 +156,10 @@
 
       @include media(576) {
         height: 500px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
       }
     }
   }

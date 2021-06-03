@@ -4,7 +4,7 @@
 
   @include media("tablet") {
     padding-top: 50px;
-    padding-bottom: 205px;
+    padding-bottom: 146px;
   }
 
   @include media("mobile-450") {
@@ -27,22 +27,12 @@
     }
   }
 
-  &__item {
+  &__group {
     &:not(:last-child) {
       margin-bottom: 30px;
 
       @include media(992) {
         margin-bottom: 40px;
-      }
-    }
-
-    &_reply {
-      &:not(:last-child) {
-        margin-bottom: 100px;
-
-        @include media(992) {
-          margin-bottom: 62px;
-        }
       }
     }
   }
@@ -70,8 +60,17 @@
   }
 
   &-item {
-    &_reply {
+    &--reply {
       margin-left: 180px;
+      margin-top: 30px;
+
+      &:last-child {
+        margin-bottom: 100px;
+
+        @include media(992) {
+          margin-bottom: 62px;
+        }
+      }
 
       @include media("tablet") {
         margin-left: 10%;
@@ -79,6 +78,7 @@
 
       @include media(992) {
         margin-left: 27%;
+        margin-top: 40px;
       }
 
       @include media("mobile-620") {
@@ -153,7 +153,13 @@
         }
       }
 
-      &_textarea {
+      @include media(320) {
+        &:first-child {
+          margin-bottom: 57px;
+        }
+      }
+
+      &--textarea {
         flex-basis: 100%;
         margin-bottom: 69px;
 
@@ -297,15 +303,22 @@
         margin-left: 0;
         margin-right: auto;
         height: 80px;
-        width: 149px;
+        // width: 149px;
+        padding-right: 67px;
         font-size: 20px;
       }
 
       @include media("mobile-450") {
-        width: 117px;
+        // width: 117px;
         height: 60px;
+        padding-right: 57px;
         font-size: 12px;
       }
     }
   }
+}
+
+.js-validate-error-field {
+  border: none !important;
+  border-bottom: 1px solid #b81111 !important;
 }

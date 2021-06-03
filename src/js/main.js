@@ -23,3 +23,8 @@
   Case slider
 */
 //= partials/caseSlider.js
+
+/*
+  Smooth scroll to top on footer "Back to top" click
+*/
+//= partials/smoothScrollToTop.js

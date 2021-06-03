@@ -8,27 +8,27 @@
     line-height: 90%;
     text-transform: uppercase;
 
-    @include media('1920', true) {
+    @include media("1920", true) {
       font-size: 112px;
     }
 
-    @include media('tablet', true) {
+    @include media("tablet", true) {
       font-size: 96px;
     }
 
-    @include media('1350', true) {
+    @include media("1350", true) {
       font-size: 70px;
     }
 
-    @include media('mobile', true) {
+    @include media("mobile", true) {
       font-size: 56px;
     }
 
-    @include media('620', true) {
+    @include media("620", true) {
       font-size: 42px;
     }
 
-    @include media('mobile-450', true) {
+    @include media("mobile-450", true) {
       font-size: 32px;
     }
   }
@@ -39,17 +39,17 @@
     line-height: 110%;
     text-transform: uppercase;
 
-    @include media('tablet', true) {
+    @include media("tablet", true) {
       font-size: 56px;
     }
 
-    @include media('tablet-1000', true) {
-      font-size: 50px;
+    @include media(992) {
+      font-size: 22px;
     }
 
-    @include media('mobile', true) {
-      font-size: 36px;
-    }
+    // @include media("mobile", true) {
+    //   font-size: 36px;
+    // }
 
     &-green {
       color: $main-green;
@@ -58,21 +58,17 @@
       line-height: 110%;
       text-transform: uppercase;
 
-      @include media('tablet', true) {
+      @include media("tablet", true) {
         font-size: 56px;
       }
 
-      @include media('tablet-1000', true) {
+      @include media("tablet-1000", true) {
         font-size: 50px;
       }
 
-      @include media('mobile', true) {
-        font-size: 36px;
-      }
-
-      @include media('mobile-450', true) {
-        font-size: 22px;
-      }
+      // @include media('mobile', true) {
+      //   font-size: 36px;
+      // }
     }
   }
 
@@ -81,15 +77,15 @@
     font-size: 40px;
     line-height: 120%;
 
-    @include media('tablet', true) {
+    @include media("tablet", true) {
       font-size: 32px;
     }
 
-    @include media('tablet-1000', true) {
+    @include media("tablet-1000", true) {
       font-size: 24px;
     }
 
-    @include media('mobile-450', true) {
+    @include media("mobile-450", true) {
       font-size: 18px;
     }
   }
@@ -99,19 +95,19 @@
     font-size: 24px;
     line-height: 120%;
 
-    @include media('tablet', true) {
+    @include media("tablet", true) {
       font-size: 22px;
     }
 
-    @include media('tablet-1000', true) {
+    @include media("tablet-1000", true) {
       font-size: 18px;
     }
 
-    @include media('mobile', true) {
+    @include media("mobile", true) {
       font-size: 16px;
     }
 
-    @include media('mobile-620', true) {
+    @include media("mobile-620", true) {
       font-size: 12px;
     }
   }
@@ -121,11 +117,11 @@
     font-size: 18px;
     line-height: 140%;
 
-    @include media('mobile-1000', true) {
+    @include media("mobile-1000", true) {
       font-size: 14px;
     }
 
-    @include media('mobile-450', true) {
+    @include media("mobile-450", true) {
       font-size: 12px;
     }
   }
@@ -158,7 +154,7 @@
     font-size: 24px;
     line-height: 130%;
 
-    @include media('tablet-1200', true) {
+    @include media("tablet-1200", true) {
       font-size: 14px;
     }
   }
@@ -168,15 +164,15 @@
     font-size: 18px;
     line-height: 140%;
 
-    @include media('tablet-1200', true) {
+    @include media("tablet-1200", true) {
       font-size: 16px;
     }
 
-    @include media('tablet-1000', true) {
+    @include media("tablet-1000", true) {
       font-size: 14px;
     }
 
-    @include media('mobile-450', true) {
+    @include media("mobile-450", true) {
       font-size: 11px;
     }
   }

@@ -1,8 +1,8 @@
 @import "helpers/_mixins.scss";
 @import "helpers/reset.scss";
 @import "helpers/fonts.scss";
-@import "helpers/layout.scss";
 @import "helpers/variables.scss";
+@import "helpers/layout.scss";
 @import "helpers/tipography.scss";
 @import "helpers/_uikit.scss";
 @import "helpers/setting.scss";
@@ -20,3 +20,4 @@
 @import "partials/m2/blog/body";
 @import "partials/m2/blog/comments";
 @import "partials/m2/case/body";
+@import "partials/m2/footer";

@@ -12,10 +12,12 @@
 @import "libs/just-validate.min.css";
 @import "libs/swiper.min.scss";
 
-@import "./partials/main/home.scss";
-@import "./partials/main/about.scss";
-@import "./partials/main/works.scss";
-@import "./partials/main/experience.scss";
+// Temp
+@import "partials/m2/main/home";
+// @import "partials/main/home.scss";
+@import "partials/main/about.scss";
+@import "partials/main/works.scss";
+@import "partials/main/experience.scss";
 @import "./partials/main/recognition.scss";
 @import "./partials/main/contacts.scss";
 @import "./partials/main/services.scss";
