@@ -19,10 +19,14 @@
     }
   }
 
+  &__row {
+    cursor: url("../img/cursor-slider.png") 62 62, auto;
+
+  }
+
   &__swiper-container {
     margin-right: -70px;
     overflow: hidden;
-    cursor: url("../img/cursor-slider.png") 62 62, auto;
 
     @include media("tablet-1200", true) {
       margin-right: -45px;
