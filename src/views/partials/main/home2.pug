@@ -1,5 +1,6 @@
 .home.js-section#home
   .home-container
+    //- img(srcset="img/main/home/king.jpg 758w, img/main/home/home.jpg 1620w" sizes="((min-width: 450px) and (max-width: 1024px)) 100vw, 1620px").home-image.home__image
     img(src="img/main/home/king.jpg" alt="Author's photo").home-image.home-image--desktop.home__image
     img(src="img/main/home/home.jpg" alt="Author's photo").home-image.home-image--mobile.home__image
     .home-container__info.home-author
@@ -8,7 +9,8 @@
       p.manrope.manrope-text2.home-author__description
         | My approach is to help my clients to visualize and communicate the best of themselves.
 
-      a(href="#!").home-author__button
+      a(href="#!").home-author__button.home-button
+        .home-button__item
 
     .home-ticker.js-ticker
       .home-ticker__wrapper
