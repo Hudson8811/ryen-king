@@ -1,6 +1,5 @@
 .testimonials {
-  &__container {
-  }
+  &__container {}
 
   &__row {
     padding-left: calc(10% - 20px);
@@ -29,11 +28,9 @@
     cursor: url("../img/cursor-slider.png") 62 62, auto;
   }
 
-  &__swiper-wrapper {
-  }
+  &__swiper-wrapper {}
 
-  &__swiper-slide {
-  }
+  &__swiper-slide {}
 
   &__card {
     display: flex;
@@ -63,8 +60,7 @@
     }
   }
 
-  &__img {
-  }
+  &__img {}
 
   &__content {
     padding: 70px;
@@ -118,6 +114,7 @@
   &__swiper-button-wrapper {
     display: flex;
     align-items: flex-end;
+    cursor: pointer;
 
     @include media("tablet-1000", true) {
       display: none !important;
@@ -159,21 +156,15 @@
     margin-right: 10px;
   }
 
-  &__swiper-button-next {
-  }
+  &__swiper-button-next {}
 }
 
-.swiper-container2 {
-}
+.swiper-container2 {}
 
-.swiper-wrapper {
-}
+.swiper-wrapper {}
 
-.swiper-slide {
-}
+.swiper-slide {}
 
-.swiper-button-prev2 {
-}
+.swiper-button-prev2 {}
 
-.swiper-button-next2 {
-}
+.swiper-button-next2 {}

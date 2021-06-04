@@ -96,9 +96,57 @@
 
 .swiper-button-prev2 {
   margin-right: 10px;
+  cursor: pointer;
+
+  svg {
+    circle {
+      transition: stroke .3s ease;
+    }
+
+    path {
+      transition: stroke .3s ease;
+    }
+  }
+
+  &:hover {
+    svg {
+      circle {
+        stroke: #FFFCF9;
+      }
+
+      path {
+        stroke: #FFFCF9;
+      }
+    }
+  }
 }
 
-.swiper-button-next2 {}
+.swiper-button-next2 {
+  cursor: pointer;
+
+  svg {
+    circle {
+      transition: stroke .3s ease;
+    }
+
+    path {
+      transition: stroke .3s ease;
+    }
+  }
+
+  &:hover {
+    svg {
+      circle {
+        stroke: #FFFCF9;
+      }
+
+      path {
+        stroke: #FFFCF9;
+      }
+    }
+  }
+
+}
 
 .swiper-button-wrapper {
   display: flex;

@@ -1,39 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
+    class Cursor {
+        constructor() {
+            this.isActive = false
+            this.timer = null
+            this.initDOM()
+            this.initListeners()
+        }
+
+        initDOM = () => {
+            this.container = document.createElement('div')
+            this.container.classList.add('custom-cursor')
+            document.body.appendChild(this.container)
+        }
+
+        initListeners = () => {
+            window.addEventListener('mousemove', this.trackPosition)
+        }
+
+        add = (item) => {
+            const image = new Image()
+            image.src = item.dataset.cursor
+            item.addEventListener('mousemove', this.show)
+            item.addEventListener('mouseleave', this.hide)
+        }
+
+        show = e => {
+            if (this.isActive) return
+            clearTimeout(this.timer)
+
+            this.isActive = true
+            this.container.style.backgroundImage = `url(${e.currentTarget.dataset.cursor})`
+            this.container.classList.add('active')
+        }
+
+        hide = () => {
+            this.isActive = false
+
+            this.timer = setTimeout(() => {
+                this.container.classList.remove('active')
+            }, 10)
+        }
+
+        trackPosition = (e) => {
+            this.container.style.top = `${event.clientY}px`
+            this.container.style.left = `${event.clientX}px`
+        }
+    }
+
+    const cursor = new Cursor()
+
     const items = [...document.querySelectorAll('.experience__card')]
-    let currentItem = null;
-    let currentItemPos = null;
-    const history = document.querySelector('.experience__history')
 
-    // history.addEventListener('mouseout', () => {
-    //     items.forEach(item => {
-    //         setTimeout(() => {
-    //             item.classList.add('active')
-    //         }, 1200);
-    //     });
-    // })
-
-    items.forEach((item, i) => {
-        item.addEventListener('mouseover', () => {
-            if (currentItem === item) return
-
-            currentItem = item
-            currentItemPos = i
-
-            currentItem.classList.add('active')
-
-            items.forEach((item, k) => {
-                if (!(currentItem === item)) {
-                    item.classList.remove('active')
-                }
-                if (currentItemPos - 1 === k || currentItemPos === k && k !== items.length - 1) {
-                    item.style.borderBottom = '1px solid #C2C2C2'
-                } else if (k !== items.length - 1) {
-                    item.style.borderBottom = '1px solid #484848'
-                }
-
-            })
-        })
-    })
-
-
+    items.forEach(item => cursor.add(item))
 })
