@@ -222,10 +222,6 @@
         width: 100% !important;
       }
 
-      // @include media("mobile-450") {
-      //   width: 210px !important;
-      // }
-
       @include media("mobile-350") {
         width: 200px !important;
       }
