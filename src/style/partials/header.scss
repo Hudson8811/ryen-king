@@ -111,8 +111,6 @@
     transition: 0.3s;
     opacity: 0;
     transform: translateX(-100%);
-
-    // Added
     overflow-y: auto;
 
     @include media(768, true) {
@@ -143,12 +141,9 @@
 
     &-content {
       position: relative;
-      // Changed and added
-      // padding-top: toVh(150);
       padding-top: 178px;
       padding-left: 250px;
       padding-bottom: 136px;
-      // height: 100%;
 
       @include media(768, true) {
         padding-top: 99px;
@@ -222,15 +217,11 @@
       &.active {
         & a::after {
           right: 0;
-
-          // Added
           background-color: $main-black;
         }
       }
 
       &:not(:first-child) {
-        // Changed
-        // margin-top: toVh(30);
         margin-top: 31px;
 
         @include media(768) {
@@ -244,7 +235,6 @@
     }
 
     &-link {
-      // Added
       position: relative;
       padding-bottom: 11px;
 
@@ -262,8 +252,6 @@
         transition: 0.3s ease;
         bottom: 0;
         left: 0;
-
-        // Changed
         height: 2px;
 
         background-color: transparent;
