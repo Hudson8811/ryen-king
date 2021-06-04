@@ -1,6 +1,4 @@
 .experience {
-    &__container {}
-
     &__title {
         margin-bottom: toVh(50);
     }
@@ -153,15 +151,5 @@
         @include media("mobile-450") {
             font-size: 12px;
         }
-
-        // margin-bottom: toVh(50);
-
-        // @include media('tablet-1000', true) {
-        //     margin-bottom: 30px;
-        // }
-
-        // @include media('mobile-620', true) {
-        //     margin-bottom: 20px;
-        // }
     }
 }

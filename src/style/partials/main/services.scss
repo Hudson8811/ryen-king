@@ -1,6 +1,4 @@
 .services {
-    &__container {}
-
     &__row {
         display: flex;
         justify-content: space-between;
@@ -18,8 +16,6 @@
     &__card {
         display: grid;
         cursor: pointer;
-
-
 
         &:not(:last-child) {
             margin-bottom: 80px;
@@ -75,11 +71,6 @@
     }
 
     &__card-name {
-        // @include media("mobile") {
-        //     font-size: 70px;
-        //     line-height: 110%;
-        // }
-
         @include media("mobile-450") {
             font-size: 32px;
             line-height: 90%;

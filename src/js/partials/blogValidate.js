@@ -2,9 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.js-form')) {
     new JustValidate('.js-form', {
       rules: {
-        // checkbox: {
-        //   required: true
-        // },
         email: {
           required: true,
           email: true,

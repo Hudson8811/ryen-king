@@ -1,6 +1,4 @@
 .recognition {
-  &__container {
-  }
 
   &__row {
     @include media("tablet-1200", false) {
@@ -35,9 +33,6 @@
     }
   }
 
-  &__contact-bottom {
-  }
-
   &__contact-text {
     color: $light-grey;
     margin-bottom: toVh(70);
@@ -51,8 +46,6 @@
     }
   }
 
-  &__contact-button {
-  }
 
   &__inner {
     grid-area: inner;
