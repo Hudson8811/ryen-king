@@ -32,16 +32,8 @@
       margin-right: -10px;
     }
 
-    &:hover {
-      cursor: url("../img/cursor-slider.png") 62 62, auto;
-    }
   }
 
-  &__swiper-wrapper {
-    &:hover {
-      cursor: url("../../img/cursor-slider.png") 62 62, auto;
-    }
-  }
 
   &__swiper-slide {}
 
