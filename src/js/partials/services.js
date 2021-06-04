@@ -1,105 +1,156 @@
 document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.section__services')) {
-    const controls = [...document.querySelectorAll('.js-services-control')];
-    const tabs = [...document.querySelectorAll('.js-services-tab')];
-    const akks = [...document.querySelectorAll('.js-services-akk')];
+    const isTablet = () => window.matchMedia('(max-width: 1000px)').matches;
 
-    let currentControl = null;
-    let prevControl = null;
-    let prevTab = null;
-    let prevAkk = null;
+    class Accordion {
+      static active = null
+      static inited = []
+      static clear = () => {
+        Accordion.inited.forEach(instance => {
+          instance.destroy()
+        })
 
-    const isTablet = window.matchMedia('(max-width: 1000px)').matches;
-
-    function activateTabAndControl(control, tab) {
-      if (control === currentControl) return;
-      if (prevTab === tab) return;
-      if (prevControl) prevControl.classList.remove('active');
-      if (prevTab) prevTab.classList.remove('active');
-
-      currentControl = control
-      currentControl.classList.add('active');
-
-      tab.classList.add('active');
-      prevTab = tab;
-      prevControl = control;
-
-    }
-
-    function activateAccordionItem(control, akk) {
-      if (control === prevControl) return;
-      if (prevAkk === akk) return;
-      if (prevControl) prevControl.classList.remove('active');
-      if (prevAkk) {
-        prevAkk.classList.remove('active');
-        prevAkk.style.height = 0;
+        Accordion.active = null
+        Accordion.inited = []
       }
-      console.log(akk)
-      currentControl = control
-      currentControl.classList.add('active');
-      akk.style.height = akk.scrollHeight + 'px';
-      akk.classList.add('active');
 
-      prevControl = control;
-      prevAkk = akk;
+      constructor(control, content) {
+        this.isOpened = false
+        this.$refs = {
+          control,
+          content
+        }
+
+        this.$refs.control.addEventListener('click', this.onClick)
+        this.$refs.content.addEventListener('transitionend', this.onAnimationEnd)
+        Accordion.inited.push(this)
+      }
+
+      onClick = () => {
+        !this.isOpened ? this.open() : this.close()
+      }
+
+      onAnimationEnd = (e) => {
+        if (e.target !== this.$refs.content) return
+        if (e.propertyName !== 'height') return
+        if (!this.isOpened) return
+
+        e.target.style.height = 'auto'
+      }
+
+      open = () => {
+        if (this.isOpened) return
+        if (Accordion.active) Accordion.active.close()
+        this.isOpened = true
+        Accordion.active = this
+
+        this.$refs.control.classList.add('active')
+        this.$refs.content.classList.add('active')
+        this.$refs.content.style.height = `${this.$refs.content.scrollHeight}px`
+      }
+
+      close = () => {
+        if (!this.isOpened) return
+        this.isOpened = false
+        this.$refs.content.style.height = `${this.$refs.content.scrollHeight}px`
+        getComputedStyle(this.$refs.content).height
+        this.$refs.content.style.height = '0px'
+        this.$refs.control.classList.remove('active')
+        this.$refs.content.classList.remove('active')
+      }
+
+      destroy = () => {
+        this.$refs.control.removeEventListener('click', this.onClick)
+        this.$refs.content.removeEventListener('click', this.onAnimationEnd)
+        this.$refs.content.removeAttribute('style')
+        this.$refs.control.classList.remove('active')
+        this.$refs.content.classList.remove('active')
+      }
     }
 
-    // window.addEventListener('resize', () => {
-    //   if (isTablet) {
-    //     controls.forEach((control, i) => {
-    //       const akk = akks.find(
-    //         (akk) => akk.dataset.item === control.dataset.control
-    //       );
+    class Tab {
+      static active = null
+      static inited = []
+      static clear = () => {
+        Tab.inited.forEach(instance => {
+          instance.destroy()
+        })
 
-    //       // control.removeEventListener('mouseover', activateTabAndControl)
+        Tab.active = null
+        Tab.inited = []
+      }
 
-    //       if (i === 0) {
-    //         activateAccordionItem(control, akk);
-    //       }
-    //       control.addEventListener('mouseover', activateAccordionItem(control, akk))
-    //     });
-    //   } else {
-    //     controls.forEach((control, i) => {
-    //       const tab = tabs.find(
-    //         (tab) => tab.dataset.tab === control.dataset.control
-    //       );
-
-    //       control.removeEventListener('mouseover', activateAccordionItem)
-
-    //       if (i === 0) {
-    //         activateTabAndControl(control, tab);
-    //       }
-
-    //       control.addEventListener('mouseover', activateTabAndControl(control, tab))
-
-    //     });
-    //   }
-    // })
-
-    if (isTablet) {
-      controls.forEach((control, i) => {
-        const akk = akks.find(
-          (akk) => akk.dataset.item === control.dataset.control
-        );
-        if (i === 0) {
-          activateAccordionItem(control, akk);
+      constructor(control, content) {
+        this.isOpened = false
+        this.$refs = {
+          control,
+          content
         }
-        control.addEventListener('mouseover', () => {
-          activateAccordionItem(control, akk);
-        });
-      });
-    } else {
-      controls.forEach((control, i) => {
-        const tab = tabs.find(
-          (tab) => tab.dataset.tab === control.dataset.control
-        );
-        if (i === 0) {
-          activateTabAndControl(control, tab);
-        }
-        control.addEventListener('mouseover', () => {
-          activateTabAndControl(control, tab);
-        });
-      });
+
+        this.$refs.control.addEventListener('mouseover', this.open)
+        Tab.inited.push(this)
+      }
+
+      open = () => {
+        if (this.isOpened) return
+        if (Tab.active) Tab.active.close()
+        this.isOpened = true
+        Tab.active = this
+        this.$refs.control.classList.add('active')
+        this.$refs.content.classList.add('active')
+      }
+
+      close = () => {
+        if (!this.isOpened) return
+        this.isOpened = false
+        this.$refs.control.classList.remove('active')
+        this.$refs.content.classList.remove('active')
+      }
+
+      destroy = () => {
+        this.$refs.control.removeEventListener('mouseover', this.open)
+        this.$refs.control.classList.remove('active')
+        this.$refs.content.classList.remove('active')
+      }
     }
+
+    const tabs = document.querySelector('.js-services-tabs')
+
+    const items = [...document.querySelectorAll('.js-services-item')].map(item => ({
+      container: item,
+      control: item.querySelector('.js-services-control'),
+      content: item.querySelector('.js-services-content'),
+    }))
+
+    let isTabletInited = !isTablet()
+
+    function moveContent() {
+      if (isTablet() && !isTabletInited) {
+        isTabletInited = true
+
+        Tab.clear()
+
+        items.forEach(item => {
+          new Accordion(item.control, item.content)
+          item.container.appendChild(item.content)
+        })
+
+        if (Accordion.inited[0]) Accordion.inited[0].open()
+      } else if (!isTablet() && isTabletInited) {
+        isTabletInited = false
+
+        Accordion.clear()
+
+        items.forEach(item => {
+          new Tab(item.control, item.content)
+          tabs.appendChild(item.content)
+        })
+
+        if (Tab.inited[0]) Tab.inited[0].open()
+      }
+    }
+
+    window.addEventListener('resize', moveContent)
+    moveContent()
   }
 });
