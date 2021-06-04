@@ -59,7 +59,7 @@
       text-transform: uppercase;
 
       @include media("tablet", true) {
-        font-size: 56px;
+        font-size: 52px;
       }
 
       @include media("tablet-1000", true) {

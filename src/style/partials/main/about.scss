@@ -1,6 +1,5 @@
 .about {
-  &__container {
-  }
+  &__container {}
 
   &__row {
     width: 100%;
@@ -48,6 +47,7 @@
   &__skills {
     grid-area: skills;
     display: grid;
+    margin-top: 20px;
     grid-template-rows: 1fr auto;
     grid-template-columns: calc(50% - 20px) calc(50% - 20px);
     column-gap: 40px;
@@ -55,8 +55,8 @@
       "title-one title-two"
       "desc-one desc-two";
 
-    @include media("tablet-1200", true) {
-    }
+
+    @include media("tablet-1200", true) {}
 
     @include media("tablet", true) {
       display: grid;
