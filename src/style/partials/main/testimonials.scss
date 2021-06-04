@@ -1,6 +1,4 @@
 .testimonials {
-  &__container {}
-
   &__row {
     padding-left: calc(10% - 20px);
 
@@ -27,10 +25,6 @@
     overflow: hidden;
     cursor: url("../img/cursor-slider.png") 62 62, auto;
   }
-
-  &__swiper-wrapper {}
-
-  &__swiper-slide {}
 
   &__card {
     display: flex;
@@ -59,8 +53,6 @@
       max-width: 300px;
     }
   }
-
-  &__img {}
 
   &__content {
     padding: 70px;
@@ -156,15 +148,4 @@
     margin-right: 10px;
   }
 
-  &__swiper-button-next {}
 }
-
-.swiper-container2 {}
-
-.swiper-wrapper {}
-
-.swiper-slide {}
-
-.swiper-button-prev2 {}
-
-.swiper-button-next2 {}

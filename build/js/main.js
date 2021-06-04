@@ -1362,20 +1362,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 document.addEventListener('DOMContentLoaded', function () {
-  const burger = document.querySelector('.header__burger');
   const menu = document.querySelector('.header__menu');
-  const menuExit = document.querySelector('.header__menu-exit');
   const main = document.querySelector('.main');
   const header = document.querySelector('.header__wrapper');
   const menuLinks = document.querySelectorAll('.header__menu-link');
-
-  //   burger.addEventListener('click', function () {
-  //     menu.classList.add('active');
-  //   });
-
-  //   menuExit.addEventListener('click', function () {
-  //     menu.classList.remove('active');
-  //   });
 
   // Menu Handler
   document.addEventListener('click', (event) => {
@@ -1432,9 +1422,6 @@ document.addEventListener('DOMContentLoaded', function () {
         header.style.transform = 'translateY(0%)';
       }
     });
-  }
-  function disabledPreloader() {
-    document.getElementById('preloader').style.display = 'none';
   }
 });
 let swiper = new Swiper('.swiper-container1', {
@@ -1700,9 +1687,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.js-form')) {
     new JustValidate('.js-form', {
       rules: {
-        // checkbox: {
-        //   required: true
-        // },
         email: {
           required: true,
           email: true,
@@ -1736,37 +1720,30 @@ document.addEventListener('DOMContentLoaded', () => {
         spaceBetween: 10,
       },
       321: {
-        // ok
         slidesPerView: 1.6,
         spaceBetween: 10,
       },
       351: {
-        // ok
         slidesPerView: 1,
         spaceBetween: 10,
       },
       767: {
-        // ok
         slidesPerView: 1.1,
         spaceBetween: 30,
       },
       769: {
-        // ok
         slidesPerView: 1,
         spaceBetween: 30,
       },
       1200: {
-        // ok
         slidesPerView: 1.22,
         spaceBetween: 40,
       },
       1559: {
-        // ok
         slidesPerView: 1.5,
         spaceBetween: 40,
       },
       1900: {
-        // ok
         slidesPerView: 1.6,
         spaceBetween: 40,
       },

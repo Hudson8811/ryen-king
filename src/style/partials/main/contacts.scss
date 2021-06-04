@@ -131,9 +131,6 @@
     }
   }
 
-  &__inner {
-  }
-
   &__wrapper {
     display: flex;
 
@@ -180,12 +177,6 @@
     @include media("mobile", true) {
       margin-bottom: 10px;
     }
-  }
-
-  &__contact-item {
-  }
-
-  &__adress {
   }
 
   &__tel {

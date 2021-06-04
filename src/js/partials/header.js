@@ -1,18 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const burger = document.querySelector('.header__burger');
   const menu = document.querySelector('.header__menu');
-  const menuExit = document.querySelector('.header__menu-exit');
   const main = document.querySelector('.main');
   const header = document.querySelector('.header__wrapper');
   const menuLinks = document.querySelectorAll('.header__menu-link');
-
-  //   burger.addEventListener('click', function () {
-  //     menu.classList.add('active');
-  //   });
-
-  //   menuExit.addEventListener('click', function () {
-  //     menu.classList.remove('active');
-  //   });
 
   // Menu Handler
   document.addEventListener('click', (event) => {
@@ -69,8 +59,5 @@ document.addEventListener('DOMContentLoaded', function () {
         header.style.transform = 'translateY(0%)';
       }
     });
-  }
-  function disabledPreloader() {
-    document.getElementById('preloader').style.display = 'none';
   }
 });

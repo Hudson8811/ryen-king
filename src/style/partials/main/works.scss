@@ -4,16 +4,12 @@
   }
 
   &__slide {
-    &-sm {}
-
     &-xs {
       @include media("tablet-1000", true) {
         display: none;
       }
     }
   }
-
-  &__row {}
 
   &__title {
     margin-bottom: 70px;
@@ -80,15 +76,7 @@
       font-size: 18px;
     }
   }
-
-  &__swiper-button-prev {}
-
-  &__swiper-button-next {}
 }
-
-.swiper-container2 {}
-
-.swiper-wrapper {}
 
 .swiper-slide {
   width: auto;
