@@ -66,6 +66,7 @@
 
     &__history {
         width: 1052/1780 * 100%;
+        cursor: none;
 
         @include media("tablet-1200", true) {
             width: 100%;
@@ -74,24 +75,23 @@
         @include media("mobile", true) {
             margin-bottom: 40px;
         }
+
+        &:hover {
+            .experience__card:not(:hover) {
+                color: $dark-grey-2;
+                border-top-color: $dark-grey-2;
+            }
+        }
     }
 
     &__card {
-        padding: 50px 0;
-        color: $dark-grey-2;
-        transition: color 0.3s linear, border 0.3s linear;
-        cursor: url("../img/main/experience/test.png") 62 62, pointer;
-        z-index: 10;
         position: relative;
+        z-index: 1;
         display: block;
-
-        &.active {
-            color: $main-white;
-
-            &:not(:last-child) {
-                border-bottom: 1px solid $light-grey;
-            }
-        }
+        padding: 50px 0;
+        color: $main-white;
+        cursor: none;
+        transition: z-index 0.3s, color 0.3s linear, border-color 0.3s linear;
 
         @include media("tablet-1000", true) {
             padding: 30px 0;
@@ -101,12 +101,17 @@
             padding: 20px 0;
         }
 
-        &:not(:last-child) {
-            border-bottom: 1px solid $dark-grey-2;
+        &:hover {
+            z-index: 2;
         }
 
-        &:hover {
-            // cursor: url('../img/main/experience/cursor1.png') 62 62, pointer;
+        &:not(:first-child) {
+            margin-top: -1px;
+            border-top: 1px solid $light-grey;
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $light-grey;
         }
     }
 
