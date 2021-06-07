@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (Accordion.active) Accordion.active.close()
         this.isOpened = true
         Accordion.active = this
-
         this.$refs.control.classList.add('active')
         this.$refs.content.classList.add('active')
         this.$refs.content.style.height = `${this.$refs.content.scrollHeight}px`
@@ -61,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       destroy = () => {
         this.$refs.control.removeEventListener('click', this.onClick)
-        this.$refs.content.removeEventListener('click', this.onAnimationEnd)
+        this.$refs.content.removeEventListener('transitionend', this.onAnimationEnd)
         this.$refs.content.removeAttribute('style')
         this.$refs.control.classList.remove('active')
         this.$refs.content.classList.remove('active')
