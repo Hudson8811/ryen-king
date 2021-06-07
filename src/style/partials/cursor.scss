@@ -9,9 +9,14 @@
     pointer-events: none;
     font-size: 270px;
     transition: opacity 0.3s, visibility 0.3s;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     &.active {
         opacity: 1;
         visibility: visible;
     }
+
+
 }
