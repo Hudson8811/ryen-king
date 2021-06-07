@@ -21,4 +21,13 @@ body {
 .section {
   background-color: #000;
   height: 100%;
+
+  &.active {
+    .section-main {
+      .container-main {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
 }
