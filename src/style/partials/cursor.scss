@@ -13,6 +13,10 @@
     background-size: cover;
     background-repeat: no-repeat;
 
+    @include media('tablet', true) {
+        font-size: 180px;
+    }
+
     &.active {
         opacity: 1;
         visibility: visible;

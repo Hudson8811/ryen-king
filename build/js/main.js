@@ -1307,14 +1307,31 @@ document.addEventListener('DOMContentLoaded', function () {
       function animateHome(index) {
         const author = document.querySelector('.js-author-home')
         const img = document.querySelector('.js-img-home')
+        const imgAdapt = document.querySelector('.js-img-home-adapt')
+
 
         if (index === 1) {
           author.style.opacity = 1
           img.style.opacity = 1
+          imgAdapt.style.opacity = 1
+
         } else {
           author.style.opacity = 0
           img.style.opacity = 0
+          imgAdapt.style.opacity = 0
         }
+      }
+
+      function addScroll() {
+        const sections = [...document.querySelectorAll('.section')]
+
+        sections.forEach(section => {
+          if (section.classList.contains('active')) {
+            section.style.overflow = 'auto'
+          } else {
+            section.style.overflow = 'hidden'
+          }
+        })
       }
 
       function progressBar(index) {
@@ -1345,6 +1362,8 @@ document.addEventListener('DOMContentLoaded', function () {
           // setLabel(nextIndex - 1)
           progressBar(nextIndex);
           animateHome(nextIndex)
+          setTimeout(addScroll, 1200);
+
           // animationActiveSection(index - 1)
         },
 
@@ -1353,7 +1372,7 @@ document.addEventListener('DOMContentLoaded', function () {
           // setLabel(0)
           // setActiveMenu(0)
           animateHome(1)
-
+          setTimeout(addScroll, 1200);
           progressBar(1);
           // animationActiveSection(0)
         },
