@@ -74,6 +74,11 @@
     width: 100%;
     padding: 201px 64px 52px 40px;
 
+    @include media(1921, false) {
+      width: 1162px;
+      margin-left: auto;
+    }
+
     @include media("tablet") {
       padding: 9% 2% 3% 40px;
     }
@@ -286,6 +291,25 @@
       background: url("../img/main/home/button.svg") no-repeat;
       background-size: contain;
       @include run-circle;
+    }
+  }
+
+  &__image {
+    @include media(1921, false) {
+      position: absolute;
+      margin-left: -87.5px;
+      width: 845.5px;
+    }
+
+    @include media(2101, false) {
+      position: absolute;
+      margin-left: -197.5px;
+      width: 955.5px;
+    }
+
+    @include media(2321, false) {
+      margin-left: -317.5px;
+      width: 1075.5px;
     }
   }
 }
