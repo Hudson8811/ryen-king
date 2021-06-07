@@ -9,6 +9,8 @@
     left: 0;
     height: 100vh;
     z-index: 10;
+
+
   }
 
   &__row {
@@ -42,6 +44,10 @@
   &__author-name {
     margin-top: auto;
     max-width: 500px;
+    opacity: 0;
+    transition: opacity .6s ease;
+    transition-delay: 1s;
+
   }
 }
 

@@ -9,9 +9,18 @@
     pointer-events: none;
     font-size: 270px;
     transition: opacity 0.3s, visibility 0.3s;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include media('tablet', true) {
+        font-size: 180px;
+    }
 
     &.active {
         opacity: 1;
         visibility: visible;
     }
+
+
 }

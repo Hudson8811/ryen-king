@@ -1,11 +1,4 @@
 .testimonials {
-  &__row {
-    padding-left: calc(10% - 20px);
-
-    @include media("1920", true) {
-      padding-left: 0;
-    }
-  }
 
   &__title {
     margin-bottom: 100px;
