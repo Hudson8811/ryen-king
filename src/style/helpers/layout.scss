@@ -43,8 +43,8 @@ html {
     height: auto;
     // transform: translateY(300px);
     opacity: 0;
-    transition: transform .6s ease, opacity .6s ease, overflow .6s ease;
-    transition-delay: 1s;
+    transition: transform .6s ease, opacity .6s ease;
+    transition-delay: .6s;
   }
 
   box-sizing: border-box;

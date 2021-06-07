@@ -22,7 +22,7 @@
     object-fit: cover;
     opacity: 0;
     transition: opacity .6s ease;
-    transition-delay: 1s;
+    transition-delay: .6s;
 
     &--mobile {
       display: none;
@@ -98,7 +98,7 @@
       max-width: 400px;
       opacity: 0;
       transition: opacity .6s ease;
-      transition-delay: 1s;
+      transition-delay: .6s;
 
       @include media("tablet") {
         max-width: 300px;

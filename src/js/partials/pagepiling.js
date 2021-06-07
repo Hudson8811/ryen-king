@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
           setPageNumber(0);
           // setLabel(0)
           // setActiveMenu(0)
-          animateHome()
+          animateHome(1)
 
           progressBar(1);
           // animationActiveSection(0)
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('preloader').style.display = 'none';
     }
 
-    setTimeout(disabledPreloader, 1000);
+    setTimeout(disabledPreloader, 600);
 
     // $("a.fancybox").fancybox({
     //     type: 'iframe',
