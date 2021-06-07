@@ -1,6 +1,6 @@
 .testimonials {
   &__row {
-    padding-left: calc(10% - 20px);
+    padding-left: calc(10% + 20px);
 
     @include media("1919", true) {
       padding-left: 0;
@@ -10,6 +10,10 @@
   &__title {
     margin-bottom: 100px;
     text-align: center;
+
+    @include media("1919", true) {
+      margin-left: 0px;
+    }
 
     @include media("tablet-1000", true) {
       margin-bottom: 60px;
