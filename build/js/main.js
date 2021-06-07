@@ -1523,7 +1523,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!this.isOpened) return
         this.isOpened = false
         this.$refs.content.style.height = `${this.$refs.content.scrollHeight}px`
-        getComputedStyle(this.$refs.content).height
+        // getComputedStyle(this.$refs.content).height
         this.$refs.content.style.height = '0px'
         this.$refs.control.classList.remove('active')
         this.$refs.content.classList.remove('active')
