@@ -10,6 +10,7 @@
   &__title {
     margin-bottom: 100px;
     text-align: center;
+    margin-left: -40px;
 
     @include media("1919", true) {
       margin-left: 0px;
