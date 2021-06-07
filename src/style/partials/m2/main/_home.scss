@@ -1,6 +1,10 @@
 .home {
   height: 100vh;
 
+  @include media(992) {
+    min-height: 960px;
+  }
+
   &-container {
     position: relative;
     display: flex;
