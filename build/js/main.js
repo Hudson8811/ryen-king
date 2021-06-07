@@ -1304,6 +1304,18 @@ document.addEventListener('DOMContentLoaded', function () {
       //     header.classList.remove('active')
       //     document.querySelector(`[data-menuanchor="${anchor}"]`).classList.add('active')
       // }
+      function animateHome(index) {
+        const author = document.querySelector('.js-author-home')
+        const img = document.querySelector('.js-img-home')
+
+        if (index === 1) {
+          author.style.opacity = 1
+          img.style.opacity = 1
+        } else {
+          author.style.opacity = 0
+          img.style.opacity = 0
+        }
+      }
 
       function progressBar(index) {
         const progressBar = document.querySelector('.progress-line-js');
@@ -1332,6 +1344,7 @@ document.addEventListener('DOMContentLoaded', function () {
           setPageNumber(nextIndex - 1);
           // setLabel(nextIndex - 1)
           progressBar(nextIndex);
+          animateHome(nextIndex)
           // animationActiveSection(index - 1)
         },
 
@@ -1339,6 +1352,8 @@ document.addEventListener('DOMContentLoaded', function () {
           setPageNumber(0);
           // setLabel(0)
           // setActiveMenu(0)
+          animateHome()
+
           progressBar(1);
           // animationActiveSection(0)
         },

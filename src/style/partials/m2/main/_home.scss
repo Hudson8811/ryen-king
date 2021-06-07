@@ -20,6 +20,9 @@
     width: 758px;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity .6s ease;
+    transition-delay: 1s;
 
     &--mobile {
       display: none;
@@ -93,6 +96,9 @@
     &__name {
       order: 1;
       max-width: 400px;
+      opacity: 0;
+      transition: opacity .6s ease;
+      transition-delay: 1s;
 
       @include media("tablet") {
         max-width: 300px;
@@ -290,6 +296,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }

@@ -41,9 +41,9 @@ html {
     width: 100%;
     margin: 0 auto;
     height: auto;
-    transform: translateY(300px);
+    // transform: translateY(300px);
     opacity: 0;
-    transition: transform .6s ease, opacity .6s ease;
+    transition: transform .6s ease, opacity .6s ease, overflow .6s ease;
     transition-delay: 1s;
   }
 
