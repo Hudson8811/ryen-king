@@ -2628,7 +2628,7 @@ body {
 
 /* 4.5.1. Case page slider */
 .case-slider__container {
-  width: 106.66%;
+  width: 106.46%;
 }
 @media only screen and (min-width: 993px) {
   .case-slider__container:hover {
