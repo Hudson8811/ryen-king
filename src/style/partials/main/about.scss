@@ -158,7 +158,7 @@
     grid-area: img-wrapper;
     position: relative;
     width: 100%;
-    height: toVh(980);
+    height: toVh(960);
     margin-top: -70px;
 
     @include media("tablet-1200", true) {
