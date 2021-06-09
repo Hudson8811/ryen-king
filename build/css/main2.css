@@ -2,19 +2,18 @@
 
   1.  Global
 
-    1.1. Global resets
-    1.2. Fonts
-    1.3. General
-    1.4. Scrollbar
-    1.5. Typography
-    1.6. Primary button
-    1.7. Section settings
-    1.8. Secondary pages only styles
-      1.8.1. Primary container
-      1.8.2. Secondary container aside
-      1.8.3. Secondary container main
-    1.9. Secondary pages only typography
-    1.10. Secondary pages only links
+    1.1. Fonts
+    1.2. General
+    1.3. Scrollbar
+    1.4. Typography
+    1.5. Primary button
+    1.6. Section settings
+    1.7. Secondary pages only styles
+      1.7.1. Primary container
+      1.7.2. Secondary container aside
+      1.7.3. Secondary container main
+    1.8. Secondary pages only typography
+    1.9. Secondary pages only links
 
   2. Header
 
@@ -40,191 +39,11 @@
 @import url(jquery.fancybox.min.css);
 @import url(just-validate.min.css);
 @import url(swiper.min.css);
+@import url(resets.min.css);
 /*-------------------------------------------------------------------------------
   1. Global
 -------------------------------------------------------------------------------*/
-/* 1.1. Global resets */
-a,
-abbr,
-acronym,
-address,
-applet,
-article,
-aside,
-audio,
-b,
-big,
-blockquote,
-body,
-canvas,
-caption,
-center,
-cite,
-code,
-dd,
-del,
-details,
-dfn,
-div,
-dl,
-dt,
-em,
-embed,
-fieldset,
-figcaption,
-figure,
-footer,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-header,
-hgroup,
-html,
-i,
-iframe,
-img,
-ins,
-kbd,
-label,
-legend,
-li,
-mark,
-menu,
-nav,
-object,
-ol,
-output,
-p,
-pre,
-q,
-ruby,
-s,
-samp,
-section,
-small,
-span,
-strike,
-strong,
-sub,
-summary,
-sup,
-table,
-tbody,
-td,
-tfoot,
-th,
-thead,
-time,
-tr,
-tt,
-u,
-ul,
-var,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:after,
-blockquote:before,
-q:after,
-q:before {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-button,
-input,
-textarea {
-  font-size: inherit;
-  font-family: inherit;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-a,
-a:focus,
-button,
-div,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-input,
-select,
-span,
-textarea {
-  outline: 0;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-a,
-a:hover {
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-textarea {
-  resize: none;
-}
-
-a {
-  color: inherit;
-}
-
-/* 1.2. Fonts */
+/* 1.1. Fonts */
 @font-face {
   font-family: Manrope;
   src: url(../fonts/Manrope-Medium.woff2) format("woff2"),
@@ -285,7 +104,7 @@ a {
   font-display: swap;
 }
 
-/* 1.3. General */
+/* 1.2. General */
 body {
   font-family: NeueMachina;
   color: #fff;
@@ -372,7 +191,7 @@ body {
   }
 }
 
-/* 1.4. Scrollbar */
+/* 1.3. Scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -387,7 +206,7 @@ body {
   border: 1px solid #000;
 }
 
-/* 1.5. Typography */
+/* 1.4. Typography */
 .neue {
   font-family: NeueMachina, sans-serif;
   font-style: normal;
@@ -604,7 +423,7 @@ body {
   line-height: 140%;
 }
 
-/* 1.6. Primary button */
+/* 1.5. Primary button */
 .button-primary {
   color: #0d0d0c;
   background: #99e836;
@@ -679,7 +498,7 @@ body {
   background: #fffcf9;
 }
 
-/* 1.7. Section settings */
+/* 1.6. Section settings */
 .container {
   max-width: calc(100% - 200px);
   margin: auto;
@@ -711,7 +530,7 @@ body {
   opacity: 1;
 }
 
-/* 1.8. Secondary pages only styles */
+/* 1.7. Secondary pages only styles */
 .m2container {
   margin: 0 auto;
   max-width: 1779px;
@@ -728,7 +547,7 @@ body {
   }
 }
 
-/* 1.8.1. Primary container */
+/* 1.7.1. Primary container */
 .m2container-body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -756,7 +575,7 @@ body {
   }
 }
 
-/* 1.8.2. Secondary container aside */
+/* 1.7.2. Secondary container aside */
 .m2container-body__aside {
   margin-right: 186px;
 }
@@ -796,7 +615,7 @@ body {
   }
 }
 
-/* 1.8.3. Secondary container main */
+/* 1.7.3. Secondary container main */
 .m2container-body__main {
   width: 1050px;
   -ms-flex-negative: 0;
@@ -823,7 +642,7 @@ body {
   }
 }
 
-/* 1.9. Secondary pages only typography */
+/* 1.8. Secondary pages only typography */
 @media only screen and (max-width: 1920px) {
   .m2headline1 {
     font-size: 140px;
@@ -948,7 +767,7 @@ body {
   }
 }
 
-/* 1.10. Secondary pages only links */
+/* 1.9. Secondary pages only links */
 .m2button {
   display: -webkit-box;
   display: -ms-flexbox;
