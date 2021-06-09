@@ -1799,6 +1799,15 @@ body {
 .swiper-button-prev2 {
   margin-right: 10px;
   cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s ease;
+}
+
+@media only screen and (min-width: 993px) {
+  .swiper-button-prev2:hover {
+    opacity: 1;
+    transition: 0.3s ease;
+  }
 }
 
 .swiper-button-prev2 svg circle {
@@ -1821,6 +1830,15 @@ body {
 
 .swiper-button-next2 {
   cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s ease;
+}
+
+@media only screen and (min-width: 993px) {
+  .swiper-button-next2:hover {
+    opacity: 1;
+    transition: 0.3s ease;
+  }
 }
 
 .swiper-button-next2 svg circle {
