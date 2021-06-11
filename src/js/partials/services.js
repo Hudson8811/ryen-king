@@ -1,155 +1,189 @@
-document.addEventListener("DOMContentLoaded", () => {
-  if (document.querySelector(".section__services")) {
-    const isTablet = () => window.matchMedia("(max-width: 1000px)").matches;
-
-    class Accordion {
-      static active = null;
-      static inited = [];
-      static clear = () => {
-        Accordion.inited.forEach((instance) => {
-          instance.destroy();
-        });
-
-        Accordion.active = null;
-        Accordion.inited = [];
-      };
-
-      constructor(control, content) {
-        this.isOpened = false;
-        this.$refs = {
-          control,
-          content,
-        };
-
-        this.$refs.control.addEventListener("click", this.onClick);
-        this.$refs.content.addEventListener("transitionend", this.onAnimationEnd);
-        Accordion.inited.push(this);
-      }
-
-      onClick = () => {
-        !this.isOpened ? this.open() : this.close();
-      };
-
-      onAnimationEnd = (e) => {
-        if (e.target !== this.$refs.content) return;
-        if (e.propertyName !== "height") return;
-        if (!this.isOpened) return;
-
-        e.target.style.height = "auto";
-      };
-
-      open = () => {
-        if (this.isOpened) return;
-        if (Accordion.active) Accordion.active.close();
-        this.isOpened = true;
-        Accordion.active = this;
-        this.$refs.control.classList.add("active");
-        this.$refs.content.classList.add("active");
-        this.$refs.content.style.height = `${this.$refs.content.scrollHeight}px`;
-      };
-
-      close = () => {
-        if (!this.isOpened) return;
-        this.isOpened = false;
-        this.$refs.content.style.height = `${this.$refs.content.scrollHeight}px`;
-        getComputedStyle(this.$refs.content).height;
-        this.$refs.content.style.height = "0px";
-        this.$refs.control.classList.remove("active");
-        this.$refs.content.classList.remove("active");
-      };
-
-      destroy = () => {
-        this.$refs.control.removeEventListener("click", this.onClick);
-        this.$refs.content.removeEventListener("transitionend", this.onAnimationEnd);
-        this.$refs.content.removeAttribute("style");
-        this.$refs.control.classList.remove("active");
-        this.$refs.content.classList.remove("active");
-      };
-    }
-
-    class Tab {
-      static active = null;
-      static inited = [];
-      static clear = () => {
-        Tab.inited.forEach((instance) => {
-          instance.destroy();
-        });
-
-        Tab.active = null;
-        Tab.inited = [];
-      };
-
-      constructor(control, content) {
-        this.isOpened = false;
-        this.$refs = {
-          control,
-          content,
-        };
-
-        this.$refs.control.addEventListener("mouseover", this.open);
-        Tab.inited.push(this);
-      }
-
-      open = () => {
-        if (this.isOpened) return;
-        if (Tab.active) Tab.active.close();
-        this.isOpened = true;
-        Tab.active = this;
-        this.$refs.control.classList.add("active");
-        this.$refs.content.classList.add("active");
-      };
-
-      close = () => {
-        if (!this.isOpened) return;
-        this.isOpened = false;
-        this.$refs.control.classList.remove("active");
-        this.$refs.content.classList.remove("active");
-      };
-
-      destroy = () => {
-        this.$refs.control.removeEventListener("mouseover", this.open);
-        this.$refs.control.classList.remove("active");
-        this.$refs.content.classList.remove("active");
-      };
-    }
-
-    const tabs = document.querySelector(".js-services-tabs");
-
-    const items = [...document.querySelectorAll(".js-services-item")].map((item) => ({
-      container: item,
-      control: item.querySelector(".js-services-control"),
-      content: item.querySelector(".js-services-content"),
-    }));
-
-    let isTabletInited = !isTablet();
-
-    function moveContent() {
-      if (isTablet() && !isTabletInited) {
-        isTabletInited = true;
-
-        Tab.clear();
-
-        items.forEach((item) => {
-          new Accordion(item.control, item.content);
-          item.container.appendChild(item.content);
-        });
-
-        if (Accordion.inited[0]) Accordion.inited[0].open();
-      } else if (!isTablet() && isTabletInited) {
-        isTabletInited = false;
-
-        Accordion.clear();
-
-        items.forEach((item) => {
-          new Tab(item.control, item.content);
-          tabs.appendChild(item.content);
-        });
-
-        if (Tab.inited[0]) Tab.inited[0].open();
-      }
-    }
-
-    window.addEventListener("resize", moveContent);
-    moveContent();
+!(function () {
+  function e(e, t) {
+    (null == t || t > e.length) && (t = e.length);
+    for (var n = 0, i = new Array(t); n < t; n++) i[n] = e[n];
+    return i;
   }
-});
+  function t(e, t) {
+    if (!(e instanceof t))
+      throw new TypeError('Cannot call a class as a function');
+  }
+  function n(e, t, n) {
+    return (
+      t in e
+        ? Object.defineProperty(e, t, {
+            value: n,
+            enumerable: !0,
+            configurable: !0,
+            writable: !0,
+          })
+        : (e[t] = n),
+      e
+    );
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    if (document.querySelector('.section__services')) {
+      var i = function () {
+          o() && !l
+            ? ((l = !0),
+              c.clear(),
+              a.forEach(function (e) {
+                new r(e.control, e.content), e.container.appendChild(e.content);
+              }),
+              r.inited[0] && r.inited[0].open())
+            : !o() &&
+              l &&
+              ((l = !1),
+              r.clear(),
+              a.forEach(function (e) {
+                new c(e.control, e.content), s.appendChild(e.content);
+              }),
+              c.inited[0] && c.inited[0].open());
+        },
+        o = function () {
+          return window.matchMedia('(max-width: 1000px)').matches;
+        },
+        r = function e(i, o) {
+          var r = this;
+          t(this, e),
+            n(this, 'onClick', function () {
+              r.isOpened ? r.close() : r.open();
+            }),
+            n(this, 'onAnimationEnd', function (e) {
+              e.target === r.$refs.content &&
+                'height' === e.propertyName &&
+                r.isOpened &&
+                (e.target.style.height = 'auto');
+            }),
+            n(this, 'open', function () {
+              r.isOpened ||
+                (e.active && e.active.close(),
+                (r.isOpened = !0),
+                (e.active = r),
+                r.$refs.control.classList.add('active'),
+                r.$refs.content.classList.add('active'),
+                (r.$refs.content.style.height = ''.concat(
+                  r.$refs.content.scrollHeight,
+                  'px'
+                )));
+            }),
+            n(this, 'close', function () {
+              r.isOpened &&
+                ((r.isOpened = !1),
+                (r.$refs.content.style.height = ''.concat(
+                  r.$refs.content.scrollHeight,
+                  'px'
+                )),
+                getComputedStyle(r.$refs.content).height,
+                (r.$refs.content.style.height = '0px'),
+                r.$refs.control.classList.remove('active'),
+                r.$refs.content.classList.remove('active'));
+            }),
+            n(this, 'destroy', function () {
+              r.$refs.control.removeEventListener('click', r.onClick),
+                r.$refs.content.removeEventListener(
+                  'transitionend',
+                  r.onAnimationEnd
+                ),
+                r.$refs.content.removeAttribute('style'),
+                r.$refs.control.classList.remove('active'),
+                r.$refs.content.classList.remove('active');
+            }),
+            (this.isOpened = !1),
+            (this.$refs = { control: i, content: o }),
+            this.$refs.control.addEventListener('click', this.onClick),
+            this.$refs.content.addEventListener(
+              'transitionend',
+              this.onAnimationEnd
+            ),
+            e.inited.push(this);
+        };
+      n(r, 'active', null),
+        n(r, 'inited', []),
+        n(r, 'clear', function () {
+          r.inited.forEach(function (e) {
+            e.destroy();
+          }),
+            (r.active = null),
+            (r.inited = []);
+        });
+      var c = function e(i, o) {
+        var r = this;
+        t(this, e),
+          n(this, 'open', function () {
+            r.isOpened ||
+              (e.active && e.active.close(),
+              (r.isOpened = !0),
+              (e.active = r),
+              r.$refs.control.classList.add('active'),
+              r.$refs.content.classList.add('active'));
+          }),
+          n(this, 'close', function () {
+            r.isOpened &&
+              ((r.isOpened = !1),
+              r.$refs.control.classList.remove('active'),
+              r.$refs.content.classList.remove('active'));
+          }),
+          n(this, 'destroy', function () {
+            r.$refs.control.removeEventListener('mouseover', r.open),
+              r.$refs.control.classList.remove('active'),
+              r.$refs.content.classList.remove('active');
+          }),
+          (this.isOpened = !1),
+          (this.$refs = { control: i, content: o }),
+          this.$refs.control.addEventListener('mouseover', this.open),
+          e.inited.push(this);
+      };
+      n(c, 'active', null),
+        n(c, 'inited', []),
+        n(c, 'clear', function () {
+          c.inited.forEach(function (e) {
+            e.destroy();
+          }),
+            (c.active = null),
+            (c.inited = []);
+        });
+      var s = document.querySelector('.js-services-tabs'),
+        a = ((f = document.querySelectorAll('.js-services-item')),
+        (function (t) {
+          if (Array.isArray(t)) return e(t);
+        })(f) ||
+          (function (e) {
+            if (
+              ('undefined' != typeof Symbol && null != e[Symbol.iterator]) ||
+              null != e['@@iterator']
+            )
+              return Array.from(e);
+          })(f) ||
+          (function (t, n) {
+            if (t) {
+              if ('string' == typeof t) return e(t, n);
+              var i = Object.prototype.toString.call(t).slice(8, -1);
+              return (
+                'Object' === i && t.constructor && (i = t.constructor.name),
+                'Map' === i || 'Set' === i
+                  ? Array.from(t)
+                  : 'Arguments' === i ||
+                    /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(i)
+                  ? e(t, n)
+                  : void 0
+              );
+            }
+          })(f) ||
+          (function () {
+            throw new TypeError(
+              'Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.'
+            );
+          })()).map(function (e) {
+          return {
+            container: e,
+            control: e.querySelector('.js-services-control'),
+            content: e.querySelector('.js-services-content'),
+          };
+        }),
+        l = !o();
+      window.addEventListener('resize', i), i();
+    }
+    var f;
+  });
+})();
