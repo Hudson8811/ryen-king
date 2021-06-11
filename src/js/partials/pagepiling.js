@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("preloader").style.display = "none";
     }
 
-    // setTimeout(disabledPreloader, 600);
+    setTimeout(disabledPreloader, 600);
 
     // $("a.fancybox").fancybox({
     //     type: 'iframe',
