@@ -46,6 +46,7 @@
     }
 
     &__card {
+        display: block;
         &-md {
             max-width: 688px;
         }
