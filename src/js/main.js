@@ -10,9 +10,6 @@
 
 //= partials/pagepiling.js
 //= partials/header.js
-//= partials/swiper.js
-
-//= partials/experience.js
 
 /*
   Blog form validation
