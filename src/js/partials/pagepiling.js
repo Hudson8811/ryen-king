@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () {
-  if (document.getElementById('pagepiling')) {
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.getElementById("pagepiling")) {
     function isTablet() {
-      return window.matchMedia('(max-width: 1000px)').matches;
+      return window.matchMedia("(max-width: 1000px)").matches;
     }
 
-    let isInited = window.matchMedia('(max-width: 1000px)').matches;
+    let isInited = window.matchMedia("(max-width: 1000px)").matches;
     // const sections = [...document.querySelectorAll('.js-section')]
 
     // function onScroll() {
@@ -86,15 +86,15 @@ document.addEventListener('DOMContentLoaded', function () {
       // }
 
       const anchors = [
-        'home',
-        'about',
-        'experience',
-        'works',
-        'services',
-        'recognition',
-        'testimonials',
-        'blog',
-        'contacts',
+        "home",
+        "about",
+        "experience",
+        "works",
+        "services",
+        "recognition",
+        "testimonials",
+        "blog",
+        "contacts",
       ];
 
       // function setLabel(index) {
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // }
 
       function setPageNumber(index) {
-        [...document.querySelectorAll('.js-page-number')].forEach((element) => {
+        [...document.querySelectorAll(".js-page-number")].forEach((element) => {
           element.textContent = `${index + 1}/${anchors.length}`;
         });
       }
@@ -119,39 +119,37 @@ document.addEventListener('DOMContentLoaded', function () {
       //     document.querySelector(`[data-menuanchor="${anchor}"]`).classList.add('active')
       // }
       function animateHome(index) {
-        const author = document.querySelector('.js-author-home')
-        const img = document.querySelector('.js-img-home')
-        const imgAdapt = document.querySelector('.js-img-home-adapt')
-
+        const author = document.querySelector(".js-author-home");
+        const img = document.querySelector(".js-img-home");
+        const imgAdapt = document.querySelector(".js-img-home-adapt");
 
         if (index === 1) {
-          author.style.opacity = 1
-          img.style.opacity = 1
-          imgAdapt.style.opacity = 1
-
+          author.style.opacity = 1;
+          img.style.opacity = 1;
+          imgAdapt.style.opacity = 1;
         } else {
-          author.style.opacity = 0
-          img.style.opacity = 0
-          imgAdapt.style.opacity = 0
+          author.style.opacity = 0;
+          img.style.opacity = 0;
+          imgAdapt.style.opacity = 0;
         }
       }
 
       function addScroll() {
-        const sections = [...document.querySelectorAll('.section')]
+        const sections = [...document.querySelectorAll(".section")];
 
-        sections.forEach(section => {
-          if (section.classList.contains('active')) {
-            section.style.overflow = 'auto'
+        sections.forEach((section) => {
+          if (section.classList.contains("active")) {
+            section.style.overflow = "auto";
           } else {
-            section.style.overflow = 'hidden'
+            section.style.overflow = "hidden";
           }
-        })
+        });
       }
 
       function progressBar(index) {
-        const progressBar = document.querySelector('.progress-line-js');
+        const progressBar = document.querySelector(".progress-line-js");
 
-        progressBar.style.width = (100 / 9) * index + '%';
+        progressBar.style.width = (100 / 9) * index + "%";
       }
 
       // function animationActiveSection(index) {
@@ -164,18 +162,18 @@ document.addEventListener('DOMContentLoaded', function () {
       //   }
       // }
 
-      $('#pagepiling').pagepiling({
+      $("#pagepiling").pagepiling({
         anchors: anchors,
         verticalCentered: false,
         scrollingSpeed: 700,
-        easing: 'swing',
-        menu: '#myMenu',
+        easing: "swing",
+        menu: "#myMenu",
         // sectionsColor: ['#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000', '#000'],
         onLeave: function (index, nextIndex, direction) {
           setPageNumber(nextIndex - 1);
           // setLabel(nextIndex - 1)
           progressBar(nextIndex);
-          animateHome(nextIndex)
+          animateHome(nextIndex);
           setTimeout(addScroll, 1200);
 
           // animationActiveSection(index - 1)
@@ -185,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
           setPageNumber(0);
           // setLabel(0)
           // setActiveMenu(0)
-          animateHome(1)
+          animateHome(1);
           setTimeout(addScroll, 1200);
           progressBar(1);
           // animationActiveSection(0)
@@ -198,10 +196,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // window.addEventListener('resize', initPaging);
 
     function disabledPreloader() {
-      document.getElementById('preloader').style.display = 'none';
+      document.getElementById("preloader").style.display = "none";
     }
 
-    // setTimeout(disabledPreloader, 600);
+    setTimeout(disabledPreloader, 600);
 
     // $("a.fancybox").fancybox({
     //     type: 'iframe',
