@@ -163,6 +163,7 @@
 
     @include media("tablet-1200", true) {
       margin-top: 0;
+      height: toVh(740);
     }
 
     @include media("mobile", true) {
