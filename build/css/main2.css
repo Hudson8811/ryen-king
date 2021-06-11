@@ -924,6 +924,36 @@ body {
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
+@media only screen and (max-width: 1440px) {
+  .header__logo {
+    margin-left: auto;
+    margin-right: 31%;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .header__logo {
+    margin-left: auto;
+    margin-right: 29%;
+  }
+}
+@media only screen and (max-width: 1350px) {
+  .header__logo {
+    margin-left: auto;
+    margin-right: 26%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .header__logo {
+    margin-left: auto;
+    margin-right: 23%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .header__logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @media only screen and (max-width: 450px) {
   .header__logo {
     font-size: 18px;
