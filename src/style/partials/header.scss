@@ -29,6 +29,26 @@
     line-height: 120%;
     transform: rotate(-90deg);
 
+    @include media(1440) {
+      margin-left: auto;
+      margin-right: 31%;
+    }
+
+    @include media(1350) {
+      margin-left: auto;
+      margin-right: 26%;
+    }
+
+    @include media(1200) {
+      margin-left: auto;
+      margin-right: 23%;
+    }
+
+    @include media(1024) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     @include media("mobile-450") {
       font-size: 18px;
     }
