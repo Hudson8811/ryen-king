@@ -19,7 +19,9 @@
     }
   }
 
-  &__row {}
+  &__row {
+    padding-bottom: 50px;
+  }
 
   &__swiper-container {
     cursor: url("../img/cursor-slider.png") 62 62, auto;
@@ -41,6 +43,7 @@
   &__swiper-slide {}
 
   &__card {
+    display: block;
     height: 630px;
     position: relative;
 
